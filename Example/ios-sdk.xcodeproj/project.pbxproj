@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ACB308F49629E2DE7E56913 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0ACB308F49629E2DE7E56913 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1E0242AB6788C9E1AAED51E3 /* Pods_ios_sdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212F0E6615B64DFD64A3319A /* Pods-ios-sdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk_Example.debug.xcconfig"; path = "Target Support Files/Pods-ios-sdk_Example/Pods-ios-sdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ios-sdk_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +44,8 @@
 		92708B33C8609D738B1C2CEB /* Pods_ios_sdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B073B9749BF128D492B11FFC /* Pods-ios-sdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk_Example.release.xcconfig"; path = "Target Support Files/Pods-ios-sdk_Example/Pods-ios-sdk_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BB07CBDAFF6296B1BAC99163 /* Pods-ios-sdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ios-sdk_Tests/Pods-ios-sdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DEEBB6CCCF67084D3235F877 /* ios-sdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "ios-sdk.podspec"; path = "../ios-sdk.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E48D604EAF2BDC5813410C35 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DEEBB6CCCF67084D3235F877 /* ios-sdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = "ios-sdk.podspec"; path = "../ios-sdk.podspec"; sourceTree = "<group>"; };
+		E48D604EAF2BDC5813410C35 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FEB512F85CB788CB2A7270DB /* Pods-ios-sdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-sdk_Tests.release.xcconfig"; path = "Target Support Files/Pods-ios-sdk_Tests/Pods-ios-sdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +77,7 @@
 				BB07CBDAFF6296B1BAC99163 /* Pods-ios-sdk_Tests.debug.xcconfig */,
 				FEB512F85CB788CB2A7270DB /* Pods-ios-sdk_Tests.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -226,7 +227,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);

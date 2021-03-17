@@ -1,0 +1,16 @@
+PODS:
+  - ios-sdk (0.1.0)
+
+DEPENDENCIES:
+  - ios-sdk (from `../`)
+
+EXTERNAL SOURCES:
+  ios-sdk:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ios-sdk: 3ef78fcf6c806cd9284ad2ebcd05d0a11c37b943
+
+PODFILE CHECKSUM: a52577fd831d07fad1bd6d21244e4347a12889da
+
+COCOAPODS: 1.9.3
