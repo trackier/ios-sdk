@@ -1,5 +1,5 @@
 {
-  "name": "ios-sdk",
+  "name": "trackier-ios-sdk",
   "version": "1.0.0",
   "summary": "This is trackier ios-sdk.",
   "description": "TODO: Add long description of the pod here.",
@@ -18,5 +18,7 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "ios-sdk/Classes/**/*"
+  "swift_versions": "5",
+  "source_files": "ios-sdk/Classes/**/*",
+  "swift_version": "5"
 }
