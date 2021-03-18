@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import trackier_ios_sdk
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+      let replaceMe = ReplaceMe()
+        replaceMe.getData()
     }
 
     override func didReceiveMemoryWarning() {

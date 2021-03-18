@@ -1,16 +1,27 @@
 PODS:
-  - trackier-ios-sdk (1.0.0)
+  - Alamofire (4.9.1)
+  - SwiftyJSON (4.3.0)
+  - trackier-ios-sdk (1.1.0):
+    - Alamofire (~> 4.0)
+    - SwiftyJSON (~> 4.0)
 
 DEPENDENCIES:
   - trackier-ios-sdk (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   trackier-ios-sdk:
     :path: "../"
 
 SPEC CHECKSUMS:
-  trackier-ios-sdk: 142fafcf669c5c7d30dfa81cb26bbf823d7a66cd
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  trackier-ios-sdk: e954791787de96a71e0130175a703c6a1ce48856
 
-PODFILE CHECKSUM: 6b013adf4d93f8452ed705d6b6ae0b64a58182e7
+PODFILE CHECKSUM: 4e57670d58945d89aa708d298914694b8d1c92f3
 
 COCOAPODS: 1.9.3
