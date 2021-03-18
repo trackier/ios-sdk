@@ -1,22 +1,24 @@
 {
   "name": "trackier-ios-sdk",
-  "version": "0.1.0",
-  "summary": "A short description of trackier-ios-sdk.",
+  "version": "1.0.0",
+  "summary": "This is trackier-ios-sdk 1.0.0 .",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/prak24oct/trackier-ios-sdk",
+  "homepage": "https://github.com/trackier/ios-sdk",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "prak24oct": "prakharatdit@gmail.com"
+    "trackier": "dev@trackier.com"
   },
   "source": {
-    "git": "https://github.com/prak24oct/trackier-ios-sdk.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/trackier/ios-sdk.git",
+    "tag": "1.0.0"
   },
+  "swift_versions": "5.0",
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "trackier-ios-sdk/Classes/**/*"
+  "source_files": "trackier-ios-sdk/Classes/**/*",
+  "swift_version": "5.0"
 }

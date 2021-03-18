@@ -1,5 +1,5 @@
 PODS:
-  - trackier-ios-sdk (0.1.0)
+  - trackier-ios-sdk (1.0.0)
 
 DEPENDENCIES:
   - trackier-ios-sdk (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  trackier-ios-sdk: a72cc10dead3e859b401b6d283c18f681d713dc0
+  trackier-ios-sdk: 142fafcf669c5c7d30dfa81cb26bbf823d7a66cd
 
 PODFILE CHECKSUM: 6b013adf4d93f8452ed705d6b6ae0b64a58182e7
 
