@@ -22,7 +22,7 @@ pod 'trackier-ios-sdk'
 
 ## Author
 
-prak24oct, prakharatdit@gmail.com
+trackier, dev@trackier.com
 
 ## License
 
