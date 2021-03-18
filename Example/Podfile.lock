@@ -1,16 +1,16 @@
 PODS:
-  - ios-sdk (1.0.0)
+  - trackier-ios-sdk (0.1.0)
 
 DEPENDENCIES:
-  - ios-sdk (from `../`)
+  - trackier-ios-sdk (from `../`)
 
 EXTERNAL SOURCES:
-  ios-sdk:
+  trackier-ios-sdk:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ios-sdk: 38b8e9328e5998ae86df0d8116de5408448ed380
+  trackier-ios-sdk: a72cc10dead3e859b401b6d283c18f681d713dc0
 
-PODFILE CHECKSUM: a52577fd831d07fad1bd6d21244e4347a12889da
+PODFILE CHECKSUM: 6b013adf4d93f8452ed705d6b6ae0b64a58182e7
 
 COCOAPODS: 1.9.3

@@ -2,10 +2,10 @@ use_frameworks!
 
 platform :ios, '9.0'
 
-target 'ios-sdk_Example' do
+target 'trackier-ios-sdk_Example' do
   pod 'trackier-ios-sdk', :path => '../'
 
-  target 'ios-sdk_Tests' do
+  target 'trackier-ios-sdk_Tests' do
     inherit! :search_paths
 
     
