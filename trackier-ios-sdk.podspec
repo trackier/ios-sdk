@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'trackier-ios-sdk'
   s.version          = '1.0.0'
-  s.summary          = 'This is trackier ios sdk.'
+  s.summary          = 'This is trackier-ios-sdk 1.0.0 .'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/prak24oct/trackier-ios-sdk'
+  s.homepage         = 'https://github.com/trackier/ios-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'prak24oct' => 'prakharatdit@gmail.com' }
-  s.source           = { :git => 'https://github.com/prak24oct/trackier-ios-sdk.git', :tag => s.version.to_s }
+  s.author           = { 'trackier' => 'dev@trackier.com' }
+  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
