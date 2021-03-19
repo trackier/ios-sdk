@@ -23,6 +23,16 @@
 		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5596862E5F6C285875E4C761CC242 /* Validation.swift */; };
 		5386BF7855EDB7468131732B22C5652D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E6A92C837FE8D00075430DA08BE5F6 /* Alamofire.framework */; };
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BF55AB3F6EAEB19B8653795645C00 /* Result.swift */; };
+		671C546E26048C2B00958C38 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C546C26047A5B00958C38 /* Log.swift */; };
+		671C547026048DF600958C38 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C546F26048DF600958C38 /* Cache.swift */; };
+		671C54722604986300958C38 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54712604986300958C38 /* Reach.swift */; };
+		671C54752604A1EC00958C38 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54732604A1E400958C38 /* ApiManager.swift */; };
+		671C54782604A2DA00958C38 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54762604A2D300958C38 /* APIRepository.swift */; };
+		671C547A2604BF3B00958C38 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54792604BF3B00958C38 /* DeviceInfo.swift */; };
+		67B80AE426035D4500E1F149 /* TrackierSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B80AE326035D4500E1F149 /* TrackierSDK.swift */; };
+		67B80AE626035E9F00E1F149 /* TrackierSDKInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B80AE526035E9F00E1F149 /* TrackierSDKInstance.swift */; };
+		67B80AE826036B8C00E1F149 /* TrackierSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B80AE726036B8C00E1F149 /* TrackierSDKConfig.swift */; };
+		67B80AEA26036EB300E1F149 /* TrackierEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B80AE926036EB300E1F149 /* TrackierEvent.swift */; };
 		7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA05AE51BEACA7CD1D9D8F1DE7F809D /* Foundation.framework */; };
 		7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BACB35151AA767B49216D2A232A965A /* SwiftyJSON.swift */; };
 		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAE3BE5FE57DED14A26D1B40956132 /* AFError.swift */; };
@@ -122,6 +132,16 @@
 		58978579F2797C14A36C1911E91C0282 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		5C700DC4D43B2545387161C21914FE80 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		671C546C26047A5B00958C38 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		671C546F26048DF600958C38 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		671C54712604986300958C38 /* Reach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		671C54732604A1E400958C38 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		671C54762604A2D300958C38 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		671C54792604BF3B00958C38 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		67B80AE326035D4500E1F149 /* TrackierSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierSDK.swift; sourceTree = "<group>"; };
+		67B80AE526035E9F00E1F149 /* TrackierSDKInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierSDKInstance.swift; sourceTree = "<group>"; };
+		67B80AE726036B8C00E1F149 /* TrackierSDKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierSDKConfig.swift; sourceTree = "<group>"; };
+		67B80AE926036EB300E1F149 /* TrackierEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierEvent.swift; sourceTree = "<group>"; };
 		6A7AC8D1FC44397D388BDB0A614C0D59 /* Pods-trackier-ios-sdk_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-trackier-ios-sdk_Example-umbrella.h"; sourceTree = "<group>"; };
 		75163746EBCC52B719EFEA55971C42D6 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		7728B4BD82C732B3E556D0C580ED8493 /* Pods-trackier-ios-sdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +379,16 @@
 				0A66422A0FD48417724925E7BECBB851 /* ReplaceMe.swift */,
 				A276FB65CD9D36792285B98C39B27AF9 /* Pod */,
 				D4E22600F0770A78AA580873A7B0C94A /* Support Files */,
+				67B80AE326035D4500E1F149 /* TrackierSDK.swift */,
+				67B80AE526035E9F00E1F149 /* TrackierSDKInstance.swift */,
+				67B80AE726036B8C00E1F149 /* TrackierSDKConfig.swift */,
+				67B80AE926036EB300E1F149 /* TrackierEvent.swift */,
+				671C546C26047A5B00958C38 /* Log.swift */,
+				671C546F26048DF600958C38 /* Cache.swift */,
+				671C54712604986300958C38 /* Reach.swift */,
+				671C54732604A1E400958C38 /* ApiManager.swift */,
+				671C54762604A2D300958C38 /* APIRepository.swift */,
+				671C54792604BF3B00958C38 /* DeviceInfo.swift */,
 			);
 			name = "trackier-ios-sdk";
 			path = ../..;
@@ -645,6 +675,7 @@
 				98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */,
 				D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */,
 				E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */,
+				671C547026048DF600958C38 /* Cache.swift in Sources */,
 				64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */,
 				F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */,
 				2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */,
@@ -652,6 +683,7 @@
 				AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */,
 				933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */,
 				53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */,
+				671C547A2604BF3B00958C38 /* DeviceInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +707,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B80AE626035E9F00E1F149 /* TrackierSDKInstance.swift in Sources */,
+				671C54752604A1EC00958C38 /* ApiManager.swift in Sources */,
+				671C54722604986300958C38 /* Reach.swift in Sources */,
+				671C546E26048C2B00958C38 /* Log.swift in Sources */,
 				A04FEAC4DB61A97BAECF186D625E7E98 /* ReplaceMe.swift in Sources */,
+				67B80AE426035D4500E1F149 /* TrackierSDK.swift in Sources */,
+				67B80AEA26036EB300E1F149 /* TrackierEvent.swift in Sources */,
+				67B80AE826036B8C00E1F149 /* TrackierSDKConfig.swift in Sources */,
+				671C54782604A2DA00958C38 /* APIRepository.swift in Sources */,
 				2C1E409571BEF37C7E2901B9C3B5CA13 /* trackier-ios-sdk-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,11 +881,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.1.1;
 				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
 				PRODUCT_MODULE_NAME = trackier_ios_sdk;
 				PRODUCT_NAME = trackier_ios_sdk;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1047,11 +1089,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.1.1;
 				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
 				PRODUCT_MODULE_NAME = trackier_ios_sdk;
 				PRODUCT_NAME = trackier_ios_sdk;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
