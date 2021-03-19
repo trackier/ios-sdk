@@ -11,7 +11,9 @@ class Constants {
     static let SDK_VERSION = "1.0.0"
     static let USER_AGENT = "com.trackier.sdk:ios-sdk:" + SDK_VERSION
     static let API_VERSION = "v1"
-    static let BASE_URL = "https://events.trackier.io/" + API_VERSION + "/"
+    static let BASE_URL = "https://events.trackier.io/" + API_VERSION
+    static let INSTALL_URL = BASE_URL + "/install"
+    static let EVENTS_URL = BASE_URL + "/event"
 
     static let LOG_TAG = "trackiersdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"

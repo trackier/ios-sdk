@@ -20,6 +20,6 @@ public class TrackierSDKConfig {
     }
 
     func setLogLevel() {
-        //TODO: fix me
+        // TODO: fix me
     }
 }
