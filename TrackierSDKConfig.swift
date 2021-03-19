@@ -8,6 +8,9 @@
 import Foundation
 
 public class TrackierSDKConfig {
+    public static let ENVIRONMENT_PRODUCTION = Constants.ENV_PRODUCTION
+    public static let ENV_DEVELOPMENT = Constants.ENV_DEVELOPMENT
+    
     var appToken: String
     var env: String
 

@@ -38,7 +38,7 @@ class TrackierWorkRequest {
     
     func getEventData() -> Dictionary<String, Any> {
         var dict = getData()
-//        dict["event"] = self.eventObj
+        dict["event"] = self.eventObj.getHashMap()
         return dict
     }
 }

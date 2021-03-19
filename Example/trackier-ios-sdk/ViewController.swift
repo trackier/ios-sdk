@@ -14,13 +14,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        TrackierSDK.initialize()
-        let config = TrackierSDKConfig(appToken: "", env: "")
+        let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT)
         TrackierSDK.initialize(config: config)
-        let event = TrackierEvent(id: "sldkjflsdfj")
+        let event = TrackierEvent(id: TrackierEvent.PURCHASE)
+        event.addEventValue(prop: "purchaseId", val: "sldfjdslfsfsdf")
+        event.addEventValue(prop: "purchasePnr", val: "sd2-3dslk329032-23")
+        event.setRevenue(revenue: 120.5, currency: "INR")
+        event.param1 = "this is a param1 value"
         TrackierSDK.trackEvent(event: event)
         print("device info.......\(UIDevice.current.modelName)")
-        
     }
 
     override func didReceiveMemoryWarning() {

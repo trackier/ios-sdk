@@ -29,7 +29,7 @@
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BF55AB3F6EAEB19B8653795645C00 /* Result.swift */; };
 		671C546E26048C2B00958C38 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C546C26047A5B00958C38 /* Log.swift */; };
 		671C54722604986300958C38 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54712604986300958C38 /* Reach.swift */; };
-		671C54752604A1EC00958C38 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54732604A1E400958C38 /* ApiManager.swift */; };
+		671C54752604A1EC00958C38 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54732604A1E400958C38 /* APIManager.swift */; };
 		671C54782604A2DA00958C38 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54762604A2D300958C38 /* APIRepository.swift */; };
 		671C547A2604BF3B00958C38 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671C54792604BF3B00958C38 /* DeviceInfo.swift */; };
 		67B80AE426035D4500E1F149 /* TrackierSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B80AE326035D4500E1F149 /* TrackierSDK.swift */; };
@@ -141,7 +141,7 @@
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		671C546C26047A5B00958C38 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		671C54712604986300958C38 /* Reach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		671C54732604A1E400958C38 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		671C54732604A1E400958C38 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		671C54762604A2D300958C38 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		671C54792604BF3B00958C38 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		67B80AE326035D4500E1F149 /* TrackierSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierSDK.swift; sourceTree = "<group>"; };
@@ -391,7 +391,7 @@
 				67B80AE926036EB300E1F149 /* TrackierEvent.swift */,
 				671C546C26047A5B00958C38 /* Log.swift */,
 				671C54712604986300958C38 /* Reach.swift */,
-				671C54732604A1E400958C38 /* ApiManager.swift */,
+				671C54732604A1E400958C38 /* APIManager.swift */,
 				671C54762604A2D300958C38 /* APIRepository.swift */,
 				671C54792604BF3B00958C38 /* DeviceInfo.swift */,
 				41A10DCB2604CA6A0079BED4 /* Constants.swift */,
@@ -717,7 +717,7 @@
 			files = (
 				67B80AE626035E9F00E1F149 /* TrackierSDKInstance.swift in Sources */,
 				41A10DCC2604CA6A0079BED4 /* Constants.swift in Sources */,
-				671C54752604A1EC00958C38 /* ApiManager.swift in Sources */,
+				671C54752604A1EC00958C38 /* APIManager.swift in Sources */,
 				41A10DE62604DDC10079BED4 /* Utils.swift in Sources */,
 				671C54722604986300958C38 /* Reach.swift in Sources */,
 				41A10DD82604D9820079BED4 /* CacheManager.swift in Sources */,

@@ -11,9 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 
-class ApiManager: NSObject {
+class APIManager: NSObject {
     
     static let sharedInstance = ApiManager()
+    static var headers = ["User-Agent": Constants.USER_AGENT, "X-Client-SDK": Constants.SDK_VERSION]
     
     override init() {
     }
@@ -21,10 +22,10 @@ class ApiManager: NSObject {
     static func doWork(workRequest: TrackierWorkRequest) {
         switch workRequest.kind {
         case TrackierWorkRequest.KIND_INSTALL:
-            sharedInstance.requestPOSTURL(strURL: "https://requestbin.offersoptimize.com/1kke4xr1", params: workRequest.getData(), headers: nil)
+            sharedInstance.requestPOSTURL(strURL: Constants.BASE_URL + "/install", params: workRequest.getData(), headers: headers)
             break;
         case TrackierWorkRequest.KIND_EVENT:
-            sharedInstance.requestPOSTURL(strURL: "https://requestbin.offersoptimize.com/1kke4xr1", params: workRequest.getEventData(), headers: nil)
+            sharedInstance.requestPOSTURL(strURL: Constants.BASE_URL + "/event", params: workRequest.getEventData(), headers: headers)
             break;
         case TrackierWorkRequest.KIND_SESSION:
             break;

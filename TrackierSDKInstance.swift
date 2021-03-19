@@ -31,24 +31,14 @@ class TrackierSDKInstance {
             return
         }
         self.config = config
+        self.isInitialized = true
         self.appToken = config.appToken
         self.installId = getInstallID()
         // DeviceInfo.init(device, this.config.context)
 
-        DispatchQueue.global().async { //Swift sample
-            sleep(1) //emulates heavy operation, delay 1 second
-            self.initIdfa()
-            self.initAttributionInfo()
+        DispatchQueue.global().async {
             self.trackInstall()
         }
-    }
-    
-    private  func initIdfa() {
-        // TODO: fix me, get idfa for ios < 14
-    }
-
-    private  func initAttributionInfo() {
-        isInitialized = true
     }
 
     private func setInstallID(installID: String) {
@@ -78,7 +68,7 @@ class TrackierSDKInstance {
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
-        ApiManager.doWork(workRequest: wrk)
+        APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
 
@@ -92,6 +82,9 @@ class TrackierSDKInstance {
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
-        ApiManager.doWork(workRequest: wrk)
+        wrk.eventObj = event
+        DispatchQueue.global().async {
+            APIManager.doWork(workRequest: wrk)
+        }
     }
 }

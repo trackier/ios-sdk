@@ -7,48 +7,73 @@
 
 import Foundation
 
-public struct TrackierEvent {
+public class TrackierEvent {
 
     var id: String
     public init(id: String) {
         self.id = id
     }
 
-    var orderId: String? = ""
-    var currency: String? = ""
-    var param1: String? = ""
-    var param2: String? = ""
-    var param3: String? = ""
-    var param4: String? = ""
-    var param5: String? = ""
-    var param6: String? = ""
-    var param7: String? = ""
-    var param8: String? = ""
-    var param9: String? = ""
-    var param10: String? = ""
+    public var orderId: String? = ""
+    public var currency: String? = ""
+    public var param1: String? = ""
+    public var param2: String? = ""
+    public var param3: String? = ""
+    public var param4: String? = ""
+    public var param5: String? = ""
+    public var param6: String? = ""
+    public var param7: String? = ""
+    public var param8: String? = ""
+    public var param9: String? = ""
+    public var param10: String? = ""
 
-    var revenue: Double? = 0.0
+    var revenue: Float64? = 0.0
     var ev = [String: Any]()
     
-    mutating public func addEventValue(prop: String, val: Any) {
-        var eventValue = self.ev
-        eventValue[prop] = val
-        self.ev = eventValue
+    public func addEventValue(prop: String, val: Any) {
+        self.ev[prop] = val
+    }
+    
+    public func setRevenue(revenue: Float64, currency: String) {
+        self.revenue = revenue
+        if currency.count == 3 {
+            self.currency = currency
+        }
+    }
+    
+    func getHashMap() -> Dictionary<String, Any> {
+        var dict = Dictionary<String, Any>()
+        dict["id"] = self.id
+        dict["orderId"] = self.orderId
+        dict["param1"] = self.param1
+        dict["param2"] = self.param2
+        dict["param3"] = self.param3
+        dict["param4"] = self.param4
+        dict["param5"] = self.param5
+        dict["param6"] = self.param6
+        dict["param7"] = self.param7
+        dict["param8"] = self.param8
+        dict["param9"] = self.param9
+        dict["param10"] = self.param10
+        dict["currency"] = self.currency
+        dict["revenue"] = self.revenue
+        dict["ev"] = self.ev
+        return dict
     }
 
-    static let LEVEL_ACHIEVED = "1CFfUn3xEY"
-    static let ADD_TO_CART = "Fy4uC1_FlN"
-    static let ADD_TO_WISHLIST = "AOisVC76YG"
-    static let COMPLETE_REGISTRATION = "mEqP4aD8dU"
-    static let TUTORIAL_COMPLETION = "99VEGvXjN7"
-    static let PURCHASE = "Q4YsqBKnzZ"
-    static let SUBSCRIBE = "B4N_In4cIP"
-    static let START_TRIAL = "jYHcuyxWUW"
-    static let ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
-    static let CONTENT_VIEW = "Jwzois1ays"
-    static let TRAVEL_BOOKING = "yP1-ipVtHV"
-    static let SHARE = "dxZXGG1qqL"
-    static let INVITE = "7lnE3OclNT"
-    static let LOGIN = "o91gt1Q0PK"
-    static let UPDATE = "sEQWVHGThl"
+    public static let LEVEL_ACHIEVED = "1CFfUn3xEY"
+    public static let ADD_TO_CART = "Fy4uC1_FlN"
+    public static let ADD_TO_WISHLIST = "AOisVC76YG"
+    public static let COMPLETE_REGISTRATION = "mEqP4aD8dU"
+    public static let TUTORIAL_COMPLETION = "99VEGvXjN7"
+    public static let PURCHASE = "Q4YsqBKnzZ"
+    public static let SUBSCRIBE = "B4N_In4cIP"
+    public static let START_TRIAL = "jYHcuyxWUW"
+    public static let ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
+    public static let CONTENT_VIEW = "Jwzois1ays"
+    public static let TRAVEL_BOOKING = "yP1-ipVtHV"
+    public static let SHARE = "dxZXGG1qqL"
+    public static let INVITE = "7lnE3OclNT"
+    public static let LOGIN = "o91gt1Q0PK"
+    public static let UPDATE = "sEQWVHGThl"
 }
