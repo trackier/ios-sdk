@@ -14,7 +14,7 @@ class APIService {
             print(responseObject)
             if let data = responseObject.data {
                 let json = String(data: data, encoding: String.Encoding.utf8)
-                print("Response: \(json)")
+                print(json)
             }
         }
     }
