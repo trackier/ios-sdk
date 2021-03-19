@@ -12,6 +12,6 @@ private let subsystem = "com.trackier.ios-sdk"
 
 @available(iOS 10.0, *)
 struct Log {
-  static let dev = OSLog(subsystem: subsystem, category: "dev")
-  static let prod = OSLog(subsystem: subsystem, category: "prod")
+    static let dev = OSLog(subsystem: subsystem, category: "dev")
+    static let prod = OSLog(subsystem: subsystem, category: "prod")
 }

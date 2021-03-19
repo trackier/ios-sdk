@@ -7,27 +7,17 @@
 
 import Foundation
 
-class TrackierSDKConfi {
-    private var enableApkTracking = false
-   // private val logger: Logger
+class TrackierSDKConfig {
+    var appToken: String
+    var env: String
 
-    init( val appToken: String, val env: String) {
-//        context = context.applicationContext
-//        val level = if (env == Constants.ENV_PRODUCTION) Level.SEVERE else Level.FINEST
-//        Factory.setLogLevel(level)
-//        logger = Factory.logger
+    init(appToken: String, env: String) {
+        self.appToken = appToken
+        self.env = env
     }
 
 
     func setLogLevel() {
-        //Factory.setLogLevel(value)
-    }
-
-    func setApkTracking(value: Bool) {
-       // enableApkTracking = value
-    }
-
-    func isApkTrackingEnabled() -> Bool {
-        return enableApkTracking
+        //TODO: fix me
     }
 }

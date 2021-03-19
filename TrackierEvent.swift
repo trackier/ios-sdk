@@ -7,27 +7,30 @@
 
 import Foundation
 
-struct TrackierEvent{
+struct TrackierEvent {
     
-    init(val id: String){
-        
-    }
-     var orderId: String? = ""
-     var currency: String? = ""
-     var param1: String? = ""
-     var param2: String? = ""
-     var param3: String? = ""
-     var param4: String? = ""
-     var param5: String? = ""
-     var param6: String? = ""
-     var param7: String? = ""
-     var param8: String? = ""
-     var param9: String? = ""
-     var param10: String? = ""
+    init(val id: String) {}
+    var orderId: String? = ""
+    var currency: String? = ""
+    var param1: String? = ""
+    var param2: String? = ""
+    var param3: String? = ""
+    var param4: String? = ""
+    var param5: String? = ""
+    var param6: String? = ""
+    var param7: String? = ""
+    var param8: String? = ""
+    var param9: String? = ""
+    var param10: String? = ""
 
     var revenue: Double? = 0.0
     var ev = [String: Any]()
-    // var ev = mutableMapOf<String, Any>()
+    
+    mutating func addEventValue(prop: String, val: Any) {
+        var eventValue = self.ev
+        eventValue[prop] = val
+        self.ev = eventValue
+    }
 
     static let LEVEL_ACHIEVED = "1CFfUn3xEY"
     static let ADD_TO_CART = "Fy4uC1_FlN"
@@ -44,5 +47,4 @@ struct TrackierEvent{
     static let INVITE = "7lnE3OclNT"
     static let LOGIN = "o91gt1Q0PK"
     static let UPDATE = "sEQWVHGThl"
-    
 }

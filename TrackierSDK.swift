@@ -10,11 +10,11 @@ import os
 
 public class TrackierSDK{
     
-       private static  var isInitialized = false
-       private var instance = TrackierSDKInstance()
+    private static  var isInitialized = false
+    private var instance = TrackierSDKInstance()
     
     
-   public static func initialize() {
+    public static func initialize() {
         if (isInitialized) {
           //  os_log("SDK Already initialized", log: OSLog.default, type: .info)
             os_log("SDK Already initialized", log: Log.prod, type: .info)
