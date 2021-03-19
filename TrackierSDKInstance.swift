@@ -25,8 +25,8 @@ class TrackierSDKInstance {
     var installId = ""
     
     /**
-    * Initialize method should be called to initialize the sdk
-    */
+     * Initialize method should be called to initialize the sdk
+     */
     public func initialize(config: TrackierSDKConfig) {
         if self.isInitialized {
             return
@@ -54,51 +54,28 @@ class TrackierSDKInstance {
     }
 
     private func setInstallID(installID: String) {
-//            val prefs = Util.getSharedPref(this.config.context)
-//            prefs.edit().putString(Constants.SHARED_PREF_INSTALL_ID, installID)
-//                    .apply()
+        CacheManager.setString(key: Constants.SHARED_PREF_INSTALL_ID, value: installID)
     }
 
     private func getInstallID() -> String {
-//        var installId = Util.getSharedPrefString(this.config.context, Constants.SHARED_PREF_INSTALL_ID)
-//        if(installId.isBlank()){
-//            installId = UUID.randomUUID().toString()
-//            setInstallID(installId)
-//        }
-        return installId
+        return CacheManager.getString(key: Constants.SHARED_PREF_INSTALL_ID)
     }
 
-       private func isInstallTracked() -> Bool {
-//           return try {
-//               val prefs = Util.getSharedPref(this.config.context)
-//               prefs.getBoolean(Constants.SHARED_PREF_IS_INSTALL_TRACKED, false)
-//           } catch (ex: Exception) {
-//               false
-//           }
-        return true
-       }
+    private func isInstallTracked() -> Bool {
+        return CacheManager.getBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED)
+    }
 
-       private func setInstallTracked() {
-//           val prefs = Util.getSharedPref(this.config.context)
-//           prefs.edit().putBoolean(Constants.SHARED_PREF_IS_INSTALL_TRACKED, true).apply()
-       }
+    private func setInstallTracked() {
+        CacheManager.setBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED, value: true)
+    }
 
-       private  func trackInstall() {
-//           if (isInstallTracked()) {
-//               return
-//           }
-//           if (config.isApkTrackingEnabled()) {
-//               // TODO: implement APK tracking logic
-//           }
-//           if (!isReferrerStored()) {
-//               val installRef = InstallReferrer(this.config.context)
-//               val refDetails = installRef.getRefDetails()
-//               this.setReferrerDetails(refDetails)
-//           }
-//           val wrkRequest = makeWorkRequest(TrackierWorkRequest.KIND_INSTALL)
-//           TrackierWorkRequest.enqueue(wrkRequest)
-           setInstallTracked()
-       }
+    private  func trackInstall() {
+        if (isInstallTracked()) {
+            return
+        }
+        // TODO: fix me
+        setInstallTracked()
+    }
 
     func trackEvent(event: TrackierEvent) {
        if (!isEnabled || !configLoaded) {
