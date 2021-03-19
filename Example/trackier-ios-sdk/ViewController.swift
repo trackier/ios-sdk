@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        TrackierSDK.initialize()
+//        TrackierSDK.initialize()
         print("device info.......\(UIDevice.current.modelName)")
         
     }

@@ -16,7 +16,6 @@ public class TrackierSDKConfig {
         self.env = env
     }
 
-
     func setLogLevel() {
         //TODO: fix me
     }

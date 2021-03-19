@@ -16,7 +16,6 @@ class TrackierSDKInstance {
     
 //    private var device = DeviceInfo()
 
-
     var isEnabled = true
     var isInitialized = false
     var configLoaded = false
@@ -31,10 +30,9 @@ class TrackierSDKInstance {
         if self.isInitialized {
             return
         }
-        self.isInitialized = true
         self.config = config
         self.appToken = config.appToken
-        //this.installId = getInstallID()
+        self.installId = getInstallID()
         // DeviceInfo.init(device, this.config.context)
 
         DispatchQueue.global().async { //Swift sample
