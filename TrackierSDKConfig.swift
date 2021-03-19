@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TrackierSDKConfig {
+public class TrackierSDKConfig {
     var appToken: String
     var env: String
 

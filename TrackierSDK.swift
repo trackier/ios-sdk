@@ -8,35 +8,34 @@
 import Foundation
 import os
 
-public class TrackierSDK{
-    
-    private static  var isInitialized = false
+public class TrackierSDK {
+    private var isInitialized = false
     private var instance = TrackierSDKInstance()
     
+    static let shared = TrackierSDK()
     
-    public static func initialize() {
-        if (isInitialized) {
-          //  os_log("SDK Already initialized", log: OSLog.default, type: .info)
-            os_log("SDK Already initialized", log: Log.prod, type: .info)
+    private init() {}
+    
+    public static func initialize(config: TrackierSDKConfig) {
+        if (shared.isInitialized) {
+            os_log("SDK Already initialized!", log: Log.prod, type: .info)
             return
         }
-        isInitialized = true
-        os_log("Trackier SDK ${Constants.SDK_VERSION} initialized", log: Log.prod, type: .info)
-       //instance.initialize(config)
+        shared.isInitialized = true
+        os_log("Trackier SDK %@ initialized", log: Log.prod, type: .info, Constants.SDK_VERSION)
+        shared.instance.initialize(config: config)
     }
 
-    static func isEnabled() -> Bool{
-       // return instance.isEnabled
-         return false
+    static func isEnabled() -> Bool {
+        return shared.instance.isEnabled
     }
 
-    func setEnabled(value : Bool) {
-       // instance.isEnabled = value
+    static func setEnabled(value : Bool) {
+        shared.instance.isEnabled = value
     }
-
    
-    static func trackEvent() {
-        if (!isInitialized) {
+    static func trackEvent(event: TrackierEvent) {
+        if (!shared.isInitialized) {
             os_log("SDK Not Initialized", log: Log.prod, type: .info)
             return
         }
@@ -44,7 +43,6 @@ public class TrackierSDK{
             os_log("SDK Disabled", log: Log.prod, type: .info)
             return
         }
-       // instance.trackEvent(event)
+        shared.instance.trackEvent(event: event)
     }
-    
 }
