@@ -13,7 +13,7 @@ class TrackierWorkRequest {
     static let KIND_SESSION = "session"
     static let KIND_UNKNOWN = "unknown"
     
-    private var kind: String
+    var kind: String
     private var appToken: String
     private var mode: String
     

@@ -9,7 +9,7 @@ import Foundation
 
 class TrackierSDKInstance {
     
-    var config: TrackierSDKConfig? = nil
+    var config = TrackierSDKConfig(appToken: "", env: "")
     var appToken: String = ""
     
     init() {}
@@ -18,8 +18,7 @@ class TrackierSDKInstance {
 
     var isEnabled = true
     var isInitialized = false
-    var configLoaded = false
-    var gaid: String? = ""
+    var idfa: String? = ""
     var isLAT = false
     var installId = ""
     
@@ -71,16 +70,20 @@ class TrackierSDKInstance {
         if (isInstallTracked()) {
             return
         }
-        // TODO: fix me
+        let installId = UUID().uuidString
+        setInstallID(installID: installId)
+        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
+        ApiManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
 
     func trackEvent(event: TrackierEvent) {
-       if (!isEnabled || !configLoaded) {
-           return
-       }
-       if (!isInitialized) {
-       }
-        // TODO: Fix me
-   }
+        if (!isEnabled) {
+            return
+        }
+        if (!isInitialized) {
+        }
+        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
+        ApiManager.doWork(workRequest: wrk)
+    }
 }

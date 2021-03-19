@@ -13,13 +13,25 @@ import SwiftyJSON
 
 class ApiManager: NSObject {
     
+    static let sharedInstance = ApiManager()
+    
     override init() {
     }
-
-    static let sharedInstance = ApiManager()
-
-    //TODO :-
-    /* Handle Time out request alamofire */
+    
+    static func doWork(workRequest: TrackierWorkRequest) {
+        switch workRequest.kind {
+        case TrackierWorkRequest.KIND_INSTALL:
+            break;
+        case TrackierWorkRequest.KIND_EVENT:
+            break;
+        case TrackierWorkRequest.KIND_SESSION:
+            break;
+        case TrackierWorkRequest.KIND_UNKNOWN:
+            break;
+        default:
+            break;
+        }
+    }
 
 
     func requestGETURL(_ strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void)
