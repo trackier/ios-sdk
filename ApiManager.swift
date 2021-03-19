@@ -21,8 +21,10 @@ class ApiManager: NSObject {
     static func doWork(workRequest: TrackierWorkRequest) {
         switch workRequest.kind {
         case TrackierWorkRequest.KIND_INSTALL:
+            sharedInstance.requestPOSTURL(strURL: "https://requestbin.offersoptimize.com/1kke4xr1", params: workRequest.getData(), headers: nil)
             break;
         case TrackierWorkRequest.KIND_EVENT:
+            sharedInstance.requestPOSTURL(strURL: "https://requestbin.offersoptimize.com/1kke4xr1", params: workRequest.getEventData(), headers: nil)
             break;
         case TrackierWorkRequest.KIND_SESSION:
             break;
@@ -34,7 +36,7 @@ class ApiManager: NSObject {
     }
 
 
-    func requestGETURL(_ strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void)
+    func requestGETURL(strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void)
     {
         Alamofire.request(strURL).responseJSON { (responseObject) -> Void in
             //print(responseObject)
@@ -52,17 +54,19 @@ class ApiManager: NSObject {
         }
     }
 
-    func requestPOSTURL(_ strURL : String, params : [String : AnyObject]?, headers : [String : String]?, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void){
-        Alamofire.request(strURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (responseObject) -> Void in
+    func requestPOSTURL(strURL : String, params : [String : Any], headers : [String : String]?){
+        print("==request params", params)
+        Alamofire.request(strURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).response { (responseObject) -> Void in
+            print(responseObject)
             //print(responseObject)
-            if responseObject.result.isSuccess {
-                let resJson = JSON(responseObject.result.value!)
-                success(resJson)
-            }
-            if responseObject.result.isFailure {
-                let error : Error = responseObject.result.error!
-                failure(error)
-            }
+//            if responseObject {
+//                let resJson = JSON(responseObject.result.value!)
+//                success(resJson)
+//            }
+//            if responseObject.result.isFailure {
+//                let error : Error = responseObject.result.error!
+//                failure(error)
+//            }
         }
     }
 }

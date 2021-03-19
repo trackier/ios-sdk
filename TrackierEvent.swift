@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct TrackierEvent {
-    
-    init(val id: String) {}
+public struct TrackierEvent {
+
+    var id: String
+    public init(id: String) {
+        self.id = id
+    }
+
     var orderId: String? = ""
     var currency: String? = ""
     var param1: String? = ""
@@ -26,7 +30,7 @@ struct TrackierEvent {
     var revenue: Double? = 0.0
     var ev = [String: Any]()
     
-    mutating func addEventValue(prop: String, val: Any) {
+    mutating public func addEventValue(prop: String, val: Any) {
         var eventValue = self.ev
         eventValue[prop] = val
         self.ev = eventValue

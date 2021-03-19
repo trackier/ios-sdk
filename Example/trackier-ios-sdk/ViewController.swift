@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //        TrackierSDK.initialize()
+        let config = TrackierSDKConfig(appToken: "", env: "")
+        TrackierSDK.initialize(config: config)
+        let event = TrackierEvent(id: "sldkjflsdfj")
+        TrackierSDK.trackEvent(event: event)
         print("device info.......\(UIDevice.current.modelName)")
         
     }

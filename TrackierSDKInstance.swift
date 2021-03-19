@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 class TrackierSDKInstance {
     
@@ -70,20 +71,27 @@ class TrackierSDKInstance {
         if (isInstallTracked()) {
             return
         }
-        let installId = UUID().uuidString
-        setInstallID(installID: installId)
+        var installId = getInstallID()
+        if installId == "" {
+            installId = UUID().uuidString
+            setInstallID(installID: installId)
+        }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
+        wrk.installId = installId
         ApiManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
 
     func trackEvent(event: TrackierEvent) {
         if (!isEnabled) {
+            os_log("SDK Not Enabled", log: Log.dev, type: .debug)
             return
         }
         if (!isInitialized) {
+            os_log("SDK Not Initialized", log: Log.dev, type: .debug)
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
+        wrk.installId = installId
         ApiManager.doWork(workRequest: wrk)
     }
 }

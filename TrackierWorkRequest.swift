@@ -14,6 +14,8 @@ class TrackierWorkRequest {
     static let KIND_UNKNOWN = "unknown"
     
     var kind: String
+    var installId: String = ""
+    var eventObj = TrackierEvent(id: "")
     private var appToken: String
     private var mode: String
     
@@ -30,6 +32,13 @@ class TrackierWorkRequest {
         dict["createdAt"] = Utils.getCurrentTime()
         dict["isLat"] = false
         dict["mode"] = self.mode
+        dict["installId"] = self.installId
+        return dict
+    }
+    
+    func getEventData() -> Dictionary<String, Any> {
+        var dict = getData()
+//        dict["event"] = self.eventObj
         return dict
     }
 }

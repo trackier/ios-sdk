@@ -11,7 +11,7 @@ public class TrackierSDKConfig {
     var appToken: String
     var env: String
 
-    init(appToken: String, env: String) {
+    public init(appToken: String, env: String) {
         self.appToken = appToken
         self.env = env
     }

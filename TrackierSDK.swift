@@ -26,15 +26,15 @@ public class TrackierSDK {
         shared.instance.initialize(config: config)
     }
 
-    static func isEnabled() -> Bool {
+    public static func isEnabled() -> Bool {
         return shared.instance.isEnabled
     }
 
-    static func setEnabled(value : Bool) {
+    public static func setEnabled(value : Bool) {
         shared.instance.isEnabled = value
     }
    
-    static func trackEvent(event: TrackierEvent) {
+    public static func trackEvent(event: TrackierEvent) {
         if (!shared.isInitialized) {
             os_log("SDK Not Initialized", log: Log.prod, type: .info)
             return
