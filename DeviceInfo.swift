@@ -12,7 +12,6 @@ class DeviceInfo {
     
     let buildInfo = Bundle.main.infoDictionary
     var name = UIDevice.current.name
-    var systemName = UIDevice.current.systemName
     var systemVersion = UIDevice.current.systemVersion
     var model = UIDevice.current.model
     var batteryLevel = UIDevice.current.batteryLevel
@@ -32,7 +31,7 @@ class DeviceInfo {
         dict["buildName"] = buildInfo?["BuildMachineOSBuild"]
         dict["osVersion"] = systemVersion
         dict["manufacturer"] = "Apple"
-        dict["hardwareName"] = systemName
+        dict["hardwareName"] = name
         dict["model"] = model
         dict["apiLevel"] = buildInfo?["DTPlatformBuild"]
         dict["brand"] = model
