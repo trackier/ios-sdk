@@ -19,6 +19,8 @@ class TrackierWorkRequest {
     private var appToken: String
     private var mode: String
     
+    let deviceInfo =  DeviceInfo()
+    
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
         self.appToken = appToken
@@ -28,7 +30,7 @@ class TrackierWorkRequest {
     func getData() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
         dict["appKey"] = self.appToken
-        dict["device"] = "{}"   // TODO: fix me
+        dict["device"] =  deviceInfo.getDeviceInfo()  
         dict["createdAt"] = Utils.getCurrentTime()
         dict["isLat"] = false
         dict["mode"] = self.mode

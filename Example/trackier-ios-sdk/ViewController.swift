@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         event.setRevenue(revenue: 120.5, currency: "INR")
         event.param1 = "this is a param1 value"
         TrackierSDK.trackEvent(event: event)
-        print("device info.......\(UIDevice.current.modelName)")
     }
 
     override func didReceiveMemoryWarning() {
