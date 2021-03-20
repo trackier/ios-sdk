@@ -16,6 +16,7 @@ class TrackierWorkRequest {
     var kind: String
     var installId: String = ""
     var eventObj = TrackierEvent(id: "")
+    var deviceInfo: DeviceInfo? = nil
     private var appToken: String
     private var mode: String
     
@@ -28,9 +29,8 @@ class TrackierWorkRequest {
     func getData() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
         dict["appKey"] = self.appToken
-        dict["device"] = "{}"   // TODO: fix me
+        dict["device"] =  deviceInfo?.getDeviceInfo()
         dict["createdAt"] = Utils.getCurrentTime()
-        dict["isLat"] = false
         dict["mode"] = self.mode
         dict["installId"] = self.installId
         return dict

@@ -17,4 +17,11 @@ class Utils {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
         return formatter.string(from: date)
     }
+    
+    // Reference: https://stackoverflow.com/questions/34778950/how-to-compare-any-value-types
+    static func isEqual<T: Equatable>(type: T.Type, a: Any, b: Any) -> Bool {
+        guard let a = a as? T, let b = b as? T else { return false }
+
+        return a == b
+    }
 }

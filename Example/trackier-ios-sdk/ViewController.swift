@@ -21,8 +21,10 @@ class ViewController: UIViewController {
         event.addEventValue(prop: "purchasePnr", val: "sd2-3dslk329032-23")
         event.setRevenue(revenue: 120.5, currency: "INR")
         event.param1 = "this is a param1 value"
-        TrackierSDK.trackEvent(event: event)
-        print("device info.......\(UIDevice.current.modelName)")
+        DispatchQueue.global().async {
+            sleep(1)
+            TrackierSDK.trackEvent(event: event)
+        }
     }
 
     override func didReceiveMemoryWarning() {
