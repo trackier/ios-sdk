@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - SwiftyJSON (4.3.0)
-  - trackier-ios-sdk (1.1.0):
+  - trackier-ios-sdk (1.2.0):
     - Alamofire (~> 4.0)
     - SwiftyJSON (~> 4.0)
 
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  trackier-ios-sdk: e954791787de96a71e0130175a703c6a1ce48856
+  trackier-ios-sdk: 94861fd0655e9a80f4461c31a2c1c5909870dd92
 
 PODFILE CHECKSUM: 4e57670d58945d89aa708d298914694b8d1c92f3
 

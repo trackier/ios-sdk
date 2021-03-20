@@ -1,7 +1,7 @@
 {
   "name": "trackier-ios-sdk",
-  "version": "1.1.0",
-  "summary": "This is trackier-ios-sdk 1.1.0 .",
+  "version": "1.2.0",
+  "summary": "This is trackier-ios-sdk 1.2.0 .",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/trackier/ios-sdk",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/trackier/ios-sdk.git",
-    "tag": "1.1.0"
+    "tag": "1.2.0"
   },
   "swift_versions": "5.0",
   "platforms": {
