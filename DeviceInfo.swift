@@ -1,70 +1,57 @@
 //
 //  DeviceInfo.swift
-//  Alamofire
+//  trackier-ios-sdk
 //
 //  Created by Prakhar Srivastava on 19/03/21.
+//  Modified by Hemant Mann
 //
 
 import Foundation
-import Network
 
-class DeviceInfo : UIViewController{
+class DeviceInfo {
     
+    let buildInfo = Bundle.main.infoDictionary
     var name = UIDevice.current.name
     var systemName = UIDevice.current.systemName
     var systemVersion = UIDevice.current.systemVersion
     var model = UIDevice.current.model
-    var localizedModel = UIDevice.current.localizedModel
-    //var orientataion = UIDevice.current.orientation.
-   // var batteryLevel = UIDevice.current.batteryLevel
+    var batteryLevel = UIDevice.current.batteryLevel
     var isBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
-   // var batteryState = UIDevice.current.batteryState
-    var connectivity = ""
-
-
-    func getConnectivity() -> String {
-        var connection = ""
-        let nwPathMonitor = NWPathMonitor()
-        nwPathMonitor.pathUpdateHandler = { path in
-
-            if path.usesInterfaceType(.wifi) {
-                print("Path is Wi-Fi")
-               connection = "Wi-Fi"
-            } else if path.usesInterfaceType(.cellular) {
-                    print("Path is Cellular")
-               connection =  "Cellular"
-            } else if path.usesInterfaceType(.wiredEthernet) {
-                    print("Path is Wired Ethernet")
-              connection =  "WiredEthernet"
-            } else if path.usesInterfaceType(.loopback) {
-                    print("Path is Loopback")
-               connection =  "Loopback"
-            } else if path.usesInterfaceType(.other) {
-                    print("Path is other")
-               connection = "other"
-            }
-        }
-
-        nwPathMonitor.start(queue: .main)
-        
-        return connection
-        
-    }
     
     public func getDeviceInfo() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
+        #if os(iOS)
+        dict["osName"] = "iOS"
+        #elseif os(watchOS)
+        dict["osName"] = "watchOS"
+        #elseif os(tvOS)
+        dict["osName"] = "tvOS"
+        #endif
+        
         dict["name"] = name
-        dict["systemName"] = systemName
-        dict["systemVersion"] = systemVersion
+        dict["buildName"] = buildInfo?["BuildMachineOSBuild"]
+        dict["osVersion"] = systemVersion
+        dict["manufacturer"] = "Apple"
+        dict["hardwareName"] = systemName
         dict["model"] = model
-           dict["localizedModel"] = localizedModel
-          // dict["orientataion"] = orientataion
-          // dict["batteryLevel"] = batteryLevel
-           dict["isBatteryMonitoringEnabled"] = isBatteryMonitoringEnabled
-          // dict["batteryState"] = batteryState
-           dict["connectivity"] = getConnectivity()
-           return dict
-       }
-       
-    
+        dict["apiLevel"] = buildInfo?["DTPlatformBuild"]
+        dict["brand"] = model
+        dict["packageName"] = buildInfo?["CFBundleIdentifier"]
+        dict["appVersion"] = buildInfo?["CFBundleShortVersionString"]
+        dict["appNumericVersion"] = buildInfo?["CFBundleNumericVersion"]
+        dict["sdkVersion"] = Constants.SDK_VERSION
+        dict["language"] = Locale.current.languageCode
+        dict["country"] = NSLocale.current.regionCode
+        dict["timezone"] = TimeZone.current.identifier
+        // TODO: screenSize,screenDensity?
+        dict["batteryLevel"] = batteryLevel
+        dict["ibme"] = isBatteryMonitoringEnabled
+        let platformName: Any? = buildInfo?["DTPlatformName"]
+        if platformName != nil && Utils.isEqual(type: String.self, a: platformName!, b: "iphonesimulator") {
+            dict["isEmulator"] = true
+        } else {
+            dict["isEmulator"] = false
+        }
+        return dict
+    }
 }

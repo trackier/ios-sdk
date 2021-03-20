@@ -14,14 +14,12 @@ class TrackierSDKInstance {
     var appToken: String = ""
     
     init() {}
-    
-//    private var device = DeviceInfo()
 
     var isEnabled = true
     var isInitialized = false
     var idfa: String? = ""
-    var isLAT = false
     var installId = ""
+    let deviceInfo = DeviceInfo()
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -34,7 +32,6 @@ class TrackierSDKInstance {
         self.isInitialized = true
         self.appToken = config.appToken
         self.installId = getInstallID()
-        // DeviceInfo.init(device, this.config.context)
 
         DispatchQueue.global().async {
             self.trackInstall()
@@ -68,6 +65,7 @@ class TrackierSDKInstance {
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
+        wrk.deviceInfo = deviceInfo
         APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
@@ -83,6 +81,7 @@ class TrackierSDKInstance {
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.eventObj = event
+        wrk.deviceInfo = deviceInfo
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
         }
