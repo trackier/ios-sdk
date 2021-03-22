@@ -17,7 +17,7 @@ class NetworkManager: NSObject
     private var retriedRequests: [String: Int] = [:]
     
    // public typealias successHandler = (Data) -> ()
-    public typealias failureHandler = (_ error: String?) -> ()
+   // public typealias failureHandler = (_ error: String?) -> ()
     
     static let sharedManager: SessionManager = {
         let configuration = URLSessionConfiguration.default
@@ -32,7 +32,7 @@ class NetworkManager: NSObject
     }()
     
     
-    class func postApiCall( url : String,  body : [String : Any], headers : [String : String]?,failure: @escaping failureHandler)
+    class func postApiCall( url : String,  body : [String : Any], headers : [String : String]?)
     {
         
         if  NetworkReachabilityManager()!.isReachable
@@ -72,7 +72,7 @@ class NetworkManager: NSObject
         }
         else
         {
-           failure("sldfjks")
+           //failure("sldfjks")
         }
     }
 }
