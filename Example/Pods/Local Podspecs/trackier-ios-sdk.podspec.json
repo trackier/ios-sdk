@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/trackier/ios-sdk.git",
-    "tag": "s.version.to_s"
+    "tag": "1.2.2"
   },
   "swift_versions": "5.0",
   "platforms": {

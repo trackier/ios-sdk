@@ -7,151 +7,149 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00303252DC485FA62F88E0ABA6C719C0 /* trackier-ios-sdk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7140AD493A8E75A08006777D9A938B /* trackier-ios-sdk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04EFD2294697A420AE19C277498A4C20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
+		03F476E8E4030742BB8CBB359AD884E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747003A3D880F6BF810E1509160ADDD /* Constants.swift */; };
+		06FB7C017BEAD49322D24651632315C5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7C36A542E8254A09B3BC40B7A12514 /* Utils.swift */; };
 		0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */; };
-		1098A3E116A39D8628AC2040C7B6ECD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
-		1179015B1191B0684B29EE1732C05787 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
 		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */; };
+		17751EBF91F4C7653AB22F20D089AEEC /* Pods-trackier-ios-sdk_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7AC8D1FC44397D388BDB0A614C0D59 /* Pods-trackier-ios-sdk_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */; };
 		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */; };
-		275775181B26A65E972F5F5409D7D7E8 /* Pods-trackier-ios-sdk_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7AC8D1FC44397D388BDB0A614C0D59 /* Pods-trackier-ios-sdk_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D8EC59D50423FA53536118E39A208B1 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA46BC0BA3DCC090EE627D1D2F629C /* CacheManager.swift */; };
 		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */; };
+		31CF79608E86D260D30881A62B1D541F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */; };
 		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */; };
-		387DDB673EF3876B9EC319796EAF6547 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699095402451AD0749A576BBFE8F40D /* Utils.swift */; };
-		47D68BA8B3829CC39D664EE6697237EA /* TrackierSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B132DB025DF5F304057144FE1A7514 /* TrackierSDK.swift */; };
+		496A25B0C1CC79743C1EFAA0B40E907D /* Pods-trackier-ios-sdk_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC7A786EE8771385A3CC7AA7EBF6650 /* Pods-trackier-ios-sdk_Tests-dummy.m */; };
+		50013C33D35EBAF31ACF3A8B3A9A3FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */; };
 		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */; };
 		64744C911253C3E01461FAD7C935C8D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */; };
-		66AF5187C4F4DB1332A90D7589582F6E /* TrackierSDKInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8C9508C22B978A2E7A3D5E052E966 /* TrackierSDKInstance.swift */; };
-		7003CF52FA1C5C3386B2E521375D4541 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780A69522BE1D6C53AFCED268A83365 /* APIManager.swift */; };
-		70A04ED53E2A0E476FF9F4E0781752A7 /* Pods-trackier-ios-sdk_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA77BB40C7ECD2915C03312D611E42F8 /* Pods-trackier-ios-sdk_Example-dummy.m */; };
-		753D59DBD094F78D04D1908C8ECD55EB /* TrackierEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6834DD32D99E2061FF80D8A7AED2C56 /* TrackierEvent.swift */; };
-		7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */; };
-		7924B3C23508C1F9B72E84C9C1CFB407 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374EEAE4C4E9E409597ADB0C35A1123F /* APIService.swift */; };
-		7FD7EACA9AAC963C10E633E3487902D8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62FCAE3A20FF49114BF0CEE97BE2AB7 /* Log.swift */; };
+		74A08351241BA694FD81BF219C94B51B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */; };
 		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F367F44FC87833A1792B541781BB7 /* AFError.swift */; };
-		883010D9EF9E739BBDA8B1ABE137A4B4 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20748A4A0F24D8CCC641B90572956975 /* CacheManager.swift */; };
+		89EA87C0C19C1A90A024B7C74B2B4780 /* trackier-ios-sdk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F260867C9795A82752E58DCFA287D2 /* trackier-ios-sdk-dummy.m */; };
+		926ADECD688929CD1089B5C5882C8145 /* Pods-trackier-ios-sdk_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA77BB40C7ECD2915C03312D611E42F8 /* Pods-trackier-ios-sdk_Example-dummy.m */; };
 		931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3F4F1011789493720361780A1982D /* SessionManager.swift */; };
 		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */; };
-		9437B3A28BD1D423B81F9C148E670CB1 /* TrackierWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ED539D0651D3EF17A0C1D3B5D413A /* TrackierWorkRequest.swift */; };
-		944E162205EADC295579FCFC5F77A0CD /* Pods-trackier-ios-sdk_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE83916077A7B06FBA8CECBCEB72CF1F /* Pods-trackier-ios-sdk_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */; };
-		A07B6DE401B435A6B939D56ADE3DCD15 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252798631F8D5198B67118E10CB2C8D3 /* DeviceInfo.swift */; };
-		AC7570605A6F43416C282BE1C8FC3662 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */; };
+		AC00A231BD047D9B9635D6CF45A70A67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */; };
+		AD33B461BCF17774345F285032FCC466 /* trackier-ios-sdk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09E5EBD390EAAC3E7C55CD0E12D13EAE /* trackier-ios-sdk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFC64B1097F7355FF423D6A73E9C7210 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */; };
-		BC4E5AA30072284AB1475C1B65C2B4D3 /* trackier-ios-sdk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F73F6A2C30EAA6F66E5D33E691A15 /* trackier-ios-sdk-dummy.m */; };
+		B10BEC504E3D1A1BCAE201B0340E0EA8 /* Pods-trackier-ios-sdk_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE83916077A7B06FBA8CECBCEB72CF1F /* Pods-trackier-ios-sdk_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA73E1AA152F15B83E6B97110C38B47D /* TrackierSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EF01F427DE43FFC2268C7CC10EC9B /* TrackierSDK.swift */; };
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */; };
-		D28D6508D8C9E08A6E50815B2A097DA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4290DD8F9E4BB98043BBFFC695C43C2 /* Constants.swift */; };
-		D2C97FCBFBE43EA380709FB7EBC21176 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0946AD0D443E0F8668A6AD3AA415AC /* Reach.swift */; };
+		BF1CE8C78F48529521F8F2CB40EDF383 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F9493AF6D0CF9B721D9C9813306DD8 /* Log.swift */; };
+		C2C41C522183618160720A3D1EBD830B /* TrackierSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C129BF9B2E7E7B2267B8ACC9A2D3DCA4 /* TrackierSDKConfig.swift */; };
+		C68C7B155D893BFF528620537C7DAFF9 /* TrackierEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901DA396C3272240FF222DCDE2EE00BA /* TrackierEvent.swift */; };
+		CA58C1A74A5A1EEA462B5BB43B34840E /* TrackierWorkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC3141AB7909B855C6A35989A3991A /* TrackierWorkRequest.swift */; };
+		CC91B0A4D3A050B11F66AB741524C2CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798B022BE31E6D634B6B53E309D4BB4 /* APIService.swift */; };
 		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */; };
+		D4B2F58C8661742ADD9925411ECA573C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A850F8D363707FA4D55AA74D7597F /* APIManager.swift */; };
 		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */; };
-		D7428D7127396BECB394B7B6B938551D /* TrackierSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426698301C2289727AF9A8B06595FAE1 /* TrackierSDKConfig.swift */; };
+		E0535F97F9C42FD73F1B93D77AC4BEF8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */; };
 		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */; };
 		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */; };
+		F16BA13F0A93132F18A36305C170FB66 /* TrackierSDKInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1022614330663BDB21A34C43FFAC730 /* TrackierSDKInstance.swift */; };
 		F7B74645E07C39771156A1FA413B98D4 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAEEA700D236C3273D2F8BA1178B0FF1 /* Pods-trackier-ios-sdk_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC7A786EE8771385A3CC7AA7EBF6650 /* Pods-trackier-ios-sdk_Tests-dummy.m */; };
+		F807BD3F1DDC9390FF2130F8F557FFC2 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6156B573EBEB2252A18BBF553911FC2A /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0581C926FE8CDABE2C11D24489D10138 /* PBXContainerItemProxy */ = {
+		22DBE0B021C7E884E6022FDB9B12E969 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
-		3274DCD1B1F5E59EB4D5FCF7A70B99D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		552CFBB9BDCA77567CB3C435E1C08DD7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE4C6B85E220D6D44AB075DCFE3293D7;
-			remoteInfo = "Pods-trackier-ios-sdk_Example";
-		};
-		E26A7D9FE5ED2B3C7B8EE484789D5F37 /* PBXContainerItemProxy */ = {
+		58B52E07E438E9308FD1B4ECC69B57FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7C3E37925CEFD11EBB2FF2248BB65639;
 			remoteInfo = "trackier-ios-sdk";
 		};
+		85951C50793B591F9A3A091B30A875A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE4C6B85E220D6D44AB075DCFE3293D7;
+			remoteInfo = "Pods-trackier-ios-sdk_Example";
+		};
+		A714E183F5A341338D418D59486E4A3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		081E5E5F49571B299CC2EC365F5E9EC3 /* Pods-trackier-ios-sdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		09E5EBD390EAAC3E7C55CD0E12D13EAE /* trackier-ios-sdk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-umbrella.h"; sourceTree = "<group>"; };
+		0AFD818C18F975E44902C0E5673A689D /* trackier-ios-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "trackier-ios-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		0E11492B18D5FBE61247D077240FD087 /* Pods-trackier-ios-sdk_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Tests-Info.plist"; sourceTree = "<group>"; };
+		145B359A8701662D8EB2F9E695B620A4 /* trackier-ios-sdk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "trackier-ios-sdk.modulemap"; sourceTree = "<group>"; };
 		1797663B1D2010D4AEE7AB70D7F4EA08 /* Pods_trackier_ios_sdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_trackier_ios_sdk_Tests.framework; path = "Pods-trackier-ios-sdk_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CD0D9E93524235BEE8703C71B7AD23A /* trackier-ios-sdk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "trackier-ios-sdk.modulemap"; sourceTree = "<group>"; };
-		20748A4A0F24D8CCC641B90572956975 /* CacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = "trackier-ios-sdk/Classes/CacheManager.swift"; sourceTree = "<group>"; };
-		252798631F8D5198B67118E10CB2C8D3 /* DeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceInfo.swift; path = "trackier-ios-sdk/Classes/DeviceInfo.swift"; sourceTree = "<group>"; };
+		17E9020F789E529FF11416A263CC98B0 /* trackier-ios-sdk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-prefix.pch"; sourceTree = "<group>"; };
+		1F509CA119E2A72CB1C65B6426BE79AD /* trackier-ios-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "trackier-ios-sdk.release.xcconfig"; sourceTree = "<group>"; };
 		2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		374EEAE4C4E9E409597ADB0C35A1123F /* APIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = "trackier-ios-sdk/Classes/APIService.swift"; sourceTree = "<group>"; };
+		32C432206B945786A4208B4634942B7A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		426698301C2289727AF9A8B06595FAE1 /* TrackierSDKConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKConfig.swift; path = "trackier-ios-sdk/Classes/TrackierSDKConfig.swift"; sourceTree = "<group>"; };
-		4699095402451AD0749A576BBFE8F40D /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "trackier-ios-sdk/Classes/Utils.swift"; sourceTree = "<group>"; };
+		42F9493AF6D0CF9B721D9C9813306DD8 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "trackier-ios-sdk/Classes/Log.swift"; sourceTree = "<group>"; };
+		44DA46BC0BA3DCC090EE627D1D2F629C /* CacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = "trackier-ios-sdk/Classes/CacheManager.swift"; sourceTree = "<group>"; };
 		47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		490F73F6A2C30EAA6F66E5D33E691A15 /* trackier-ios-sdk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "trackier-ios-sdk-dummy.m"; sourceTree = "<group>"; };
 		4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B856D989306DE79B9EE3F778CC6FF04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4C5C66729E285DDB8E32CDA92115519B /* Pods-trackier-ios-sdk_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-trackier-ios-sdk_Tests.modulemap"; sourceTree = "<group>"; };
 		4E831AD7083E471A42C2A08A4324A711 /* Pods-trackier-ios-sdk_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-trackier-ios-sdk_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4FDAAF4CC72AAF033CC19A6F5E40DA74 /* trackier-ios-sdk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "trackier-ios-sdk-Info.plist"; sourceTree = "<group>"; };
 		58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E04BE38E3445799DD1793F59B8A00E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		605F36301DB1E62E132B6B6C0F3C2024 /* trackier-ios-sdk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "trackier-ios-sdk-Info.plist"; sourceTree = "<group>"; };
+		6156B573EBEB2252A18BBF553911FC2A /* DeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceInfo.swift; path = "trackier-ios-sdk/Classes/DeviceInfo.swift"; sourceTree = "<group>"; };
 		616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		68B132DB025DF5F304057144FE1A7514 /* TrackierSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDK.swift; path = "trackier-ios-sdk/Classes/TrackierSDK.swift"; sourceTree = "<group>"; };
-		69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		64EC3141AB7909B855C6A35989A3991A /* TrackierWorkRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierWorkRequest.swift; path = "trackier-ios-sdk/Classes/TrackierWorkRequest.swift"; sourceTree = "<group>"; };
 		6A7AC8D1FC44397D388BDB0A614C0D59 /* Pods-trackier-ios-sdk_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-trackier-ios-sdk_Example-umbrella.h"; sourceTree = "<group>"; };
 		7728B4BD82C732B3E556D0C580ED8493 /* Pods-trackier-ios-sdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		77AB862D357CEFB5193BE0BEAB7AC48D /* Pods_trackier_ios_sdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_trackier_ios_sdk_Example.framework; path = "Pods-trackier-ios-sdk_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		876ED539D0651D3EF17A0C1D3B5D413A /* TrackierWorkRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierWorkRequest.swift; path = "trackier-ios-sdk/Classes/TrackierWorkRequest.swift"; sourceTree = "<group>"; };
+		8747003A3D880F6BF810E1509160ADDD /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "trackier-ios-sdk/Classes/Constants.swift"; sourceTree = "<group>"; };
 		8F05A88A6664616AD51BADCD22C3880A /* Pods-trackier-ios-sdk_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-trackier-ios-sdk_Example.modulemap"; sourceTree = "<group>"; };
+		901DA396C3272240FF222DCDE2EE00BA /* TrackierEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierEvent.swift; path = "trackier-ios-sdk/Classes/TrackierEvent.swift"; sourceTree = "<group>"; };
 		95CA2A7F03A8CD6F17858B66B78F9819 /* Pods-trackier-ios-sdk_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-trackier-ios-sdk_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		98D3F4F1011789493720361780A1982D /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		A4290DD8F9E4BB98043BBFFC695C43C2 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "trackier-ios-sdk/Classes/Constants.swift"; sourceTree = "<group>"; };
+		A43A850F8D363707FA4D55AA74D7597F /* APIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = "trackier-ios-sdk/Classes/APIManager.swift"; sourceTree = "<group>"; };
 		A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		B780A69522BE1D6C53AFCED268A83365 /* APIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = "trackier-ios-sdk/Classes/APIManager.swift"; sourceTree = "<group>"; };
 		B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		C62FCAE3A20FF49114BF0CEE97BE2AB7 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "trackier-ios-sdk/Classes/Log.swift"; sourceTree = "<group>"; };
-		D6834DD32D99E2061FF80D8A7AED2C56 /* TrackierEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierEvent.swift; path = "trackier-ios-sdk/Classes/TrackierEvent.swift"; sourceTree = "<group>"; };
-		D6BCAB61466C26778F2B86A453885687 /* trackier-ios-sdk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-prefix.pch"; sourceTree = "<group>"; };
+		BD41A04B3D0D6A52F2EF0F12D350D9FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C129BF9B2E7E7B2267B8ACC9A2D3DCA4 /* TrackierSDKConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKConfig.swift; path = "trackier-ios-sdk/Classes/TrackierSDKConfig.swift"; sourceTree = "<group>"; };
+		C7F260867C9795A82752E58DCFA287D2 /* trackier-ios-sdk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "trackier-ios-sdk-dummy.m"; sourceTree = "<group>"; };
+		CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D798B022BE31E6D634B6B53E309D4BB4 /* APIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = "trackier-ios-sdk/Classes/APIService.swift"; sourceTree = "<group>"; };
 		DA5C2C5E04757B3D19686093721D2C71 /* Pods-trackier-ios-sdk_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-trackier-ios-sdk_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA77BB40C7ECD2915C03312D611E42F8 /* Pods-trackier-ios-sdk_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-trackier-ios-sdk_Example-dummy.m"; sourceTree = "<group>"; };
 		DC9E5D23C4DF6A914B09BDCF1BAEEF71 /* Pods-trackier-ios-sdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DD7140AD493A8E75A08006777D9A938B /* trackier-ios-sdk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-umbrella.h"; sourceTree = "<group>"; };
+		DE7C36A542E8254A09B3BC40B7A12514 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "trackier-ios-sdk/Classes/Utils.swift"; sourceTree = "<group>"; };
 		DE83916077A7B06FBA8CECBCEB72CF1F /* Pods-trackier-ios-sdk_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-trackier-ios-sdk_Tests-umbrella.h"; sourceTree = "<group>"; };
 		DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		E34F9667FAA9D7598EC30D3249134271 /* trackier-ios-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "trackier-ios-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		E5122E29D94D3C9A99FEB2D83865BCC5 /* trackier-ios-sdk.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "trackier-ios-sdk.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E63F367F44FC87833A1792B541781BB7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		ED0946AD0D443E0F8668A6AD3AA415AC /* Reach.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reach.swift; path = "trackier-ios-sdk/Classes/Reach.swift"; sourceTree = "<group>"; };
 		EDB1E88C04CB6B9848D5747CFDC9F45A /* Pods-trackier-ios-sdk_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		EFAF7BCD778C35E354D5457087BECC6D /* trackier-ios-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "trackier-ios-sdk.debug.xcconfig"; sourceTree = "<group>"; };
+		F1022614330663BDB21A34C43FFAC730 /* TrackierSDKInstance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKInstance.swift; path = "trackier-ios-sdk/Classes/TrackierSDKInstance.swift"; sourceTree = "<group>"; };
 		F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		F2D8C9508C22B978A2E7A3D5E052E966 /* TrackierSDKInstance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKInstance.swift; path = "trackier-ios-sdk/Classes/TrackierSDKInstance.swift"; sourceTree = "<group>"; };
 		F5B22B5A612FA53F7FA667A7435BAC61 /* Pods-trackier-ios-sdk_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F66EF01F427DE43FFC2268C7CC10EC9B /* TrackierSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDK.swift; path = "trackier-ios-sdk/Classes/TrackierSDK.swift"; sourceTree = "<group>"; };
 		F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		F93123157B8F35F48D332BE59E6FA8BB /* Pods-trackier-ios-sdk_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Example-Info.plist"; sourceTree = "<group>"; };
 		F9B9ED94416278F08EDDEAEF1D40B6A2 /* trackier_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = trackier_ios_sdk.framework; path = "trackier-ios-sdk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC135AEC9AA29E93523BCBAC6F727AD3 /* trackier-ios-sdk.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "trackier-ios-sdk.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF464A1EE53AED71B31D57F0EB043E36 /* Pods-trackier-ios-sdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FFC7A786EE8771385A3CC7AA7EBF6650 /* Pods-trackier-ios-sdk_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-trackier-ios-sdk_Tests-dummy.m"; sourceTree = "<group>"; };
 		FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
@@ -162,53 +160,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7664FD4F59A0C00866CBAE60B0A3AD64 /* Foundation.framework in Frameworks */,
+				50013C33D35EBAF31ACF3A8B3A9A3FB4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54C8B98735D7AF129F8C09F1BCF4ECE1 /* Frameworks */ = {
+		0CB85476965FD8DE82CCD82DD710B391 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7570605A6F43416C282BE1C8FC3662 /* Alamofire.framework in Frameworks */,
-				1179015B1191B0684B29EE1732C05787 /* Foundation.framework in Frameworks */,
+				AC00A231BD047D9B9635D6CF45A70A67 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66A9E0785F927D649D8F50C06495E1BC /* Frameworks */ = {
+		41E2F8849EF1B6F5FA8575A6B39DE237 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EFD2294697A420AE19C277498A4C20 /* Foundation.framework in Frameworks */,
+				31CF79608E86D260D30881A62B1D541F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		733B475FE3E8946C2D40509E749846FA /* Frameworks */ = {
+		D7F5D48C3EB64F0A3FD85E7F4D678827 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1098A3E116A39D8628AC2040C7B6ECD5 /* Foundation.framework in Frameworks */,
+				E0535F97F9C42FD73F1B93D77AC4BEF8 /* Alamofire.framework in Frameworks */,
+				74A08351241BA694FD81BF219C94B51B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		169F0A52EA2D9108BBF4F32FCEA36F0D /* Pod */ = {
+		107F7D19F05536C94E049F4FAFB4AB81 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5E04BE38E3445799DD1793F59B8A00E6 /* LICENSE */,
-				4B856D989306DE79B9EE3F778CC6FF04 /* README.md */,
-				FC135AEC9AA29E93523BCBAC6F727AD3 /* trackier-ios-sdk.podspec */,
+				CA5E0849BDF30236C363A144A9DB5875 /* Foundation.framework */,
 			);
-			name = Pod;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		2F2A6FCCD7293377A61DF5D10894ACF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4B03B07DFA7C8BB60693AE1DE30731E2 /* Alamofire.framework */,
-				DBBD239EB7C1C83EA80124D1A53485AB /* iOS */,
+				107F7D19F05536C94E049F4FAFB4AB81 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,14 +226,6 @@
 			path = "Target Support Files/Pods-trackier-ios-sdk_Example";
 			sourceTree = "<group>";
 		};
-		44A83C1A717421A0B9CB4E3AA88A7D28 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CCDD377ED271AB45A5929DC245169F0D /* trackier-ios-sdk */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		4D8535F9AFB7317015EFFC8FDC18F74D /* Pods-trackier-ios-sdk_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +240,16 @@
 			);
 			name = "Pods-trackier-ios-sdk_Tests";
 			path = "Target Support Files/Pods-trackier-ios-sdk_Tests";
+			sourceTree = "<group>";
+		};
+		6F88147D4A9211BA9E62C54503152471 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				32C432206B945786A4208B4634942B7A /* LICENSE */,
+				BD41A04B3D0D6A52F2EF0F12D350D9FA /* README.md */,
+				E5122E29D94D3C9A99FEB2D83865BCC5 /* trackier-ios-sdk.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		7046DA308D46D3A86E9727A132DD0BDE /* Targets Support Files */ = {
@@ -289,27 +287,20 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		81690F860AE0EA28093BA6CB587D9A83 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1CD0D9E93524235BEE8703C71B7AD23A /* trackier-ios-sdk.modulemap */,
-				490F73F6A2C30EAA6F66E5D33E691A15 /* trackier-ios-sdk-dummy.m */,
-				4FDAAF4CC72AAF033CC19A6F5E40DA74 /* trackier-ios-sdk-Info.plist */,
-				D6BCAB61466C26778F2B86A453885687 /* trackier-ios-sdk-prefix.pch */,
-				DD7140AD493A8E75A08006777D9A938B /* trackier-ios-sdk-umbrella.h */,
-				EFAF7BCD778C35E354D5457087BECC6D /* trackier-ios-sdk.debug.xcconfig */,
-				E34F9667FAA9D7598EC30D3249134271 /* trackier-ios-sdk.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/trackier-ios-sdk";
-			sourceTree = "<group>";
-		};
 		90FDDC7F5D24472360CA259A8D40AE98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B246A41B8DC3871B0439622C2025ED32 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAF50459DB1F9E5FE74F5CD8E24F67F0 /* trackier-ios-sdk */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */ = {
@@ -338,34 +329,26 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		CCDD377ED271AB45A5929DC245169F0D /* trackier-ios-sdk */ = {
+		CDF2913B7948E63E4758F7F0681E5FA1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B780A69522BE1D6C53AFCED268A83365 /* APIManager.swift */,
-				374EEAE4C4E9E409597ADB0C35A1123F /* APIService.swift */,
-				20748A4A0F24D8CCC641B90572956975 /* CacheManager.swift */,
-				A4290DD8F9E4BB98043BBFFC695C43C2 /* Constants.swift */,
-				252798631F8D5198B67118E10CB2C8D3 /* DeviceInfo.swift */,
-				C62FCAE3A20FF49114BF0CEE97BE2AB7 /* Log.swift */,
-				ED0946AD0D443E0F8668A6AD3AA415AC /* Reach.swift */,
-				D6834DD32D99E2061FF80D8A7AED2C56 /* TrackierEvent.swift */,
-				68B132DB025DF5F304057144FE1A7514 /* TrackierSDK.swift */,
-				426698301C2289727AF9A8B06595FAE1 /* TrackierSDKConfig.swift */,
-				F2D8C9508C22B978A2E7A3D5E052E966 /* TrackierSDKInstance.swift */,
-				876ED539D0651D3EF17A0C1D3B5D413A /* TrackierWorkRequest.swift */,
-				4699095402451AD0749A576BBFE8F40D /* Utils.swift */,
-				169F0A52EA2D9108BBF4F32FCEA36F0D /* Pod */,
-				81690F860AE0EA28093BA6CB587D9A83 /* Support Files */,
+				145B359A8701662D8EB2F9E695B620A4 /* trackier-ios-sdk.modulemap */,
+				C7F260867C9795A82752E58DCFA287D2 /* trackier-ios-sdk-dummy.m */,
+				605F36301DB1E62E132B6B6C0F3C2024 /* trackier-ios-sdk-Info.plist */,
+				17E9020F789E529FF11416A263CC98B0 /* trackier-ios-sdk-prefix.pch */,
+				09E5EBD390EAAC3E7C55CD0E12D13EAE /* trackier-ios-sdk-umbrella.h */,
+				0AFD818C18F975E44902C0E5673A689D /* trackier-ios-sdk.debug.xcconfig */,
+				1F509CA119E2A72CB1C65B6426BE79AD /* trackier-ios-sdk.release.xcconfig */,
 			);
-			name = "trackier-ios-sdk";
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/trackier-ios-sdk";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				44A83C1A717421A0B9CB4E3AA88A7D28 /* Development Pods */,
+				B246A41B8DC3871B0439622C2025ED32 /* Development Pods */,
 				2F2A6FCCD7293377A61DF5D10894ACF2 /* Frameworks */,
 				90FDDC7F5D24472360CA259A8D40AE98 /* Pods */,
 				7C55115C1CB5C985F4A8B5461207339F /* Products */,
@@ -373,12 +356,26 @@
 			);
 			sourceTree = "<group>";
 		};
-		DBBD239EB7C1C83EA80124D1A53485AB /* iOS */ = {
+		EAF50459DB1F9E5FE74F5CD8E24F67F0 /* trackier-ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				69DAB41DE6AF59D8362CBC670CDF0EEC /* Foundation.framework */,
+				A43A850F8D363707FA4D55AA74D7597F /* APIManager.swift */,
+				D798B022BE31E6D634B6B53E309D4BB4 /* APIService.swift */,
+				44DA46BC0BA3DCC090EE627D1D2F629C /* CacheManager.swift */,
+				8747003A3D880F6BF810E1509160ADDD /* Constants.swift */,
+				6156B573EBEB2252A18BBF553911FC2A /* DeviceInfo.swift */,
+				42F9493AF6D0CF9B721D9C9813306DD8 /* Log.swift */,
+				901DA396C3272240FF222DCDE2EE00BA /* TrackierEvent.swift */,
+				F66EF01F427DE43FFC2268C7CC10EC9B /* TrackierSDK.swift */,
+				C129BF9B2E7E7B2267B8ACC9A2D3DCA4 /* TrackierSDKConfig.swift */,
+				F1022614330663BDB21A34C43FFAC730 /* TrackierSDKInstance.swift */,
+				64EC3141AB7909B855C6A35989A3991A /* TrackierWorkRequest.swift */,
+				DE7C36A542E8254A09B3BC40B7A12514 /* Utils.swift */,
+				6F88147D4A9211BA9E62C54503152471 /* Pod */,
+				CDF2913B7948E63E4758F7F0681E5FA1 /* Support Files */,
 			);
-			name = iOS;
+			name = "trackier-ios-sdk";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,27 +389,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		349791EDCF2FA957665893696A7CD35F /* Headers */ = {
+		5BC395301C904F56D50577FC9691E8AF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00303252DC485FA62F88E0ABA6C719C0 /* trackier-ios-sdk-umbrella.h in Headers */,
+				17751EBF91F4C7653AB22F20D089AEEC /* Pods-trackier-ios-sdk_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B97D46B1B9C5B8645DD3C7243112C4F4 /* Headers */ = {
+		7BCCFC5B4CE66241D877FF79C8612586 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275775181B26A65E972F5F5409D7D7E8 /* Pods-trackier-ios-sdk_Example-umbrella.h in Headers */,
+				AD33B461BCF17774345F285032FCC466 /* trackier-ios-sdk-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC7CDC638BD23CF76EE45BC83DE3EBCB /* Headers */ = {
+		D82BDBD6D4D84FE5E198F582EE456A62 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944E162205EADC295579FCFC5F77A0CD /* Pods-trackier-ios-sdk_Tests-umbrella.h in Headers */,
+				B10BEC504E3D1A1BCAE201B0340E0EA8 /* Pods-trackier-ios-sdk_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,17 +418,17 @@
 /* Begin PBXNativeTarget section */
 		7C3E37925CEFD11EBB2FF2248BB65639 /* trackier-ios-sdk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7129EF1105C5449FDCC99870F8412CAC /* Build configuration list for PBXNativeTarget "trackier-ios-sdk" */;
+			buildConfigurationList = CBCD00BCDB1E994446271BD31BF58B1B /* Build configuration list for PBXNativeTarget "trackier-ios-sdk" */;
 			buildPhases = (
-				349791EDCF2FA957665893696A7CD35F /* Headers */,
-				C05B4545BDAAEB19937700EAF6689A1F /* Sources */,
-				54C8B98735D7AF129F8C09F1BCF4ECE1 /* Frameworks */,
-				527C6DD07B61762078CDE2B4C01D5329 /* Resources */,
+				7BCCFC5B4CE66241D877FF79C8612586 /* Headers */,
+				C0303B2AF25B1DA22E341D6CAFE53987 /* Sources */,
+				D7F5D48C3EB64F0A3FD85E7F4D678827 /* Frameworks */,
+				80A22F7F07155F3D137A7A8E01A9490D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				068A9C33D03D3196BCA4B53B9DC5FE6C /* PBXTargetDependency */,
+				8B7A5FC2AE70248DB7A86E55A558BE4B /* PBXTargetDependency */,
 			);
 			name = "trackier-ios-sdk";
 			productName = "trackier-ios-sdk";
@@ -440,17 +437,17 @@
 		};
 		861BA0432FE8965DBEF096B06CF566CD /* Pods-trackier-ios-sdk_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B36901F2B3431D634ADD9AE9F41AEC1 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Tests" */;
+			buildConfigurationList = 8FF370DC81BB2EBC802E941246EE1625 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Tests" */;
 			buildPhases = (
-				CC7CDC638BD23CF76EE45BC83DE3EBCB /* Headers */,
-				D8BC4154B138D8B5670BE0EEB5B5C39B /* Sources */,
-				66A9E0785F927D649D8F50C06495E1BC /* Frameworks */,
-				991CABF29F89BE75AA2E5F3FDC760534 /* Resources */,
+				D82BDBD6D4D84FE5E198F582EE456A62 /* Headers */,
+				1E01C348A5359137037FEEAC42BCBBF4 /* Sources */,
+				41E2F8849EF1B6F5FA8575A6B39DE237 /* Frameworks */,
+				58970E47210301FEACAACF53FE2585C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB632D8E306E7CD4D246729257FB4A1F /* PBXTargetDependency */,
+				D189E7C69D7E3740DA991CDED3E91F77 /* PBXTargetDependency */,
 			);
 			name = "Pods-trackier-ios-sdk_Tests";
 			productName = "Pods-trackier-ios-sdk_Tests";
@@ -477,18 +474,18 @@
 		};
 		FE4C6B85E220D6D44AB075DCFE3293D7 /* Pods-trackier-ios-sdk_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6262C75FE33CDDC917E54B81CCAE131B /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Example" */;
+			buildConfigurationList = EBBAF301CE8F60E154A95DA88F3DE828 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Example" */;
 			buildPhases = (
-				B97D46B1B9C5B8645DD3C7243112C4F4 /* Headers */,
-				4F3F59F7605B489286BDFC7354385A46 /* Sources */,
-				733B475FE3E8946C2D40509E749846FA /* Frameworks */,
-				506D2A1D6C4DB40CE325C58767DA7E83 /* Resources */,
+				5BC395301C904F56D50577FC9691E8AF /* Headers */,
+				DBFDD54F3CE40CF687CA771BAD0FF5A0 /* Sources */,
+				0CB85476965FD8DE82CCD82DD710B391 /* Frameworks */,
+				E5BEE77105ADAA5516F382367AD2B46A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				77FB066068AC2519ED3BFF23DDC6F3CE /* PBXTargetDependency */,
-				E37E761FE2708358BEAFA208343C01EC /* PBXTargetDependency */,
+				D4DC1940E8FF1AB70929594208F646CD /* PBXTargetDependency */,
+				5BB2563BE2BD6C7A084DFA4B2E7BFCDE /* PBXTargetDependency */,
 			);
 			name = "Pods-trackier-ios-sdk_Example";
 			productName = "Pods-trackier-ios-sdk_Example";
@@ -533,21 +530,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		506D2A1D6C4DB40CE325C58767DA7E83 /* Resources */ = {
+		58970E47210301FEACAACF53FE2585C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		527C6DD07B61762078CDE2B4C01D5329 /* Resources */ = {
+		80A22F7F07155F3D137A7A8E01A9490D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		991CABF29F89BE75AA2E5F3FDC760534 /* Resources */ = {
+		E5BEE77105ADAA5516F382367AD2B46A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -557,6 +554,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1E01C348A5359137037FEEAC42BCBBF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496A25B0C1CC79743C1EFAA0B40E907D /* Pods-trackier-ios-sdk_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DDFD9AC10F181CD7130BDF5F9E0502B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,77 +587,135 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F3F59F7605B489286BDFC7354385A46 /* Sources */ = {
+		C0303B2AF25B1DA22E341D6CAFE53987 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A04ED53E2A0E476FF9F4E0781752A7 /* Pods-trackier-ios-sdk_Example-dummy.m in Sources */,
+				D4B2F58C8661742ADD9925411ECA573C /* APIManager.swift in Sources */,
+				CC91B0A4D3A050B11F66AB741524C2CF /* APIService.swift in Sources */,
+				1D8EC59D50423FA53536118E39A208B1 /* CacheManager.swift in Sources */,
+				03F476E8E4030742BB8CBB359AD884E6 /* Constants.swift in Sources */,
+				F807BD3F1DDC9390FF2130F8F557FFC2 /* DeviceInfo.swift in Sources */,
+				BF1CE8C78F48529521F8F2CB40EDF383 /* Log.swift in Sources */,
+				89EA87C0C19C1A90A024B7C74B2B4780 /* trackier-ios-sdk-dummy.m in Sources */,
+				C68C7B155D893BFF528620537C7DAFF9 /* TrackierEvent.swift in Sources */,
+				BA73E1AA152F15B83E6B97110C38B47D /* TrackierSDK.swift in Sources */,
+				C2C41C522183618160720A3D1EBD830B /* TrackierSDKConfig.swift in Sources */,
+				F16BA13F0A93132F18A36305C170FB66 /* TrackierSDKInstance.swift in Sources */,
+				CA58C1A74A5A1EEA462B5BB43B34840E /* TrackierWorkRequest.swift in Sources */,
+				06FB7C017BEAD49322D24651632315C5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05B4545BDAAEB19937700EAF6689A1F /* Sources */ = {
+		DBFDD54F3CE40CF687CA771BAD0FF5A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7003CF52FA1C5C3386B2E521375D4541 /* APIManager.swift in Sources */,
-				7924B3C23508C1F9B72E84C9C1CFB407 /* APIService.swift in Sources */,
-				883010D9EF9E739BBDA8B1ABE137A4B4 /* CacheManager.swift in Sources */,
-				D28D6508D8C9E08A6E50815B2A097DA9 /* Constants.swift in Sources */,
-				A07B6DE401B435A6B939D56ADE3DCD15 /* DeviceInfo.swift in Sources */,
-				7FD7EACA9AAC963C10E633E3487902D8 /* Log.swift in Sources */,
-				D2C97FCBFBE43EA380709FB7EBC21176 /* Reach.swift in Sources */,
-				BC4E5AA30072284AB1475C1B65C2B4D3 /* trackier-ios-sdk-dummy.m in Sources */,
-				753D59DBD094F78D04D1908C8ECD55EB /* TrackierEvent.swift in Sources */,
-				47D68BA8B3829CC39D664EE6697237EA /* TrackierSDK.swift in Sources */,
-				D7428D7127396BECB394B7B6B938551D /* TrackierSDKConfig.swift in Sources */,
-				66AF5187C4F4DB1332A90D7589582F6E /* TrackierSDKInstance.swift in Sources */,
-				9437B3A28BD1D423B81F9C148E670CB1 /* TrackierWorkRequest.swift in Sources */,
-				387DDB673EF3876B9EC319796EAF6547 /* Utils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8BC4154B138D8B5670BE0EEB5B5C39B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAEEA700D236C3273D2F8BA1178B0FF1 /* Pods-trackier-ios-sdk_Tests-dummy.m in Sources */,
+				926ADECD688929CD1089B5C5882C8145 /* Pods-trackier-ios-sdk_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		068A9C33D03D3196BCA4B53B9DC5FE6C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 3274DCD1B1F5E59EB4D5FCF7A70B99D7 /* PBXContainerItemProxy */;
-		};
-		77FB066068AC2519ED3BFF23DDC6F3CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 0581C926FE8CDABE2C11D24489D10138 /* PBXContainerItemProxy */;
-		};
-		CB632D8E306E7CD4D246729257FB4A1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-trackier-ios-sdk_Example";
-			target = FE4C6B85E220D6D44AB075DCFE3293D7 /* Pods-trackier-ios-sdk_Example */;
-			targetProxy = 552CFBB9BDCA77567CB3C435E1C08DD7 /* PBXContainerItemProxy */;
-		};
-		E37E761FE2708358BEAFA208343C01EC /* PBXTargetDependency */ = {
+		5BB2563BE2BD6C7A084DFA4B2E7BFCDE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "trackier-ios-sdk";
 			target = 7C3E37925CEFD11EBB2FF2248BB65639 /* trackier-ios-sdk */;
-			targetProxy = E26A7D9FE5ED2B3C7B8EE484789D5F37 /* PBXContainerItemProxy */;
+			targetProxy = 58B52E07E438E9308FD1B4ECC69B57FF /* PBXContainerItemProxy */;
+		};
+		8B7A5FC2AE70248DB7A86E55A558BE4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 22DBE0B021C7E884E6022FDB9B12E969 /* PBXContainerItemProxy */;
+		};
+		D189E7C69D7E3740DA991CDED3E91F77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-trackier-ios-sdk_Example";
+			target = FE4C6B85E220D6D44AB075DCFE3293D7 /* Pods-trackier-ios-sdk_Example */;
+			targetProxy = 85951C50793B591F9A3A091B30A875A3 /* PBXContainerItemProxy */;
+		};
+		D4DC1940E8FF1AB70929594208F646CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = A714E183F5A341338D418D59486E4A3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		131356BE54884448CA49C07BEDF4BB2A /* Debug */ = {
+		0F5265992EFAF10D31BE0B4CBB66CCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFD818C18F975E44902C0E5673A689D /* trackier-ios-sdk.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
+				PRODUCT_MODULE_NAME = trackier_ios_sdk;
+				PRODUCT_NAME = trackier_ios_sdk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		228E4206550E79FDBF8B4FE059F76D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 081E5E5F49571B299CC2EC365F5E9EC3 /* Pods-trackier-ios-sdk_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -675,6 +738,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -713,186 +777,11 @@
 			};
 			name = Debug;
 		};
-		159BD2F83AA28C559053E32589261A9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7728B4BD82C732B3E556D0C580ED8493 /* Pods-trackier-ios-sdk_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		755E6C57176A7E169355AE1D5C05177A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFAF7BCD778C35E354D5457087BECC6D /* trackier-ios-sdk.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
-				PRODUCT_MODULE_NAME = trackier_ios_sdk;
-				PRODUCT_NAME = trackier_ios_sdk;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BBDEC4D24229BB2BADFFF5D0A01C101B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E34F9667FAA9D7598EC30D3249134271 /* trackier-ios-sdk.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
-				PRODUCT_MODULE_NAME = trackier_ios_sdk;
-				PRODUCT_NAME = trackier_ios_sdk;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C3A66AB31351D9BE7CF5FE7F3A4506C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF464A1EE53AED71B31D57F0EB043E36 /* Pods-trackier-ios-sdk_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D56796F95D3922E747755A5F97F351FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC9E5D23C4DF6A914B09BDCF1BAEEF71 /* Pods-trackier-ios-sdk_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DDD77B4F8954885562955A1A826ED540 /* Debug */ = {
+		2BD619FC8C06BE277275BE7F6CDD1EE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -919,14 +808,11 @@
 			};
 			name = Debug;
 		};
-		EC0C7C2265FF4B5A1E8F2D33F5C8A505 /* Debug */ = {
+		43337A56EEBDE28F5A49C086028AACAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 081E5E5F49571B299CC2EC365F5E9EC3 /* Pods-trackier-ios-sdk_Example.debug.xcconfig */;
+			baseConfigurationReference = 0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -935,29 +821,63 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		F090CD07A80273D5A73C8EA19224ADDB /* Release */ = {
+		6003C64961A8E929C770CC2C7FD79A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F509CA119E2A72CB1C65B6426BE79AD /* trackier-ios-sdk.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/trackier-ios-sdk/trackier-ios-sdk.modulemap";
+				PRODUCT_MODULE_NAME = trackier_ios_sdk;
+				PRODUCT_NAME = trackier_ios_sdk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -980,6 +900,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1014,12 +935,13 @@
 			};
 			name = Release;
 		};
-		F41F0DBC5C707E16F79EDBB75D631346 /* Release */ = {
+		6434EF2DE08241DC8928E91CC5EB4668 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */;
+			baseConfigurationReference = DC9E5D23C4DF6A914B09BDCF1BAEEF71 /* Pods-trackier-ios-sdk_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1028,18 +950,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_MODULE_NAME = Alamofire;
-				PRODUCT_NAME = Alamofire;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1047,41 +970,101 @@
 			};
 			name = Release;
 		};
+		72BBB10F4F2FE37A3B7D4F9A4193CD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF464A1EE53AED71B31D57F0EB043E36 /* Pods-trackier-ios-sdk_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8852A0A6A7B274741E4C53394D4779BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7728B4BD82C732B3E556D0C580ED8493 /* Pods-trackier-ios-sdk_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-trackier-ios-sdk_Tests/Pods-trackier-ios-sdk_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				131356BE54884448CA49C07BEDF4BB2A /* Debug */,
-				F090CD07A80273D5A73C8EA19224ADDB /* Release */,
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B36901F2B3431D634ADD9AE9F41AEC1 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Tests" */ = {
+		8FF370DC81BB2EBC802E941246EE1625 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				159BD2F83AA28C559053E32589261A9F /* Debug */,
-				C3A66AB31351D9BE7CF5FE7F3A4506C2 /* Release */,
+				8852A0A6A7B274741E4C53394D4779BD /* Debug */,
+				72BBB10F4F2FE37A3B7D4F9A4193CD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6262C75FE33CDDC917E54B81CCAE131B /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Example" */ = {
+		CBCD00BCDB1E994446271BD31BF58B1B /* Build configuration list for PBXNativeTarget "trackier-ios-sdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC0C7C2265FF4B5A1E8F2D33F5C8A505 /* Debug */,
-				D56796F95D3922E747755A5F97F351FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7129EF1105C5449FDCC99870F8412CAC /* Build configuration list for PBXNativeTarget "trackier-ios-sdk" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				755E6C57176A7E169355AE1D5C05177A /* Debug */,
-				BBDEC4D24229BB2BADFFF5D0A01C101B /* Release */,
+				0F5265992EFAF10D31BE0B4CBB66CCC2 /* Debug */,
+				6003C64961A8E929C770CC2C7FD79A14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1089,8 +1072,17 @@
 		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDD77B4F8954885562955A1A826ED540 /* Debug */,
-				F41F0DBC5C707E16F79EDBB75D631346 /* Release */,
+				2BD619FC8C06BE277275BE7F6CDD1EE5 /* Debug */,
+				43337A56EEBDE28F5A49C086028AACAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBBAF301CE8F60E154A95DA88F3DE828 /* Build configuration list for PBXNativeTarget "Pods-trackier-ios-sdk_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228E4206550E79FDBF8B4FE059F76D18 /* Debug */,
+				6434EF2DE08241DC8928E91CC5EB4668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

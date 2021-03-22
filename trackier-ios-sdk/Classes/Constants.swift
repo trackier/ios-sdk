@@ -14,12 +14,14 @@ class Constants {
     static let BASE_URL = "https://events.trackier.io/" + API_VERSION
     static let INSTALL_URL = BASE_URL + "/install"
     static let EVENTS_URL = BASE_URL + "/event"
+    static let SESSIONS_URL = BASE_URL + "/session"
 
     static let LOG_TAG = "trackiersdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"
     
     static let SHARED_PREF_IS_INSTALL_TRACKED = "is_install_tracked"
     static let SHARED_PREF_INSTALL_ID = "install_id"
+    static let SHARED_PREF_LAST_SESSION_TIME = "last_session_time"
 
     static let ENV_PRODUCTION = "production"
     static let ENV_DEVELOPMENT = "development"

@@ -33,6 +33,15 @@ class CacheManager {
         shared.userDefault.set(value, forKey: shared.getCacheKey(key: key))
     }
     
+    public static func getInt(key: String) -> Int64 {
+        let val = shared.userDefault.integer(forKey: shared.getCacheKey(key: key))
+        return Int64(val)
+    }
+    
+    public static func setInt(key: String, value: Int64) {
+        shared.userDefault.set(value, forKey: shared.getCacheKey(key: key))
+    }
+    
     public static func setBool(key: String, value: Bool) {
         shared.userDefault.set(value, forKey: shared.getCacheKey(key: key))
     }

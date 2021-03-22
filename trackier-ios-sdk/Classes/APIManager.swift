@@ -24,6 +24,7 @@ class APIManager: NSObject {
             APIService.post(uri: Constants.EVENTS_URL, body: workRequest.getEventData(), headers: headers)
             break;
         case TrackierWorkRequest.KIND_SESSION:
+            APIService.post(uri: Constants.SESSIONS_URL, body: workRequest.getSessionData(), headers: headers)
             break;
         case TrackierWorkRequest.KIND_UNKNOWN:
             break;
