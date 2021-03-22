@@ -17,6 +17,11 @@ class Utils {
         return formatter
     }
     
+    static func formatTime(date: Date) -> String {
+        let formatter = getDateTimeFormatter()
+        return formatter.string(from: date)
+    }
+    
     static func getCurrentTime() -> String {
         let date = Date()
         let formatter = getDateTimeFormatter()
@@ -26,11 +31,6 @@ class Utils {
     static func convertUnixTsToISO(ts: Int64) -> String {
         let lst = Date(timeIntervalSince1970: TimeInterval(ts))
         return formatTime(date: lst)
-    }
-    
-    static func formatTime(date: Date) -> String {
-        let formatter = getDateTimeFormatter()
-        return formatter.string(from: date)
     }
     
     // Reference: https://stackoverflow.com/questions/34778950/how-to-compare-any-value-types
