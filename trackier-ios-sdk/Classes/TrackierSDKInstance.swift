@@ -115,9 +115,10 @@ class TrackierSDKInstance {
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.deviceInfo = deviceInfo
-        wrk.lastSessionTime = getLastSessionTime()
+        let lastSessionTime = getLastSessionTime()
+        wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)
-        if (currentSessionTime - wrk.lastSessionTime) < self.minSessionDuration {
+        if (currentSessionTime - lastSessionTime) < self.minSessionDuration {
             // Session duration is too low
             return
         }
