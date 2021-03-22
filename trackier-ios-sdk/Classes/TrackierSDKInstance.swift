@@ -17,6 +17,7 @@ class TrackierSDKInstance {
 
     var isEnabled = true
     var isInitialized = false
+    var minSessionDuration: Int64 = 10 // in seconds
     var idfa: String? = ""
     var installId = ""
     let deviceInfo = DeviceInfo()
@@ -87,6 +88,10 @@ class TrackierSDKInstance {
         if (!isInitialized) {
             os_log("SDK Not Initialized", log: Log.dev, type: .debug)
         }
+        if (!isInstallTracked()) {
+            os_log("Event sent before Install was tracked", log: Log.dev, type: .debug)
+            return
+        }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.eventObj = event
@@ -104,13 +109,21 @@ class TrackierSDKInstance {
         if (!isInitialized) {
             os_log("SDK Not Initialized", log: Log.dev, type: .debug)
         }
+        if (!isInstallTracked()) {
+            return
+        }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.deviceInfo = deviceInfo
         wrk.lastSessionTime = getLastSessionTime()
+        let currentSessionTime = Int64(Date().timeIntervalSince1970)
+        if (currentSessionTime - wrk.lastSessionTime) < self.minSessionDuration {
+            // Session duration is too low
+            return
+        }
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
-            self.setLastSessionTime(val: Int64(Date().timeIntervalSince1970))
+            self.setLastSessionTime(val: currentSessionTime)
         }
     }
 }
