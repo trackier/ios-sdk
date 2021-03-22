@@ -109,6 +109,9 @@ class TrackierSDKInstance {
         if (!isInitialized) {
             os_log("SDK Not Initialized", log: Log.dev, type: .debug)
         }
+        if (!isInstallTracked()) {
+            return
+        }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.deviceInfo = deviceInfo
