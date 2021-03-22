@@ -1,7 +1,9 @@
 PODS:
   - Alamofire (4.9.1)
+  - ReachabilitySwift (5.0.0)
   - trackier-ios-sdk (1.2.2):
     - Alamofire (~> 4.0)
+    - ReachabilitySwift
 
 DEPENDENCIES:
   - trackier-ios-sdk (from `../`)
@@ -9,6 +11,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ReachabilitySwift
 
 EXTERNAL SOURCES:
   trackier-ios-sdk:
@@ -16,7 +19,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  trackier-ios-sdk: 7d2c8af5488200e13fc5026873400d51d71829c8
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  trackier-ios-sdk: 45e55de796c497a1b00720fa99a4808125f3a039
 
 PODFILE CHECKSUM: 4e57670d58945d89aa708d298914694b8d1c92f3
 
