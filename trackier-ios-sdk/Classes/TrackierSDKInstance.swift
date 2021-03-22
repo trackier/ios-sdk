@@ -20,6 +20,7 @@ class TrackierSDKInstance {
     var idfa: String? = ""
     var installId = ""
     let deviceInfo = DeviceInfo()
+    var minSessionDuration: Int64 = 10  // duration in seconds
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -107,7 +108,13 @@ class TrackierSDKInstance {
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.deviceInfo = deviceInfo
-        wrk.lastSessionTime = getLastSessionTime()
+        let lastSessionTime = getLastSessionTime()
+        wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
+        let currentSessionTime = Int64(Date().timeIntervalSince1970)
+        if (currentSessionTime - lastSessionTime) < self.minSessionDuration {
+            // Session duration is too low
+            return
+        }
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
             self.setLastSessionTime(val: Int64(Date().timeIntervalSince1970))

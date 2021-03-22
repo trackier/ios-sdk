@@ -45,12 +45,11 @@ class DeviceInfo {
         // TODO: screenSize,screenDensity?
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
-        let platformName: Any? = buildInfo?["DTPlatformName"]
-        if platformName != nil && Utils.isEqual(type: String.self, a: platformName!, b: "iphonesimulator") {
-            dict["isEmulator"] = true
-        } else {
-            dict["isEmulator"] = false
-        }
+        #if targetEnvironment(simulator)
+        dict["isEmulator"] = true
+        #else
+        dict["isEmulator"] = false
+        #endif
         return dict
     }
 }

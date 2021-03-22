@@ -45,4 +45,14 @@ public class TrackierSDK {
         }
         shared.instance.trackEvent(event: event)
     }
+    
+    public static func trackSession() {
+        shared.instance.trackSession()
+    }
+    
+    public static func setMinSessionDuration(val: UInt64) {
+        if val > 0 {
+            shared.instance.minSessionDuration = Int64(val)
+        }
+    }
 }

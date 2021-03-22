@@ -17,7 +17,7 @@ class TrackierWorkRequest {
     var installId: String = ""
     var eventObj = TrackierEvent(id: "")
     var deviceInfo: DeviceInfo? = nil
-    var lastSessionTime: Int64
+    var lastSessionTime: String
     private var appToken: String
     private var mode: String
     
@@ -25,7 +25,7 @@ class TrackierWorkRequest {
         self.kind = kind
         self.appToken = appToken
         self.mode = mode
-        self.lastSessionTime = 0
+        self.lastSessionTime = ""
     }
     
     func getData() -> Dictionary<String, Any> {
