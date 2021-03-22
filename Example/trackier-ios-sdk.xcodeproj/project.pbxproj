@@ -269,13 +269,11 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-trackier-ios-sdk_Example/Pods-trackier-ios-sdk_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/trackier-ios-sdk/trackier_ios_sdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/trackier_ios_sdk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

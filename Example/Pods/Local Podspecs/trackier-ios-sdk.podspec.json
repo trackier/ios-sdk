@@ -23,9 +23,6 @@
   "dependencies": {
     "Alamofire": [
       "~> 4.0"
-    ],
-    "ReachabilitySwift": [
-
     ]
   },
   "swift_version": "5.0"
