@@ -46,7 +46,6 @@ class NetworkRequestRetrier: RequestRetrier {
     
     private func exponentialRetry(url: String, completion: @escaping RequestRetryCompletion) {
         let retryCount = retriedRequests[url] ?? 0
-        print("retry request because status code is not in 200..299")
         
         if retryCount < 5 {
             retriedRequests[url] = retryCount + 1
