@@ -20,7 +20,6 @@ class APIManager: NSObject {
         switch workRequest.kind {
         case TrackierWorkRequest.KIND_INSTALL:
             APIService.post(uri: Constants.INSTALL_URL, body: workRequest.getData(), headers: headers)
-            os_log("Install called!", log: Log.prod, type: .info)
             break;
         case TrackierWorkRequest.KIND_EVENT:
             APIService.post(uri: Constants.EVENTS_URL, body: workRequest.getEventData(), headers: headers)
