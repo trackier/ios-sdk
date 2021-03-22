@@ -1,6 +1,5 @@
 # trackier-ios-sdk
 
-[![CI Status](https://img.shields.io/travis/prak24oct/trackier-ios-sdk.svg?style=flat)](https://travis-ci.org/prak24oct/trackier-ios-sdk)
 [![Version](https://img.shields.io/cocoapods/v/trackier-ios-sdk.svg?style=flat)](https://cocoapods.org/pods/trackier-ios-sdk)
 [![License](https://img.shields.io/cocoapods/l/trackier-ios-sdk.svg?style=flat)](https://cocoapods.org/pods/trackier-ios-sdk)
 [![Platform](https://img.shields.io/cocoapods/p/trackier-ios-sdk.svg?style=flat)](https://cocoapods.org/pods/trackier-ios-sdk)
@@ -22,7 +21,7 @@ pod 'trackier-ios-sdk'
 
 ## Author
 
-trackier, dev@trackier.com
+dev@trackier.com
 
 ## License
 
