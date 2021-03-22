@@ -17,18 +17,18 @@ class Utils {
         return formatter
     }
     
+    static func getCurrentTime() -> String {
+        let date = Date()
+        let formatter = getDateTimeFormatter()
+        return formatter.string(from: date)
+    }
+    
     static func convertUnixTsToISO(ts: Int64) -> String {
         let lst = Date(timeIntervalSince1970: TimeInterval(ts))
         return formatTime(date: lst)
     }
     
     static func formatTime(date: Date) -> String {
-        let formatter = getDateTimeFormatter()
-        return formatter.string(from: date)
-    }
-    
-    static func getCurrentTime() -> String {
-        let date = Date()
         let formatter = getDateTimeFormatter()
         return formatter.string(from: date)
     }
