@@ -17,6 +17,7 @@ class TrackierWorkRequest {
     var installId: String = ""
     var eventObj = TrackierEvent(id: "")
     var deviceInfo: DeviceInfo? = nil
+    var lastSessionTime: Int64
     private var appToken: String
     private var mode: String
     
@@ -24,12 +25,13 @@ class TrackierWorkRequest {
         self.kind = kind
         self.appToken = appToken
         self.mode = mode
+        self.lastSessionTime = 0
     }
     
     func getData() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
         dict["appKey"] = self.appToken
-        dict["device"] =  deviceInfo?.getDeviceInfo()
+        dict["device"] = deviceInfo?.getDeviceInfo()
         dict["createdAt"] = Utils.getCurrentTime()
         dict["mode"] = self.mode
         dict["installId"] = self.installId
@@ -39,6 +41,12 @@ class TrackierWorkRequest {
     func getEventData() -> Dictionary<String, Any> {
         var dict = getData()
         dict["event"] = self.eventObj.getHashMap()
+        return dict
+    }
+    
+    func getSessionData() -> Dictionary<String, Any> {
+        var dict = getData()
+        dict["lastSessionTime"] = lastSessionTime
         return dict
     }
 }

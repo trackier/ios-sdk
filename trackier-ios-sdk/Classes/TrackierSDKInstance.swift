@@ -35,6 +35,7 @@ class TrackierSDKInstance {
 
         DispatchQueue.global().async {
             self.trackInstall()
+            self.trackSession()
         }
     }
 
@@ -52,6 +53,14 @@ class TrackierSDKInstance {
 
     private func setInstallTracked() {
         CacheManager.setBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED, value: true)
+    }
+    
+    private func getLastSessionTime() -> Int64 {
+        return CacheManager.getInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME)
+    }
+
+    private func setLastSessionTime(val: Int64){
+        CacheManager.setInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME, value: val)
     }
 
     private  func trackInstall() {
@@ -84,6 +93,24 @@ class TrackierSDKInstance {
         wrk.deviceInfo = deviceInfo
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
+        }
+    }
+    
+    func trackSession() {
+        if (!isEnabled) {
+            os_log("SDK Not Enabled", log: Log.dev, type: .debug)
+            return
+        }
+        if (!isInitialized) {
+            os_log("SDK Not Initialized", log: Log.dev, type: .debug)
+        }
+        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
+        wrk.installId = installId
+        wrk.deviceInfo = deviceInfo
+        wrk.lastSessionTime = getLastSessionTime()
+        DispatchQueue.global().async {
+            APIManager.doWork(workRequest: wrk)
+            self.setLastSessionTime(val: Int64(Date().timeIntervalSince1970))
         }
     }
 }
