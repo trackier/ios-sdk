@@ -14,7 +14,7 @@ class Constants {
     static let BASE_URL = "https://events.trackier.io/" + API_VERSION
     static let INSTALL_URL = BASE_URL + "/install"
     static let EVENTS_URL = BASE_URL + "/event"
-    static let SESSIONS_URL = "https://requestbin.offersoptimize.com/1jk09ek1?t=session"
+    static let SESSIONS_URL = BASE_URL + "/session"
 
     static let LOG_TAG = "trackiersdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"

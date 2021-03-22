@@ -17,10 +17,10 @@ class TrackierSDKInstance {
 
     var isEnabled = true
     var isInitialized = false
+    var minSessionDuration: Int64 = 10 // in seconds
     var idfa: String? = ""
     var installId = ""
     let deviceInfo = DeviceInfo()
-    var minSessionDuration: Int64 = 10  // duration in seconds
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -88,6 +88,10 @@ class TrackierSDKInstance {
         if (!isInitialized) {
             os_log("SDK Not Initialized", log: Log.dev, type: .debug)
         }
+        if (!isInstallTracked()) {
+            os_log("Event sent before Install was tracked", log: Log.dev, type: .debug)
+            return
+        }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.eventObj = event
@@ -117,7 +121,7 @@ class TrackierSDKInstance {
         }
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
-            self.setLastSessionTime(val: Int64(Date().timeIntervalSince1970))
+            self.setLastSessionTime(val: currentSessionTime)
         }
     }
 }
