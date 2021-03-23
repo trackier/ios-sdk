@@ -33,6 +33,16 @@ class Utils {
         return formatTime(date: lst)
     }
     
+    static func convertDictToJSON(data: Dictionary<String, Any>) -> String {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+            let decoded = String(data: jsonData, encoding: .utf8)!
+            return decoded
+        } catch {
+            return ""
+        }
+    }
+    
     // Reference: https://stackoverflow.com/questions/34778950/how-to-compare-any-value-types
     static func isEqual<T: Equatable>(type: T.Type, a: Any, b: Any) -> Bool {
         guard let a = a as? T, let b = b as? T else { return false }

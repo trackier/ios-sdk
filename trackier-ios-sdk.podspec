@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'trackier-ios-sdk'
-  s.version          = '1.3.2'
-  s.summary          = 'This is trackier-ios-sdk 1.3.2'
+  s.version          = '1.3.3'
+  s.summary          = 'This is trackier-ios-sdk 1.3.3'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trackier' => 'dev@trackier.com' }
-  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '1.3.2' }
+  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '1.3.3' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '5.0'
@@ -40,5 +40,6 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-    s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'Willow', '~> 5.0'
 end

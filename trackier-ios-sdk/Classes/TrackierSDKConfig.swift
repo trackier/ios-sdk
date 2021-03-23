@@ -17,9 +17,14 @@ public class TrackierSDKConfig {
     public init(appToken: String, env: String) {
         self.appToken = appToken
         self.env = env
+        if env == TrackierSDKConfig.ENVIRONMENT_PRODUCTION {
+            Logger.setLogLevel(level: Logger.LEVEL_ERROR)
+        } else {
+            Logger.setLogLevel(level: Logger.LEVEL_DEBUG)
+        }
     }
 
-    func setLogLevel() {
-        // TODO: fix me
+    func setLogLevel(level: UInt) {
+        Logger.setLogLevel(level: level)
     }
 }

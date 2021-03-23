@@ -1,7 +1,7 @@
 {
   "name": "trackier-ios-sdk",
-  "version": "1.2.2",
-  "summary": "This is trackier-ios-sdk 1.2.2 .",
+  "version": "1.3.2",
+  "summary": "This is trackier-ios-sdk 1.3.2",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/trackier/ios-sdk",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/trackier/ios-sdk.git",
-    "tag": "1.2.2"
+    "tag": "1.3.2"
   },
   "swift_versions": "5.0",
   "platforms": {
@@ -23,6 +23,9 @@
   "dependencies": {
     "Alamofire": [
       "~> 4.0"
+    ],
+    "Willow": [
+      "~> 5.0"
     ]
   },
   "swift_version": "5.0"

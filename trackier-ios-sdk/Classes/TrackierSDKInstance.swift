@@ -82,14 +82,14 @@ class TrackierSDKInstance {
 
     func trackEvent(event: TrackierEvent) {
         if (!isEnabled) {
-            os_log("SDK Not Enabled", log: Log.dev, type: .debug)
+            Logger.warning(message: "SDK Not Enabled")
             return
         }
         if (!isInitialized) {
-            os_log("SDK Not Initialized", log: Log.dev, type: .debug)
+            Logger.warning(message: "SDK Not Initialized")
         }
         if (!isInstallTracked()) {
-            os_log("Event sent before Install was tracked", log: Log.dev, type: .debug)
+            Logger.warning(message: "Event sent before Install was tracked")
             return
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
@@ -103,11 +103,11 @@ class TrackierSDKInstance {
     
     func trackSession() {
         if (!isEnabled) {
-            os_log("SDK Not Enabled", log: Log.dev, type: .debug)
+            Logger.warning(message: "SDK Not Enabled")
             return
         }
         if (!isInitialized) {
-            os_log("SDK Not Initialized", log: Log.dev, type: .debug)
+            Logger.warning(message: "SDK Not Initialized")
         }
         if (!isInstallTracked()) {
             return

@@ -16,7 +16,7 @@ class Constants {
     static let EVENTS_URL = BASE_URL + "/event"
     static let SESSIONS_URL = BASE_URL + "/session"
 
-    static let LOG_TAG = "trackiersdk"
+    static let LOG_TAG = "com.trackier.sdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"
     
     static let SHARED_PREF_IS_INSTALL_TRACKED = "is_install_tracked"

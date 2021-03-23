@@ -76,7 +76,7 @@ class APIService {
     
     private func request(uri : String, method: HTTPMethod, body : [String : Any], headers : [String : String]?) {
         sessionManager.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (responseObj) -> Void in
-            
+            Logger.debug(message: "Response is \(responseObj)")
         }
     }
     

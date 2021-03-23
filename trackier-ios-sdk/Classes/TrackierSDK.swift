@@ -18,11 +18,11 @@ public class TrackierSDK {
     
     public static func initialize(config: TrackierSDKConfig) {
         if (shared.isInitialized) {
-            os_log("SDK Already initialized!", log: Log.prod, type: .info)
+            Logger.warning(message: "SDK Already initialized!")
             return
         }
         shared.isInitialized = true
-        os_log("Trackier SDK %@ initialized", log: Log.prod, type: .info, Constants.SDK_VERSION)
+        Logger.info(message: "Trackier SDK \(Constants.SDK_VERSION) initialized")
         shared.instance.initialize(config: config)
     }
 
@@ -36,11 +36,11 @@ public class TrackierSDK {
    
     public static func trackEvent(event: TrackierEvent) {
         if (!shared.isInitialized) {
-            os_log("SDK Not Initialized", log: Log.prod, type: .info)
+            Logger.warning(message: "SDK Not Initialized")
             return
         }
         if (!isEnabled()) {
-            os_log("SDK Disabled", log: Log.prod, type: .info)
+            Logger.warning(message: "SDK Disabled")
             return
         }
         shared.instance.trackEvent(event: event)
