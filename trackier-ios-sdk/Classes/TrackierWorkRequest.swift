@@ -15,7 +15,6 @@ class TrackierWorkRequest {
     
     var kind: String
     var installId: String = ""
-    var installTime : String = ""
     var installTime: String = ""
     var eventObj = TrackierEvent(id: "")
     var deviceInfo: DeviceInfo? = nil
