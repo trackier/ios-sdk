@@ -42,6 +42,9 @@ class DeviceInfo {
         dict["language"] = Locale.current.languageCode
         dict["country"] = NSLocale.current.regionCode
         dict["timezone"] = TimeZone.current.identifier
+        dict["screenSize"] = getScreenSize()
+        dict["screenDensity"] = getScreenDensity()
+        dict["screenFormat"] = name
         // TODO: screenSize,screenDensity?
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
@@ -51,5 +54,15 @@ class DeviceInfo {
         dict["isEmulator"] = false
         #endif
         return dict
+    }
+    
+    private func getScreenSize() -> String {
+        let screenSize: CGRect = UIScreen.main.bounds
+        return  "\(screenSize)"
+    }
+    
+    private func getScreenDensity() -> String {
+        let screenDensity: CGFloat = UIScreen.main.scale
+        return  "\(screenDensity)"
     }
 }
