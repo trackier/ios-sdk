@@ -85,7 +85,7 @@ class TrackierSDKInstance {
             setInstallID(installID: installId)
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId.lowercased()
+        wrk.installId = installId
         wrk.deviceInfo = deviceInfo
         wrk.installTime = installTime
         APIManager.doWork(workRequest: wrk)
@@ -105,7 +105,7 @@ class TrackierSDKInstance {
             return
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId.lowercased()
+        wrk.installId = installId
         wrk.installTime = self.installTime
         wrk.eventObj = event
         wrk.deviceInfo = deviceInfo
@@ -126,7 +126,7 @@ class TrackierSDKInstance {
             return
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId.lowercased()
+        wrk.installId = installId
         wrk.deviceInfo = deviceInfo
         wrk.installTime = self.installTime
         let lastSessionTime = getLastSessionTime()

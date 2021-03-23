@@ -36,7 +36,9 @@ class TrackierWorkRequest {
         dict["createdAt"] = Utils.getCurrentTime()
         dict["mode"] = self.mode
         dict["installId"] = self.installId
+        dict["installId"] = self.installId.lowercased()
         dict["installTime"] = self.installTime
+        dict["debug"] = true
         return dict
     }
     

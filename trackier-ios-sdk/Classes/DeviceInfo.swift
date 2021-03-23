@@ -63,6 +63,6 @@ class DeviceInfo {
     
     private func getScreenDensity() -> String {
         let screenDensity: CGFloat = UIScreen.main.scale
-          return  "\(screenDensity)"
+        return  "\(screenDensity)"
     }
 }
