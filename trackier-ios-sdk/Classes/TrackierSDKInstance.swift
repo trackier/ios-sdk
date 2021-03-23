@@ -20,6 +20,7 @@ class TrackierSDKInstance {
     var minSessionDuration: Int64 = 10 // in seconds
     var idfa: String? = ""
     var installId = ""
+    var installTime = ""
     let deviceInfo = DeviceInfo()
     
     /**
@@ -33,6 +34,7 @@ class TrackierSDKInstance {
         self.isInitialized = true
         self.appToken = config.appToken
         self.installId = getInstallID()
+        self.installTime = getInstallTime()
 
         DispatchQueue.global().async {
             self.trackInstall()
@@ -42,6 +44,15 @@ class TrackierSDKInstance {
 
     private func setInstallID(installID: String) {
         CacheManager.setString(key: Constants.SHARED_PREF_INSTALL_ID, value: installID)
+    }
+    
+    private func getInstallTime() -> String {
+        var installTime = CacheManager.getString(key: "install_time")
+        if installTime == "" {
+            installTime = Utils.getCurrentTime()
+            CacheManager.setString(key: "install_time", value: installTime)
+        }
+        return installTime
     }
 
     private func getInstallID() -> String {
@@ -74,8 +85,9 @@ class TrackierSDKInstance {
             setInstallID(installID: installId)
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
+        wrk.installId = installId.lowercased()
         wrk.deviceInfo = deviceInfo
+        wrk.installTime = installTime
         APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
@@ -93,7 +105,8 @@ class TrackierSDKInstance {
             return
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
+        wrk.installId = installId.lowercased()
+        wrk.installTime = self.installTime
         wrk.eventObj = event
         wrk.deviceInfo = deviceInfo
         DispatchQueue.global().async {
@@ -113,8 +126,9 @@ class TrackierSDKInstance {
             return
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
+        wrk.installId = installId.lowercased()
         wrk.deviceInfo = deviceInfo
+        wrk.installTime = self.installTime
         let lastSessionTime = getLastSessionTime()
         wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)
