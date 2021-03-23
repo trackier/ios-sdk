@@ -16,6 +16,7 @@ class TrackierWorkRequest {
     var kind: String
     var installId: String = ""
     var installTime : String = ""
+    var installTime: String = ""
     var eventObj = TrackierEvent(id: "")
     var deviceInfo: DeviceInfo? = nil
     var lastSessionTime: String
@@ -35,10 +36,8 @@ class TrackierWorkRequest {
         dict["device"] = deviceInfo?.getDeviceInfo()
         dict["createdAt"] = Utils.getCurrentTime()
         dict["mode"] = self.mode
-        dict["installId"] = self.installId
         dict["installId"] = self.installId.lowercased()
         dict["installTime"] = self.installTime
-        dict["debug"] = true
         return dict
     }
     
