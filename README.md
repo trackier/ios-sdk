@@ -60,7 +60,7 @@ pod 'trackier-ios-sdk'
      sleep(1)
      TrackierSDK.trackEvent(event: event)
     }
-    ``` 
+``` 
  
 #### Track with Currency & Revenue Event :-
  
