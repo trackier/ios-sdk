@@ -35,11 +35,11 @@ pod 'trackier-ios-sdk'
    Important: it is crucial to use the correct dev key when initializing the SDK. Using the wrong dev key or an     
    incorrect dev key impact all traffic sent from the SDK and cause attribution and reporting issues.
  
-     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT)
-        TrackierSDK.initialize(config: config)
-        return true
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     // Override point for customization after application launch.
+     let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT)
+     TrackierSDK.initialize(config: config)
+     return true
     }
  
 ### Track Events :-
@@ -52,28 +52,28 @@ pod 'trackier-ios-sdk'
 #### Track Event :-
    
 ```
-        let event = TrackierEvent(id: TrackierEvent.PURCHASE)
-        event.addEventValue(prop: "purchaseId", val: "sldfjdslfsfsdf")
-        event.addEventValue(prop: "purchasePnr", val: "sd2-3dslk329032-23")
-        event.param1 = "this is a param1 value"
-        DispatchQueue.global().async {
-            sleep(1)
-            TrackierSDK.trackEvent(event: event)
-        }
-``` 
+    let event = TrackierEvent(id: TrackierEvent.PURCHASE)
+    event.addEventValue(prop: "purchaseId", val: "PurchaseId Param")
+    event.addEventValue(prop: "purchasePnr", val: "Purchase Pnr Param")
+    event.param1 = "this is a param1 value"
+    DispatchQueue.global().async {
+     sleep(1)
+     TrackierSDK.trackEvent(event: event)
+    }
+    ``` 
  
 #### Track with Currency & Revenue Event :-
  
 ```  
-        let event = TrackierEvent(id: TrackierEvent.PURCHASE)
-        event.addEventValue(prop: "purchaseId", val: "PurchaseId Param")
-        event.addEventValue(prop: "purchasePnr", val: "Purchase Pnr Param")
-        event.setRevenue(revenue: 120.5, currency: "INR")
-        event.param1 = "this is a param1 value"
-        DispatchQueue.global().async {
-          sleep(1)
-          TrackierSDK.trackEvent(event: event)
-        }
+    let event = TrackierEvent(id: TrackierEvent.PURCHASE)
+    event.addEventValue(prop: "purchaseId", val: "PurchaseId Param")
+    event.addEventValue(prop: "purchasePnr", val: "Purchase Pnr Param")
+    event.setRevenue(revenue: 120.5, currency: "INR")
+    event.param1 = "this is a param1 value"
+    DispatchQueue.global().async {
+       sleep(1)
+       TrackierSDK.trackEvent(event: event)
+    }
 
 ```
 
