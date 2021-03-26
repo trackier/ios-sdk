@@ -7,6 +7,7 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+If you're new to CocoaPods, see their [official documentation](https://guides.cocoapods.org/using/using-cocoapods) for info on how to create and use Podfiles.
 
 ## Requirements
 
