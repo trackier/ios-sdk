@@ -23,6 +23,10 @@ class TrackierSDKInstance {
     var installTime = ""
     let deviceInfo = DeviceInfo()
     
+    var customerId = ""
+    var customerEmail = ""
+    var customerOptionals: Dictionary<String, Any>? = nil
+    
     /**
      * Initialize method should be called to initialize the sdk
      */
@@ -129,6 +133,9 @@ class TrackierSDKInstance {
         wrk.installId = installId
         wrk.deviceInfo = deviceInfo
         wrk.installTime = self.installTime
+        wrk.customerId = customerId
+        wrk.customerEmail = customerEmail
+        wrk.customerOptionals = customerOptionals
         let lastSessionTime = getLastSessionTime()
         wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)

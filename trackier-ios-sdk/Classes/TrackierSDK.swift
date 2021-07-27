@@ -55,4 +55,17 @@ public class TrackierSDK {
             shared.instance.minSessionDuration = Int64(val)
         }
     }
+    
+    public static func setUserID(userId: String) {
+        shared.instance.customerId = userId
+        
+    }
+    
+    public static func setUserEmail(userEmail: String) {
+        shared.instance.customerEmail = userEmail
+    }
+    
+    public static func setUserAdditionalDetails(userAdditionalDetails: Dictionary<String, Any>) {
+        shared.instance.customerOptionals = userAdditionalDetails
+    }
 }
