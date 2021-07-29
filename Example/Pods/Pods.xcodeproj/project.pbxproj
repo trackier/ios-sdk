@@ -117,7 +117,7 @@
 		11041350D9417FCF231F5432E3814B95 /* TrackierSDKConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKConfig.swift; path = "trackier-ios-sdk/Classes/TrackierSDKConfig.swift"; sourceTree = "<group>"; };
 		13B5D5149E8EDF9702B8EFB23047573D /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1784880B57065E66568E43A48EE53BB0 /* LogLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
-		1797663B1D2010D4AEE7AB70D7F4EA08 /* Pods_trackier_ios_sdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_trackier_ios_sdk_Tests.framework; path = "Pods-trackier-ios-sdk_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1797663B1D2010D4AEE7AB70D7F4EA08 /* Pods_trackier_ios_sdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackier_ios_sdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18194A469CF5A91577947C6A80183C3A /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		186000FB965ACDC3D8CC5657B0FDFF5F /* trackier-ios-sdk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "trackier-ios-sdk-dummy.m"; sourceTree = "<group>"; };
 		1AD0D392EF3B21FB010C885FA3E53000 /* APIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = "trackier-ios-sdk/Classes/APIService.swift"; sourceTree = "<group>"; };
@@ -133,15 +133,15 @@
 		346AB355B2F334A9AB97501C99633B4E /* TrackierSDKInstance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierSDKInstance.swift; path = "trackier-ios-sdk/Classes/TrackierSDKInstance.swift"; sourceTree = "<group>"; };
 		3501BB58C6F9B564B0C40112A722664C /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		37416A64EA3DFBF93681C50501108CE5 /* Willow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Willow.debug.xcconfig; sourceTree = "<group>"; };
-		45A8C6BAB49DC60460B4EEF94C08C76B /* trackier-ios-sdk.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "trackier-ios-sdk.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		45A8C6BAB49DC60460B4EEF94C08C76B /* trackier-ios-sdk.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "trackier-ios-sdk.podspec"; sourceTree = "<group>"; tabWidth = 2; };
 		49CA289ED11284C24BEB65D130CAEDC1 /* Willow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Willow-umbrella.h"; sourceTree = "<group>"; };
 		4C5C66729E285DDB8E32CDA92115519B /* Pods-trackier-ios-sdk_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-trackier-ios-sdk_Tests.modulemap"; sourceTree = "<group>"; };
 		4E831AD7083E471A42C2A08A4324A711 /* Pods-trackier-ios-sdk_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-trackier-ios-sdk_Example-frameworks.sh"; sourceTree = "<group>"; };
 		555ABF791B2DC5F5138C9446F03D94F8 /* Willow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Willow.modulemap; sourceTree = "<group>"; };
 		57E5A2AAEC5D339FEB2056E515CD83C3 /* Willow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Willow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58472524590FEC59EA5DFA75BD46D9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		58472524590FEC59EA5DFA75BD46D9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D6AC72E224C7862A3AF0A8BDEBCAAF1 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D87A569A941FE254DBCFF8F5BAC6441 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		62623324BE6ADE04918ED7490011BBC4 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		68BF6F4BB2403F3FCC9EADDCD6F34AA8 /* trackier-ios-sdk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-umbrella.h"; sourceTree = "<group>"; };
@@ -150,16 +150,16 @@
 		6FECAFB1CAB3E2090CE5A9D5ECCE3C79 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		759996BA893AE229031F1E5685D3986E /* CacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = "trackier-ios-sdk/Classes/CacheManager.swift"; sourceTree = "<group>"; };
 		7728B4BD82C732B3E556D0C580ED8493 /* Pods-trackier-ios-sdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		77AB862D357CEFB5193BE0BEAB7AC48D /* Pods_trackier_ios_sdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_trackier_ios_sdk_Example.framework; path = "Pods-trackier-ios-sdk_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BCF03ED1454CF04BE743F653E609A87 /* Willow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Willow.framework; path = Willow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77AB862D357CEFB5193BE0BEAB7AC48D /* Pods_trackier_ios_sdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackier_ios_sdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BCF03ED1454CF04BE743F653E609A87 /* Willow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Willow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801DE2814940A779E306696778124A1E /* LogModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogModifier.swift; path = Source/LogModifier.swift; sourceTree = "<group>"; };
 		82BB00D51A970D39CB105BBEEDD56AB7 /* LogMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogMessage.swift; path = Source/LogMessage.swift; sourceTree = "<group>"; };
 		8419D57BD4C7B99A46CDC6BF5A8A1BB8 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		8642EA783DF00AA15C923E1F3E43A2F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8642EA783DF00AA15C923E1F3E43A2F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8F05A88A6664616AD51BADCD22C3880A /* Pods-trackier-ios-sdk_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-trackier-ios-sdk_Example.modulemap"; sourceTree = "<group>"; };
 		95CA2A7F03A8CD6F17858B66B78F9819 /* Pods-trackier-ios-sdk_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-trackier-ios-sdk_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D4391AEEAD3009AA6E763DFCD307D94 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A32E3979D6F115BEC67524AB38469D5B /* TrackierEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackierEvent.swift; path = "trackier-ios-sdk/Classes/TrackierEvent.swift"; sourceTree = "<group>"; };
 		A8EC6BA91410D45A4996C0A17386A6FF /* trackier-ios-sdk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "trackier-ios-sdk-prefix.pch"; sourceTree = "<group>"; };
 		AEC27D08DCE170C7C9A3B8BCD6745AEF /* DeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceInfo.swift; path = "trackier-ios-sdk/Classes/DeviceInfo.swift"; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		F261BF4DE857C8768140FFD79AA8543D /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "trackier-ios-sdk/Classes/Constants.swift"; sourceTree = "<group>"; };
 		F5B22B5A612FA53F7FA667A7435BAC61 /* Pods-trackier-ios-sdk_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F93123157B8F35F48D332BE59E6FA8BB /* Pods-trackier-ios-sdk_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-trackier-ios-sdk_Example-Info.plist"; sourceTree = "<group>"; };
-		F9B9ED94416278F08EDDEAEF1D40B6A2 /* trackier_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = trackier_ios_sdk.framework; path = "trackier-ios-sdk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B9ED94416278F08EDDEAEF1D40B6A2 /* trackier_ios_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = trackier_ios_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAFCD7A5E31325F061F4F09156B2044 /* APIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = "trackier-ios-sdk/Classes/APIManager.swift"; sourceTree = "<group>"; };
 		FADCBDBC6406A5BCA552922E8E7E93E6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		FF464A1EE53AED71B31D57F0EB043E36 /* Pods-trackier-ios-sdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-trackier-ios-sdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -313,7 +313,6 @@
 				BEDF098B297D7F87CCB1187BD461029D /* LogWriter.swift */,
 				8A4DF636213AAA56A31ACC0D875BBC78 /* Support Files */,
 			);
-			name = Willow;
 			path = Willow;
 			sourceTree = "<group>";
 		};
@@ -427,7 +426,6 @@
 				2BFF959448A86ACF317B3D0FF9287B90 /* Validation.swift */,
 				8ED895BBD3A6210D68E0683C21DC093B /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1032,8 +1030,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
