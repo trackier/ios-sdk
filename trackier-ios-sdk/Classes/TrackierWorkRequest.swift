@@ -21,6 +21,9 @@ class TrackierWorkRequest {
     var lastSessionTime: String
     private var appToken: String
     private var mode: String
+    var customerId = ""
+    var customerEmail = ""
+    var customerOptionals: Dictionary<String, Any>? = nil
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -37,6 +40,11 @@ class TrackierWorkRequest {
         dict["mode"] = self.mode
         dict["installId"] = self.installId.lowercased()
         dict["installTime"] = self.installTime
+        dict["cuid"] = customerId
+        dict["cmail"] = customerEmail
+        if (customerOptionals != nil) {
+            dict["opts"] = customerOptionals
+        }
         return dict
     }
     
