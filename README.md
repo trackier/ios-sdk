@@ -117,11 +117,11 @@ To assosiate Customer Id , Customer Email and Customer additional params during 
 ## <a id="qs-add-custome-param-event"></a>Add custom params with event
 
 ```swift
-event.addEventValue(“customeValue1”,”XXXXX”);
-event.addEventValue(“customeValue2”,”XXXXX”);
+    event.addEventValue(“customeValue1”,”XXXXX”);
+    event.addEventValue(“customeValue2”,”XXXXX”);
     DispatchQueue.global().async {
-       sleep(1)
-       TrackierSDK.trackEvent(event: event)
+        sleep(1)
+        TrackierSDK.trackEvent(event: event)
     }
 ```
 
