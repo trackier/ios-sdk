@@ -7,7 +7,5 @@ target 'trackier-ios-sdk_Example' do
 
   target 'trackier-ios-sdk_Tests' do
     inherit! :search_paths
-
-    
   end
 end

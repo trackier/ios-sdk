@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIManager: NSObject {
     
     static let sharedInstance = APIManager()
-    static var headers = ["User-Agent": Constants.USER_AGENT, "X-Client-SDK": Constants.SDK_VERSION]
+    static let headers: HTTPHeaders  = ["User-Agent": Constants.USER_AGENT, "X-Client-SDK": Constants.SDK_VERSION]
     
     override init() {
     }

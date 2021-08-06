@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.9.1)
-  - trackier-ios-sdk (1.5.0):
-    - Alamofire (~> 4.0)
+  - Alamofire (5.4.3)
+  - trackier-ios-sdk (1.6.6):
+    - Alamofire (~> 5.4.1)
     - Willow (~> 5.0)
   - Willow (5.2.1)
 
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  trackier-ios-sdk: 90685ba6fc2bf4e167ec12142cbc0c2db9754472
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  trackier-ios-sdk: 707507d8c99909c618461e3361a35930709605a6
   Willow: a6310f9aedcb6f4de8c35b94fd3416a660ae9280
 
-PODFILE CHECKSUM: 4e57670d58945d89aa708d298914694b8d1c92f3
+PODFILE CHECKSUM: 5f8f0033f5c480370348b335be3d7303bc258cbe
 
 COCOAPODS: 1.10.1
