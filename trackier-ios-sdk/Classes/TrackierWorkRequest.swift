@@ -42,6 +42,7 @@ class TrackierWorkRequest {
         dict["installTime"] = self.installTime
         dict["cuid"] = customerId
         dict["cmail"] = customerEmail
+        dict["installTimeMicro"] = Utils.getUnixTime(time: self.installTime)
         if (customerOptionals != nil) {
             dict["opts"] = customerOptionals
         }
