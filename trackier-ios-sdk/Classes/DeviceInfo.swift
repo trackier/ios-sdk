@@ -48,6 +48,9 @@ class DeviceInfo {
         // TODO: screenSize,screenDensity?
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
+        if (Locale.current.languageCode != nil) {
+             dict["locale"] = Locale.current.languageCode!
+        }       
         #if targetEnvironment(simulator)
         dict["isEmulator"] = true
         #else

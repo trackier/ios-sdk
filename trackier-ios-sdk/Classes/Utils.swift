@@ -49,4 +49,15 @@ class Utils {
 
         return a == b
     }
+
+    static func getUnixTime(time: String?) -> String {
+        if (time != nil) {
+            let dateFormatter = getDateTimeFormatter()
+            let date = dateFormatter.date(from: time!)
+            return String(date!.timeIntervalSince1970)
+        } else {
+            return ""
+        }
+        
+    }
 }
