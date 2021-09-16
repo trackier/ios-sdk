@@ -37,3 +37,4 @@ Carthage/Build
 # Pods/
 Example/Podfile.lock
 *.lock
+Example/Podfile.lock
