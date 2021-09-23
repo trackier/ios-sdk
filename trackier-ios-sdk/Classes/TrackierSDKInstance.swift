@@ -60,7 +60,12 @@ class TrackierSDKInstance {
     }
 
     private func getInstallID() -> String {
-        return CacheManager.getString(key: Constants.SHARED_PREF_INSTALL_ID)
+        var itd = CacheManager.getString(key: Constants.SHARED_PREF_INSTALL_ID)
+        if itd == "" {
+            itd = UUID().uuidString
+            setInstallID(installID: itd)
+        }
+        return itd 
     }
 
     private func isInstallTracked() -> Bool {
@@ -82,11 +87,6 @@ class TrackierSDKInstance {
     private  func trackInstall() {
         if (isInstallTracked()) {
             return
-        }
-        var installId = getInstallID()
-        if installId == "" {
-            installId = UUID().uuidString
-            setInstallID(installID: installId)
         }
         let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
