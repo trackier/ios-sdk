@@ -26,6 +26,7 @@ class TrackierSDKInstance {
     var customerId = ""
     var customerEmail = ""
     var customerOptionals: Dictionary<String, Any>? = nil
+    var organic = false
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -136,6 +137,7 @@ class TrackierSDKInstance {
         wrk.customerId = customerId
         wrk.customerEmail = customerEmail
         wrk.customerOptionals = customerOptionals
+        wrk.organic = organic
         let lastSessionTime = getLastSessionTime()
         wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)

@@ -24,6 +24,7 @@ class TrackierWorkRequest {
     var customerId = ""
     var customerEmail = ""
     var customerOptionals: Dictionary<String, Any>? = nil
+    var organic = false
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -46,6 +47,7 @@ class TrackierWorkRequest {
         if (customerOptionals != nil) {
             dict["opts"] = customerOptionals
         }
+        dict["organic"] = organic
         return dict
     }
     
