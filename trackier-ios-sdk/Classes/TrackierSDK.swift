@@ -68,4 +68,8 @@ public class TrackierSDK {
     public static func setUserAdditionalDetails(userAdditionalDetails: Dictionary<String, Any>) {
         shared.instance.customerOptionals = userAdditionalDetails
     }
+
+    public static func trackAsOrganic(organic: Bool) {
+        shared.instance.organic = organic
+    }
 }
