@@ -65,7 +65,7 @@ To assosiate Customer Id , Customer Email and Customer additional params during 
     // Override point for customization after application launch.
     let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT)
     TrackierSDK.setUserId(XXXXXXXX)
-    TrackierSDK.setUserEmail(“abc@gmail.com”)
+    TrackierSDK.setUserEmail("abc@gmail.com")
     TrackierSDK.initialize(config: config)
 ```
 
@@ -117,8 +117,8 @@ To assosiate Customer Id , Customer Email and Customer additional params during 
 ## <a id="qs-add-custome-param-event"></a>Add custom params with event
 
 ```swift
-    event.addEventValue(“customeValue1”,”XXXXX”);
-    event.addEventValue(“customeValue2”,”XXXXX”);
+    event.addEventValue("customeValue1","XXXXX");
+    event.addEventValue("customeValue2","XXXXX");
     DispatchQueue.global().async {
         sleep(1)
         TrackierSDK.trackEvent(event: event)

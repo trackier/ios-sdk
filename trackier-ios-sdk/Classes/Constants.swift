@@ -25,6 +25,7 @@ class Constants {
 
     static let ENV_PRODUCTION = "production"
     static let ENV_DEVELOPMENT = "development"
+    static let ENV_TESTING = "testing"
 
     static let DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     static let UNKNOWN_EVENT = "unknown"
