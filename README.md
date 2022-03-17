@@ -14,6 +14,7 @@
 * [Retrieve your dev key](#qs-retrieve-dev-key)
     * [Initialize the SDK](#qs-initialize-sdk)
     * [Associate User Info during initialization of sdk](#qs-add-user-info)
+* [SDK Signing](#qs-sdk-signing)
 * [Track Events](#qs-trackier-event)
     * [Retrieve Event Id from dashboard](#qs-retrieve-event-id)
     * [Track Event](#qs-track-simple-event)
@@ -79,6 +80,11 @@ To assosiate Customer Id , Customer Email and Customer additional params during 
     TrackierSDK.setUserAdditionalDetails(userAdditionalDetails)	
 ```
 
+## <a id="qs-sdk-signing"></a>SDK Signing
+```swift
+let config = TrackierSDKConfig(appToken: "xx-182a-4584-aca3-xx", env: TrackierSDKConfig.ENVIRONMENT_PRODUCTION)
+config.setAppSecret(secretId: "xxxx", secretKey: "xxx-xx")
+```
 
 
 ## <a id="qs-trackier-event"></a>Track Events
