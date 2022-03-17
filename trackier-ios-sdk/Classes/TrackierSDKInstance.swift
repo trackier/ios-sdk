@@ -81,18 +81,25 @@ class TrackierSDKInstance {
         return CacheManager.getInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME)
     }
 
-    private func setLastSessionTime(val: Int64){
+    private func setLastSessionTime(val: Int64) {
         CacheManager.setInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME, value: val)
     }
+    
+    private func makeWorkRequest(kind: String) -> TrackierWorkRequest {
+        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
+        wrk.installId = installId
+        wrk.installTime = installTime
+        wrk.deviceInfo = deviceInfo
+        wrk.secretId = self.config.getAppSecretId()
+        wrk.secretKey = self.config.getAppSecretKey()
+        return wrk
+    }
 
-    private  func trackInstall() {
+    private func trackInstall() {
         if (isInstallTracked()) {
             return
         }
-        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
-        wrk.deviceInfo = deviceInfo
-        wrk.installTime = installTime
+        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
         APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
@@ -109,11 +116,12 @@ class TrackierSDKInstance {
             Logger.warning(message: "Event sent before Install was tracked")
             return
         }
-        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_EVENT, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
-        wrk.installTime = self.installTime
+        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_EVENT)
+        wrk.customerId = customerId
+        wrk.customerEmail = customerEmail
+        wrk.customerOptionals = customerOptionals
+        wrk.organic = organic
         wrk.eventObj = event
-        wrk.deviceInfo = deviceInfo
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
         }
@@ -130,10 +138,7 @@ class TrackierSDKInstance {
         if (!isInstallTracked()) {
             return
         }
-        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_SESSION, appToken: self.appToken, mode: self.config.env)
-        wrk.installId = installId
-        wrk.deviceInfo = deviceInfo
-        wrk.installTime = self.installTime
+        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_SESSION)
         wrk.customerId = customerId
         wrk.customerEmail = customerEmail
         wrk.customerOptionals = customerOptionals
