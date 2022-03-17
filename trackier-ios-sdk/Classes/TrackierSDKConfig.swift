@@ -14,6 +14,8 @@ public class TrackierSDKConfig {
     
     var appToken: String
     var env: String
+    var secretId: String = ""
+    var secretKey: String = ""
 
     public init(appToken: String, env: String) {
         self.appToken = appToken
@@ -23,6 +25,19 @@ public class TrackierSDKConfig {
         } else {
             Logger.setLogLevel(level: Logger.LEVEL_DEBUG)
         }
+    }
+    
+    public func setAppSecret(secretId: String, secretKey: String) {
+        self.secretId = secretId
+        self.secretKey = secretKey
+    }
+    
+    func getAppSecretId() -> String {
+        return self.secretId
+    }
+    
+    func getAppSecretKey() -> String {
+        return self.secretKey
     }
 
     func setLogLevel(level: UInt) {

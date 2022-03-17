@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 class Utils {
     
@@ -58,6 +59,23 @@ class Utils {
         } else {
             return ""
         }
-        
+    }
+    
+    static func createSignature(message: String, key: String) -> String {
+        do {
+            let bytes = try CryptoSwift.HMAC(key: key, variant: .sha2(.sha256)).authenticate(message.bytes)
+            let data = Data(bytes)
+
+            return data.hexEncodedString()
+        } catch {
+            return ""
+        }
     }
 }
+
+extension Data {
+    func hexEncodedString() -> String {
+        return map { String(format: "%02hhx", $0) }.joined()
+    }
+}
+

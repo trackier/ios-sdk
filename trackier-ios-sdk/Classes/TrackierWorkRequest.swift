@@ -26,6 +26,9 @@ class TrackierWorkRequest {
     var customerOptionals: Dictionary<String, Any>? = nil
     var organic = false
     
+    var secretId: String = ""
+    var secretKey: String = ""
+    
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
         self.appToken = appToken
@@ -35,17 +38,24 @@ class TrackierWorkRequest {
     
     func getData() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
+        let installID = self.installId.lowercased()
+        let createdAt = Utils.getCurrentTime()
         dict["appKey"] = self.appToken
         dict["device"] = deviceInfo?.getDeviceInfo()
-        dict["createdAt"] = Utils.getCurrentTime()
+        dict["createdAt"] = createdAt
         dict["mode"] = self.mode
-        dict["installId"] = self.installId.lowercased()
+        dict["installId"] = installID
         dict["installTime"] = self.installTime
         dict["cuid"] = customerId
         dict["cmail"] = customerEmail
         dict["installTimeMicro"] = Utils.getUnixTime(time: self.installTime)
         if (customerOptionals != nil) {
             dict["opts"] = customerOptionals
+        }
+        if (self.secretKey.count > 10) {
+            dict["secretId"] = self.secretId
+            dict["sigv"] = "v1.0.0"
+            dict["signature"] = Utils.createSignature(message: installID+":"+createdAt+":"+self.secretId+":", key: self.secretKey)
         }
         dict["organic"] = organic
         return dict
