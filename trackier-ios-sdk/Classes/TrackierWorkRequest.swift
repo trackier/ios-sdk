@@ -26,8 +26,8 @@ class TrackierWorkRequest {
     var customerOptionals: Dictionary<String, Any>? = nil
     var organic = false
     
-    var secretId: String
-    var secretKey: String
+    var secretId: String = ""
+    var secretKey: String = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind

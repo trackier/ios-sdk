@@ -14,8 +14,8 @@ public class TrackierSDKConfig {
     
     var appToken: String
     var env: String
-    private var secretId: String = ""
-    private var secretKey: String = ""
+    var secretId: String = ""
+    var secretKey: String = ""
 
     public init(appToken: String, env: String) {
         self.appToken = appToken

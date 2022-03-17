@@ -63,7 +63,7 @@ class Utils {
     
     static func createSignature(message: String, key: String) -> String {
         do {
-            let bytes = try CryptoSwift.HMAC(key: key, variant: .sha256).authenticate(message.bytes)
+            let bytes = try CryptoSwift.HMAC(key: key, variant: .sha2(.sha256)).authenticate(message.bytes)
             let data = Data(bytes)
 
             return data.hexEncodedString()
