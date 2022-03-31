@@ -86,7 +86,7 @@ class TrackierSDKInstance {
     }
     
     private func makeWorkRequest(kind: String) -> TrackierWorkRequest {
-        let wrk = TrackierWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL, appToken: self.appToken, mode: self.config.env)
+        let wrk = TrackierWorkRequest(kind: kind, appToken: self.appToken, mode: self.config.env)
         wrk.installId = installId
         wrk.installTime = installTime
         wrk.deviceInfo = deviceInfo
