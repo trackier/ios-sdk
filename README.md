@@ -8,21 +8,22 @@
 
 ### Requirements
 
-* [Example](#qs-add-example)
+* [Quick start guide ](#qs-add-start-guide)
 * [Installation](#qs-installation)
 * [Integrate and Initialize the Trackier SDK](#qs-implement-sdk)
 * [Retrieve your dev key](#qs-retrieve-dev-key)
     * [Initialize the SDK](#qs-initialize-sdk)
     * [Associate User Info during initialization of sdk](#qs-add-user-info)
 * [SDK Signing](#qs-sdk-signing)
-* [Track Events](#qs-trackier-event)
+* [Events Tracking](#qs-trackier-event)
     * [Retrieve Event Id from dashboard](#qs-retrieve-event-id)
-    * [Events Tracking](#qs-track-simple-event)
-    * [Revenue Event](#qs-track-currency-event)
+    * [Built-in events Tracking](#qs-built-in-events-tracking)
+    * [Customs events Tracking](#qs-customs-events-tracking)
+    * [Revenue Event Tracking](#qs-revenue-event)
     * [Pass the custom params in events](#qs-add-custome-param-event)
 
 
-## <a id="qs-add-trackier-sdk"></a>Quick start guide
+## <a id="qs-add-start-guide"></a>Quick start guide
 
 We have created a example app for the Ios sdk integration. 
 
@@ -101,14 +102,14 @@ Screenshot[2]
 
 
 
-## <a id="qs-track-event"></a>Events Tracking
+## <a id="qs-trackier-event"></a>Events Tracking
 
 <a id="qs-retrieve-event-id"></a>Trackier events trackings enable to provides the insights into how to user interacts with your app. 
 Trackier sdk easily get that insights data from the app. Just follow with the simple events integration process
 
 Trackier provides the `Built-in events` and `Customs events` on the Trackier panel.
 
-#### **Built-in Events** - 
+#### <a id="qs-built-in-events-tracking"></a>**Built-in Events** - 
 
 Predefined events are the list of constants events which already been created on the dashboard. 
 
@@ -170,7 +171,7 @@ Screenshot[4]
 <img width="1000" alt="Screenshot 2022-07-04 at 2 30 49 PM" src="https://user-images.githubusercontent.com/16884982/177121084-a9056773-f102-433e-b181-f2c67bcc3473.png">
 
 
-#### **Customs Events** - 
+#### <a id="qs-customs-events-tracking"></a> **Customs Events** - 
 
 Customs events are created by user as per their required business logic. 
 
@@ -223,7 +224,7 @@ Screenshot[6]
 <img width="1000" alt="Screenshot 2022-07-04 at 3 29 36 PM" src="https://user-images.githubusercontent.com/16884982/177131719-4b02d09e-efce-49db-9464-f8346aa24408.png">
 
 
-### <a id="qs-track-event-with-currencey"></a>Revenue Event Tracking
+### <a id="qs-revenue-event"></a>Revenue Event Tracking
 
 Trackier allow user to pass the revenue data which is generated from the app through Revenue events. It is mainly used to keeping record of generating revenue from the app and also you can pass currency as well.
 
