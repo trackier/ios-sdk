@@ -8,7 +8,7 @@
 
 ### Requirements
 
-* [Example](#qs-add-example)
+* [Quick start guide ](#qs-add-trackier-sdk)
 * [Installation](#qs-installation)
 * [Integrate and Initialize the Trackier SDK](#qs-implement-sdk)
 * [Retrieve your dev key](#qs-retrieve-dev-key)
