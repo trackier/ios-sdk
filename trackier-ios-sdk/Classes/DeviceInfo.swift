@@ -16,7 +16,7 @@ class DeviceInfo {
     var model = UIDevice.current.model
     var batteryLevel = UIDevice.current.batteryLevel
     var isBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
-    var idfv=UIDevice.current.identifierForVendor?.uuidString
+    var idfv = UIDevice.current.identifierForVendor?.uuidString
     
     public func getDeviceInfo() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
