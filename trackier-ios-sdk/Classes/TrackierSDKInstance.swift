@@ -156,5 +156,5 @@ class TrackierSDKInstance {
         }
     }
     
-    private 
+
 }
