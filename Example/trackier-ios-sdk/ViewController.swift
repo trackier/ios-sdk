@@ -14,22 +14,73 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let event = TrackierEvent(id: TrackierEvent.PURCHASE)
-        event.addEventValue(prop: "purchaseId", val: "sldfjdslfsfsdf")
-        event.addEventValue(prop: "purchasePnr", val: "sd2-3dslk329032-23")
-        event.setRevenue(revenue: 120.5, currency: "INR")
-        event.param1 = "this is a param1 value"
-        DispatchQueue.global().async {
-            sleep(1)
-            TrackierSDK.trackEvent(event: event)
+            eventsTracking()
         }
     }
+
+func userDetails(){
+    
+    let event = TrackierEvent(id: TrackierEvent.LOGIN)
+    
+    /*Passing the UserId and User EmailId Data */
+    event.setUserId("XXXXXXXX"); //Pass the UserId values here
+    event.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
+    
+    /*Passing the custom value in the events */
+    event.addEventValue("customeValue1","XXXXX");
+    event.addEventValue("customeValue2","XXXXX");
+    
+    
+    DispatchQueue.global().async {
+        sleep(1)
+        TrackierSDK.trackEvent(event: event)
+}
+  }
+
+func eventsRevenueTracking(){
+    
+    let event = TrackierEvent(id: TrackierEvent.LOGIN)
+    
+    //Passing the revenue events be like below example
+    event.revenue = 10.0; //Pass your generated revenue here.
+    event.currency = "INR";  //Pass your currency here.
+    event.orderId = "orderID";
+    event.param1 = "param1";
+    event.param2 = "param2";
+    event.setEventValue("ev1", "eventValue1");
+    event.setEventValue("ev2", 1);
+    DispatchQueue.global().async {
+        sleep(1)
+        TrackierSDK.trackEvent(event: event)
+}
+    
+}
+
+
+func eventsTracking(){
+    let event = TrackierEvent(id:"sEMWSCTXeu")
+    
+    /*Below are the function for the adding the extra data,
+      You can add the extra data like login details of user or anything you need.
+      We have 10 params to add data, Below 5 are mentioned*/
+    
+    event.param1 = "this is a param1 value"
+    event.param2 = "this is a param2 value"
+    event.param3 = "this is a param3 value"
+    event.param4 = "this is a param4 value"
+    event.param5 = "this is a param5 value"
+    DispatchQueue.global().async {
+        sleep(1)
+        TrackierSDK.trackEvent(event: event)
+}
+    
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
-}
 
 extension UIDevice {
     var modelName: String {
@@ -42,5 +93,6 @@ extension UIDevice {
         }
         return identifier
     }
+
 }
 

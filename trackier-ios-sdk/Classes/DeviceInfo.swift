@@ -16,6 +16,7 @@ class DeviceInfo {
     var model = UIDevice.current.model
     var batteryLevel = UIDevice.current.batteryLevel
     var isBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
+    var idfv=UIDevice.current.identifierForVendor?.uuidString
     
     public func getDeviceInfo() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
@@ -48,6 +49,7 @@ class DeviceInfo {
         // TODO: screenSize,screenDensity?
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
+        dict["idfv"] = idfv
         if (Locale.current.languageCode != nil) {
              dict["locale"] = Locale.current.languageCode!
         }       

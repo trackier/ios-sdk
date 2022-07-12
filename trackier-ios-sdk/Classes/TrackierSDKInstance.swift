@@ -155,4 +155,6 @@ class TrackierSDKInstance {
             self.setLastSessionTime(val: currentSessionTime)
         }
     }
+    
+    private 
 }
