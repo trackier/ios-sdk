@@ -97,6 +97,7 @@ class TrackierSDKInstance {
         wrk.deviceInfo = deviceInfo
         wrk.secretId = self.config.getAppSecretId()
         wrk.secretKey = self.config.getAppSecretKey()
+        wrk.sdkt = self.config.getSDKType()
         return wrk
     }
 
