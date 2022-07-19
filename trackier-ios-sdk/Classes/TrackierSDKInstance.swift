@@ -88,10 +88,8 @@ class TrackierSDKInstance {
     private func makeWorkRequest(kind: String) -> TrackierWorkRequest {
         let wrk = TrackierWorkRequest(kind: kind, appToken: self.appToken, mode: self.config.env)
         if (self.config.getSDKType() != "ios") {
-                   deviceInfo.sdkVersion = self.config.getSDKVersion()
-                } else {
-                   deviceInfo.sdkVersion = Constants.SDK_VERSION
-                }
+           deviceInfo.sdkVersion = self.config.getSDKVersion()
+        }
         wrk.installId = installId
         wrk.installTime = installTime
         wrk.deviceInfo = deviceInfo

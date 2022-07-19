@@ -17,7 +17,7 @@ class DeviceInfo {
     var batteryLevel = UIDevice.current.batteryLevel
     var isBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
     var idfv = UIDevice.current.identifierForVendor?.uuidString
-    var sdkVersion = ""
+    var sdkVersion = Constants.SDK_VERSION
     
     public func getDeviceInfo() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
@@ -40,7 +40,7 @@ class DeviceInfo {
         dict["packageName"] = buildInfo?["CFBundleIdentifier"]
         dict["appVersion"] = buildInfo?["CFBundleShortVersionString"]
         dict["appNumericVersion"] = buildInfo?["CFBundleNumericVersion"]
-        dict["sdkVersion"] = Constants.SDK_VERSION
+        dict["sdkVersion"] = sdkVersion
         dict["language"] = Locale.current.languageCode
         dict["country"] = NSLocale.current.regionCode
         dict["timezone"] = TimeZone.current.identifier
