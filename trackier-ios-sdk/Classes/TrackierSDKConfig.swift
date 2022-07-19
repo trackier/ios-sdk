@@ -17,7 +17,7 @@ public class TrackierSDKConfig {
     var secretId: String = ""
     var secretKey: String = ""
     var sdkt: String = "ios"
-    private var sdkVersion: String = Constants.SDK_VERSION
+    var sdkVersion: String = Constants.SDK_VERSION
 
     public init(appToken: String, env: String) {
         self.appToken = appToken
