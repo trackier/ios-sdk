@@ -50,7 +50,7 @@ public class TrackierSDKConfig {
         return self.sdkt
     }
     
-    func setSDKype(sdkType: String){
+    public func setSDKype(sdkType: String){
         self.sdkt = sdkType
     }
     
@@ -58,7 +58,7 @@ public class TrackierSDKConfig {
        return self.sdkVersion
     }
     
-    func setSDKVersion(sdkVersion: String) {
+    public func setSDKVersion(sdkVersion: String) {
         self.sdkVersion = sdkVersion
     }
     
