@@ -16,6 +16,8 @@ public class TrackierSDKConfig {
     var env: String
     var secretId: String = ""
     var secretKey: String = ""
+    var sdkt: String = "ios"
+    var sdkVersion: String = Constants.SDK_VERSION
 
     public init(appToken: String, env: String) {
         self.appToken = appToken
@@ -43,4 +45,22 @@ public class TrackierSDKConfig {
     func setLogLevel(level: UInt) {
         Logger.setLogLevel(level: level)
     }
+    
+    func getSDKType() -> String {
+        return self.sdkt
+    }
+    
+    public func setSDKType(sdkType: String) {
+        self.sdkt = sdkType
+    }
+    
+    func getSDKVersion() -> String {
+       return self.sdkVersion
+    }
+    
+    public func setSDKVersion(sdkVersion: String) {
+        self.sdkVersion = sdkVersion
+    }
+    
+  
 }

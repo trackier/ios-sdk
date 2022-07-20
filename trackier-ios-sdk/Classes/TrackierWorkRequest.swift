@@ -25,9 +25,9 @@ class TrackierWorkRequest {
     var customerEmail = ""
     var customerOptionals: Dictionary<String, Any>? = nil
     var organic = false
-    
     var secretId: String = ""
     var secretKey: String = ""
+    var sdkt = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -58,6 +58,7 @@ class TrackierWorkRequest {
             dict["signature"] = Utils.createSignature(message: installID+":"+createdAt+":"+self.secretId+":", key: self.secretKey)
         }
         dict["organic"] = organic
+        dict["sdkt"] = sdkt
         return dict
     }
     

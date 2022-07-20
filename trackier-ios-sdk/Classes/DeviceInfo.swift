@@ -16,6 +16,8 @@ class DeviceInfo {
     var model = UIDevice.current.model
     var batteryLevel = UIDevice.current.batteryLevel
     var isBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
+    var idfv = UIDevice.current.identifierForVendor?.uuidString
+    var sdkVersion = Constants.SDK_VERSION
     
     public func getDeviceInfo() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
@@ -38,7 +40,7 @@ class DeviceInfo {
         dict["packageName"] = buildInfo?["CFBundleIdentifier"]
         dict["appVersion"] = buildInfo?["CFBundleShortVersionString"]
         dict["appNumericVersion"] = buildInfo?["CFBundleNumericVersion"]
-        dict["sdkVersion"] = Constants.SDK_VERSION
+        dict["sdkVersion"] = sdkVersion
         dict["language"] = Locale.current.languageCode
         dict["country"] = NSLocale.current.regionCode
         dict["timezone"] = TimeZone.current.identifier
@@ -48,6 +50,7 @@ class DeviceInfo {
         // TODO: screenSize,screenDensity?
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
+        dict["idfv"] = idfv
         if (Locale.current.languageCode != nil) {
              dict["locale"] = Locale.current.languageCode!
         }       

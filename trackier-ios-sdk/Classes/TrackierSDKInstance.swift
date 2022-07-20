@@ -87,11 +87,15 @@ class TrackierSDKInstance {
     
     private func makeWorkRequest(kind: String) -> TrackierWorkRequest {
         let wrk = TrackierWorkRequest(kind: kind, appToken: self.appToken, mode: self.config.env)
+        if (self.config.getSDKType() != "ios") {
+           deviceInfo.sdkVersion = self.config.getSDKVersion()
+        }
         wrk.installId = installId
         wrk.installTime = installTime
         wrk.deviceInfo = deviceInfo
         wrk.secretId = self.config.getAppSecretId()
         wrk.secretKey = self.config.getAppSecretKey()
+        wrk.sdkt = self.config.getSDKType()
         return wrk
     }
 
@@ -155,4 +159,6 @@ class TrackierSDKInstance {
             self.setLastSessionTime(val: currentSessionTime)
         }
     }
+    
+
 }
