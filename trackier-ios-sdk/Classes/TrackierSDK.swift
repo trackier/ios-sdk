@@ -58,7 +58,6 @@ public class TrackierSDK {
     
     public static func setUserID(userId: String) {
         shared.instance.customerId = userId
-        
     }
     
     public static func setUserEmail(userEmail: String) {

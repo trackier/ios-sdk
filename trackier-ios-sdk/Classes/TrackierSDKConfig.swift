@@ -61,6 +61,4 @@ public class TrackierSDKConfig {
     public func setSDKVersion(sdkVersion: String) {
         self.sdkVersion = sdkVersion
     }
-    
-  
 }
