@@ -65,8 +65,8 @@ To assosiate Customer Id , Customer Email and Customer additional params during 
 ```swift
     // Override point for customization after application launch.
     let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT)
-    TrackierSDK.setUserId(XXXXXXXX)
-    TrackierSDK.setUserEmail("abc@gmail.com")
+    TrackierSDK.setUserID(userId: "XXXXXXXX")
+    TrackierSDK.setUserEmail(userEmail: "abc@gmail.com")
     TrackierSDK.initialize(config: config)
 ```
 
