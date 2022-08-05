@@ -15,9 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         userDetails();
-            
-        }
     }
+}
+
 func userDetails(){
     
     let event = TrackierEvent(id: TrackierEvent.LOGIN)
@@ -25,8 +25,8 @@ func userDetails(){
     /*Passing the UserId and User EmailId Data */
     TrackierSDK.setUserID(userId: "2998329") //Pass the UserId values here
     TrackierSDK.setUserEmail(userEmail: "abc@gmail.com"); //Pass the user email id in the argument.
-    TrackierSDK.setUserName(userName: "Sanu")
-    TrackierSDK.setUserPhone(userPhone: "8130300721")
+    TrackierSDK.setUserName(userName: "abc")
+    TrackierSDK.setUserPhone(userPhone: "xxxxxxxxxx")
     event.setDiscount = 3.0;
     event.setCouponCode = "test";
     /*Passing the custom value in the events */
@@ -37,10 +37,26 @@ func userDetails(){
     DispatchQueue.global().async {
         sleep(1)
         TrackierSDK.trackEvent(event: event)
+    }
 }
-  }
 
+func eventsRevenueTracking(){
 
+    let event = TrackierEvent(id: TrackierEvent.LOGIN)
+
+    //Passing the revenue events be like below example
+    event.setRevenue(revenue: 10.0, currency: "INR"); //Pass your generated revenue here.
+    event.currency = "INR";  //Pass your currency here.
+    event.orderId = "orderID";
+    event.param1 = "param1";
+    event.param2 = "param2";
+    event.addEventValue(prop: "customeValue1", val: "test1");
+    event.addEventValue(prop: "customeValue2", val: "XXXXX");
+    DispatchQueue.global().async {
+        sleep(1)
+        TrackierSDK.trackEvent(event: event)
+    }
+}
 
 func eventsTracking(){
     let event = TrackierEvent(id:"sEMWSCTXeu")
@@ -57,12 +73,9 @@ func eventsTracking(){
     DispatchQueue.global().async {
         sleep(1)
         TrackierSDK.trackEvent(event: event)
+    }
 }
     
-}
-
-
-
 extension UIDevice {
     var modelName: String {
         var systemInfo = utsname()
@@ -74,6 +87,5 @@ extension UIDevice {
         }
         return identifier
     }
-
 }
 
