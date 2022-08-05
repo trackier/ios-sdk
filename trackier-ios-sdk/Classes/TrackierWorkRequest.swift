@@ -28,6 +28,8 @@ class TrackierWorkRequest {
     var secretId: String = ""
     var secretKey: String = ""
     var sdkt = ""
+    var customerPhone = ""
+    var customerName = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -59,6 +61,8 @@ class TrackierWorkRequest {
         }
         dict["organic"] = organic
         dict["sdkt"] = sdkt
+        dict["cphone"] = customerPhone
+        dict["cname"] = customerName
         return dict
     }
     

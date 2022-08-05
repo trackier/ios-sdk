@@ -71,4 +71,12 @@ public class TrackierSDK {
     public static func trackAsOrganic(organic: Bool) {
         shared.instance.organic = organic
     }
+    
+    public static func setUserPhone(userPhone: String){
+        shared.instance.customerPhone = userPhone
+    }
+    
+    public static func setUserName(userName: String){
+        shared.instance.customerName = userName
+    }
 }

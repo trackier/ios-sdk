@@ -28,6 +28,8 @@ public class TrackierEvent {
     public var param10: String? = ""
 
     var revenue: Float64? = 0.0
+    public var setDiscount: Float64? = 0.0
+    public var setCouponCode: String? = ""
     var ev = [String: Any]()
     
     public func addEventValue(prop: String, val: Any) {
@@ -57,6 +59,8 @@ public class TrackierEvent {
         dict["param10"] = self.param10
         dict["currency"] = self.currency
         dict["revenue"] = self.revenue
+        dict["discount"] = self.setDiscount
+        dict["c_code"] = self.setCouponCode
         dict["ev"] = self.ev
         return dict
     }

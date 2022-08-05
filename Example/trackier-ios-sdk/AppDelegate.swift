@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          * In First argument, you need to pass the Trackier SDK api key
         * In second argument, you need to pass the environment which can be either "development", "production" or "testing". */
         
-        let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
+        let config = TrackierSDKConfig(appToken: "0455721b-33c5-4c9f-805e-596d818d910a", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
         TrackierSDK.initialize(config: config)
         return true
     }

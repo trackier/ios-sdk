@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        userDetails();
             
         }
     }
@@ -22,12 +23,15 @@ func userDetails(){
     let event = TrackierEvent(id: TrackierEvent.LOGIN)
     
     /*Passing the UserId and User EmailId Data */
-    event.setUserId("XXXXXXXX"); //Pass the UserId values here
-    event.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
-    
+    TrackierSDK.setUserID(userId: "2998329") //Pass the UserId values here
+    TrackierSDK.setUserEmail(userEmail: "abc@gmail.com"); //Pass the user email id in the argument.
+    TrackierSDK.setUserName(userName: "Sanu")
+    TrackierSDK.setUserPhone(userPhone: "8130300721")
+    event.setDiscount = 3.0;
+    event.setCouponCode = "test";
     /*Passing the custom value in the events */
-    event.addEventValue("customeValue1","XXXXX");
-    event.addEventValue("customeValue2","XXXXX");
+    event.addEventValue(prop: "customeValue1", val: "test1");
+    event.addEventValue(prop: "customeValue2", val: "XXXXX");
     
     
     DispatchQueue.global().async {
@@ -36,24 +40,6 @@ func userDetails(){
 }
   }
 
-func eventsRevenueTracking(){
-    
-    let event = TrackierEvent(id: TrackierEvent.LOGIN)
-    
-    //Passing the revenue events be like below example
-    event.revenue = 10.0; //Pass your generated revenue here.
-    event.currency = "INR";  //Pass your currency here.
-    event.orderId = "orderID";
-    event.param1 = "param1";
-    event.param2 = "param2";
-    event.setEventValue("ev1", "eventValue1");
-    event.setEventValue("ev2", 1);
-    DispatchQueue.global().async {
-        sleep(1)
-        TrackierSDK.trackEvent(event: event)
-}
-    
-}
 
 
 func eventsTracking(){
@@ -75,11 +61,6 @@ func eventsTracking(){
     
 }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-    }
 
 
 extension UIDevice {
