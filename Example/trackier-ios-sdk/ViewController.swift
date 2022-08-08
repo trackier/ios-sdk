@@ -27,8 +27,8 @@ func userDetails(){
     TrackierSDK.setUserEmail(userEmail: "abc@gmail.com"); //Pass the user email id in the argument.
     TrackierSDK.setUserName(userName: "abc")
     TrackierSDK.setUserPhone(userPhone: "xxxxxxxxxx")
-    event.setDiscount = 3.0;
-    event.setCouponCode = "test";
+    event.setDiscount(discount: 3.0)
+    event.setCouponCode(couponCode: "test2")
     /*Passing the custom value in the events */
     event.addEventValue(prop: "customeValue1", val: "test1");
     event.addEventValue(prop: "customeValue2", val: "XXXXX");

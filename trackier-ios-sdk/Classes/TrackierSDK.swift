@@ -72,11 +72,11 @@ public class TrackierSDK {
         shared.instance.organic = organic
     }
     
-    public static func setUserPhone(userPhone: String){
+    public static func setUserPhone(userPhone: String) {
         shared.instance.customerPhone = userPhone
     }
     
-    public static func setUserName(userName: String){
+    public static func setUserName(userName: String) {
         shared.instance.customerName = userName
     }
 }
