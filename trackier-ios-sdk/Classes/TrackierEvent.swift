@@ -28,6 +28,8 @@ public class TrackierEvent {
     public var param10: String? = ""
 
     var revenue: Float64? = 0.0
+    var discount: Float64? = 0.0
+    var couponCode: String? = ""
     var ev = [String: Any]()
     
     public func addEventValue(prop: String, val: Any) {
@@ -39,6 +41,14 @@ public class TrackierEvent {
         if currency.count == 3 {
             self.currency = currency
         }
+    }
+    
+    public func setDiscount(discount: Float64) {
+        self.discount = discount
+    }
+    
+    public func setCouponCode(couponCode: String) {
+        self.couponCode = couponCode
     }
     
     func getHashMap() -> Dictionary<String, Any> {
@@ -57,6 +67,8 @@ public class TrackierEvent {
         dict["param10"] = self.param10
         dict["currency"] = self.currency
         dict["revenue"] = self.revenue
+        dict["discount"] = self.discount
+        dict["c_code"] = self.couponCode
         dict["ev"] = self.ev
         return dict
     }

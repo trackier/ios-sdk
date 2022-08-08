@@ -27,6 +27,8 @@ class TrackierSDKInstance {
     var customerEmail = ""
     var customerOptionals: Dictionary<String, Any>? = nil
     var organic = false
+    var customerPhone = ""
+    var customerName = ""
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -125,6 +127,8 @@ class TrackierSDKInstance {
         wrk.customerEmail = customerEmail
         wrk.customerOptionals = customerOptionals
         wrk.organic = organic
+        wrk.customerName = customerName
+        wrk.customerPhone = customerPhone
         wrk.eventObj = event
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
@@ -147,6 +151,8 @@ class TrackierSDKInstance {
         wrk.customerEmail = customerEmail
         wrk.customerOptionals = customerOptionals
         wrk.organic = organic
+        wrk.customerName = customerName
+        wrk.customerPhone = customerPhone
         let lastSessionTime = getLastSessionTime()
         wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)
