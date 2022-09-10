@@ -20,6 +20,7 @@
     * [Track Event](#qs-track-simple-event)
     * [Track with Currency & Revenue Event](#qs-track-currency-event)
     * [Add custom params with event](#qs-add-custome-param-event)
+* [Deeplink App Setup](#qs-deeplink)
 
 ## <a id="qs-add-example"></a>Example
 
@@ -131,6 +132,31 @@ config.setAppSecret(secretId: "xxxx", secretKey: "xxx-xx")
     }
 ```
 
-
+## <a id="qs-deeplink"></a>Deeplink App Setup
     
+There is a Universal Links iOS app opening method which needs to be implemented for deeplink to work. This method directly opens the mobile app at default activity. Universal links take the format of normal web links for example. https://yourbrand.com or https://yourbrand.u9ilnk.me
 
+Follow the steps for Universal Links
+
+**a. Getting the app bundle ID and prefix ID**
+1. Log into your Apple Developer Account.
+2. On the left-hand menu, select Certificates, IDs & Profiles.
+3. Under Identifiers, select App IDs.
+4. Click the relevant app.
+5. Copy the prefix ID and app bundle ID and insert in app settings page in Trackier MMP.
+
+
+
+**b. Configure mobile apps to register associated domains**
+
+Configuring mobile apps to register approved domains takes place inside Xcode. It requires the unilink subdomain that you can get from app setting page in Trackier MMP.
+
+1. Follow this [iOS instructions](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
+2. Get the unilink subdomain from app settings page in Trackier MMP.
+3. In Xcode, click on your project. Click on the project target.
+4. Switch to Capabilities tab.
+5. Turn on Associated Domain.
+6. Add the unilink subdomain that you got from Trackier MMP.
+7. The format is applinks:subdomain.unilink.me
+
+To associate a domain with your app, you need to have the associated domain file on your domain and the appropriate entitlement in your app. Once the unilink is created, Trackier hosts the apple-app-site-association file. When a user installs your app, the system attempts to download the associated domain file and verify the domains in your Associated Domains Entitlement.
