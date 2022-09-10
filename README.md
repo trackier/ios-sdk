@@ -145,7 +145,7 @@ Follow the steps for Universal Links
 4. Click the relevant app.
 5. Copy the prefix ID and app bundle ID and insert in app settings page in Trackier MMP.
 
-
+<img width="1255" alt="Screenshot 2022-09-10 at 3 44 00 PM" src="https://user-images.githubusercontent.com/4982023/189482319-e091a673-467e-4d50-bb04-9b478d33766a.png">
 
 **b. Configure mobile apps to register associated domains**
 
