@@ -12,6 +12,7 @@ class TrackierWorkRequest {
     static let KIND_EVENT = "event"
     static let KIND_SESSION = "session"
     static let KIND_UNKNOWN = "unknown"
+    static let KIND_Token = "deviceToken"
     
     var kind: String
     var installId: String = ""
@@ -30,6 +31,7 @@ class TrackierWorkRequest {
     var sdkt = ""
     var customerPhone = ""
     var customerName = ""
+    var deviceToken = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -75,6 +77,15 @@ class TrackierWorkRequest {
     func getSessionData() -> Dictionary<String, Any> {
         var dict = getData()
         dict["lastSessionTime"] = lastSessionTime
+        return dict
+    }
+    
+    func getDeviceToken() -> Dictionary<String, Any> {
+        var dict = Dictionary<String, Any>()
+        let installID = self.installId.lowercased()
+        dict["deviceToken"] = self.deviceToken
+        dict["appKey"] = self.appToken
+        dict["installId"] = installID
         return dict
     }
 }

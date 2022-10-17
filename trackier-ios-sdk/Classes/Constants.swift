@@ -8,13 +8,14 @@
 import Foundation
 
 class Constants {
-    static let SDK_VERSION = "1.6.28"
+    static let SDK_VERSION = "1.6.29"
     static let USER_AGENT = "com.trackier.sdk:ios-sdk:" + SDK_VERSION
     static let API_VERSION = "v1"
     static let BASE_URL = "https://events.trackier.io/" + API_VERSION
     static let INSTALL_URL = BASE_URL + "/install"
     static let EVENTS_URL = BASE_URL + "/event"
     static let SESSIONS_URL = BASE_URL + "/session"
+    static let TOKEN_URL = BASE_URL + "/device-token"
 
     static let LOG_TAG = "com.trackier.sdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"

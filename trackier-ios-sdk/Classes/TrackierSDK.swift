@@ -79,4 +79,8 @@ public class TrackierSDK {
     public static func setUserName(userName: String) {
         shared.instance.customerName = userName
     }
+    
+    public static func setDeviceToken(deviceToken: String) {
+        shared.instance.deviceToken = deviceToken
+    }
 }
