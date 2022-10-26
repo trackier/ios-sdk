@@ -108,6 +108,12 @@ class TrackierSDKInstance {
             return
         }
         let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
+        wrk.customerId = customerId
+        wrk.customerEmail = customerEmail
+        wrk.customerOptionals = customerOptionals
+        wrk.organic = organic
+        wrk.customerName = customerName
+        wrk.customerPhone = customerPhone
         APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
