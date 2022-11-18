@@ -65,7 +65,7 @@ public func TrackEvent(eventId: UnsafePointer<CChar>?, eventParam: UnsafePointer
     TrackierSDK.trackEvent(event: event)
 }
 
-public struct EventsExtraParam: Decodable {
+struct EventsExtraParam: Decodable {
     let orderId: String
     let discount: String
     let revenue: String
