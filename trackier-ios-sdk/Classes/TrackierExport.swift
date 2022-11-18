@@ -83,7 +83,7 @@ struct EventsExtraParam: Decodable {
     let param10: String
 }
 
-public struct InitData: Decodable {
+struct InitData: Decodable {
     let appKey: String
     let env: String
     let setSDKVersion: String
