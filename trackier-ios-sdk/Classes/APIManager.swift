@@ -42,4 +42,12 @@ class APIManager: NSObject {
             break;
         }
     }
+    
+    @available(iOS 13.0, *)
+    static func doWorkSession(workRequest: TrackierWorkRequest) async throws -> Data {
+        let body = workRequest.getSessionData()
+        let jsonData = Utils.convertDictToJSON(data: body)
+        Logger.debug(message: "Sending session request. Body is: \(jsonData)")
+        return try await APIService.postAsync(uri: Constants.SESSIONS_URL, body:body, headers: headers)
+    }
 }

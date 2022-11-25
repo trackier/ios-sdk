@@ -7,6 +7,7 @@
 
 import Foundation
 import os
+import Alamofire
 
 class TrackierSDKInstance {
     
@@ -42,10 +43,11 @@ class TrackierSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
-
         DispatchQueue.global().async {
             self.trackInstall()
-            self.trackSession()
+            if #available(iOS 13.0, *) {
+                self.trackSession()
+            }
         }
     }
 
@@ -135,6 +137,7 @@ class TrackierSDKInstance {
         }
     }
     
+    @available(iOS 13.0, *)
     func trackSession() {
         if (!isEnabled) {
             Logger.warning(message: "SDK Not Enabled")
@@ -161,10 +164,14 @@ class TrackierSDKInstance {
             return
         }
         DispatchQueue.global().async {
-            APIManager.doWork(workRequest: wrk)
-            self.setLastSessionTime(val: currentSessionTime)
+            Task {
+                let resData = try await APIManager.doWorkSession(workRequest: wrk)
+                let strResData = String(decoding: resData, as: UTF8.self)
+                let res = try! JSONDecoder().decode(DataResponse.self, from: strResData.data(using: .utf8)!)
+                if (res.success == true) {
+                    self.setLastSessionTime(val: currentSessionTime)
+                }
+            }
         }
     }
-    
-
 }
