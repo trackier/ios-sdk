@@ -38,7 +38,7 @@ class APIService {
                     continuation.resume(throwing: err)
                     return
                 }
-                fatalError("should not get here")
+                fatalError("unhandled request edge case")
             }
         }
     }
