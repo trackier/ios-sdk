@@ -168,7 +168,7 @@ class TrackierSDKInstance {
                 let resData = try await APIManager.doWorkSession(workRequest: wrk)
                 let strResData = String(decoding: resData, as: UTF8.self)
                 let res = try! JSONDecoder().decode(DataResponse.self, from: strResData.data(using: .utf8)!)
-                if(res.success == true){
+                if (res.success == true) {
                     self.setLastSessionTime(val: currentSessionTime)
                 }
             }
