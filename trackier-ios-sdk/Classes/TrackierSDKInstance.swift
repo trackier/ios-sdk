@@ -180,6 +180,4 @@ class TrackierSDKInstance {
             APIManager.doWork(workRequest: wrk)
         }
     }
-    
-
 }
