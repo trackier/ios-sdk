@@ -47,7 +47,9 @@ public class TrackierSDK {
     }
     
     public static func trackSession() {
-        shared.instance.trackSession()
+        if #available(iOS 13.0, *) {
+            shared.instance.trackSession()
+        }
     }
     
     public static func setMinSessionDuration(val: UInt64) {
