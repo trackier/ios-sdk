@@ -47,7 +47,6 @@ class TrackierSDKInstance {
         DispatchQueue.global().async {
             self.trackInstall()
             self.trackSession()
-            self.deviceTokenApns()
         }
     }
 
