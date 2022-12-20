@@ -30,4 +30,5 @@ class Constants {
 
     static let DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     static let UNKNOWN_EVENT = "unknown"
+    static let CACHE_DEVICE_TOKEN = "deviceToken"
 }
