@@ -81,6 +81,11 @@ public class TrackierSDK {
     }
     
     public static func setDeviceToken(deviceToken: String) {
+        // get the token from the cache
+        // compare the token, if it is different
+
+        // store this in the cache
         shared.instance.deviceToken = deviceToken
+        // send token to the server
     }
 }
