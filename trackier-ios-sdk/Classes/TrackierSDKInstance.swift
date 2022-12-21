@@ -30,6 +30,7 @@ class TrackierSDKInstance {
     var organic = false
     var customerPhone = ""
     var customerName = ""
+    var deviceToken = ""
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -108,6 +109,12 @@ class TrackierSDKInstance {
             return
         }
         let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
+        wrk.customerId = customerId
+        wrk.customerEmail = customerEmail
+        wrk.customerOptionals = customerOptionals
+        wrk.organic = organic
+        wrk.customerName = customerName
+        wrk.customerPhone = customerPhone
         APIManager.doWork(workRequest: wrk)
         setInstallTracked()
     }
@@ -172,6 +179,14 @@ class TrackierSDKInstance {
                     self.setLastSessionTime(val: currentSessionTime)
                 }
             }
+        }
+    }
+    
+    func deviceTokenApns() {
+        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_Token)
+        wrk.deviceToken = deviceToken
+        DispatchQueue.global().async {
+            APIManager.doWork(workRequest: wrk)
         }
     }
 }

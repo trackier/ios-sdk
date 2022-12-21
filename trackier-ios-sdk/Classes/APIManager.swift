@@ -36,6 +36,12 @@ class APIManager: NSObject {
             Logger.debug(message: "Sending session request. Body is: \(jsonData)")
             APIService.post(uri: Constants.SESSIONS_URL, body: body, headers: headers)
             break;
+        case TrackierWorkRequest.KIND_Token:
+            let body = workRequest.getDeviceToken()
+            let jsonData = Utils.convertDictToJSON(data: body)
+            Logger.debug(message: "Sending token request. Body is: \(jsonData)")
+            APIService.post(uri: Constants.TOKEN_URL, body: body, headers: headers)
+            break;
         case TrackierWorkRequest.KIND_UNKNOWN:
             fallthrough
         default:
