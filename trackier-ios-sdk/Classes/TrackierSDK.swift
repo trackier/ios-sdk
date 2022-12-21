@@ -81,11 +81,11 @@ public class TrackierSDK {
     }
     
     public static func setDeviceToken(deviceToken: String) {
-        let getCacheToken = CacheManager.getString(key: Constants.CACHE_DEVICE_TOKEN)
+        let getCacheToken = CacheManager.getString(key: Constants.SHARED_PREF_DEVICE_TOKEN)
         if (!getCacheToken.elementsEqual(deviceToken)) {
             shared.instance.deviceToken = deviceToken
             shared.instance.deviceTokenApns()
-            CacheManager.setString(key: Constants.CACHE_DEVICE_TOKEN, value: deviceToken)
+            CacheManager.setString(key: Constants.SHARED_PREF_DEVICE_TOKEN, value: deviceToken)
         }
     }
 }
