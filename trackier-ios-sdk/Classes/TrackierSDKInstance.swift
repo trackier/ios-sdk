@@ -46,6 +46,10 @@ class TrackierSDKInstance {
         self.installTime = getInstallTime()
         DispatchQueue.global().async {
             self.trackInstall()
+            let dl = self.config.getDeeplinkListerner()
+            if dl != nil {
+                dl.onDeepLinking(obj)
+            }
             if #available(iOS 13.0, *) {
                 self.trackSession()
             }
