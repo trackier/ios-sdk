@@ -99,15 +99,8 @@ public class TrackierSDK {
                     //print("Coneversion VALUE --  \(error.localizedDescription)")
                 }
             }
-        } else {
-            if #available(iOS 11.3, *) {
-                if #available(iOS 14.0, *) {
-                    SKAdNetwork.updateConversionValue(conversionValue)
-                } else {
-                    // Fallback on earlier versions
-                }
-            } else {
-            }
+        } else if #available(iOS 11.3, *) && #available(iOS 14.0, *) {
+            SKAdNetwork.updateConversionValue(conversionValue)
         }
     }
 }
