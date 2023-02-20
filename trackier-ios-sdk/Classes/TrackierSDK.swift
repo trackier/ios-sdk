@@ -7,6 +7,7 @@
 
 import Foundation
 import os
+import StoreKit
 
 public class TrackierSDK {
     private var isInitialized = false
@@ -88,6 +89,26 @@ public class TrackierSDK {
             shared.instance.deviceToken = deviceToken
             shared.instance.deviceTokenApns()
             CacheManager.setString(key: Constants.SHARED_PREF_DEVICE_TOKEN, value: deviceToken)
+        }
+    }
+    
+    public func updatePostbackConversion(conversionValue: Int) {
+        if #available(iOS 15.4, *) {
+            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                if error != nil {
+                    //print("Coneversion VALUE --  \(error.localizedDescription)")
+                }
+            }
+        } else {
+            if #available(iOS 11.3, *) {
+                if #available(iOS 14.0, *) {
+                    SKAdNetwork.updateConversionValue(conversionValue)
+                } else {
+                    // Fallback on earlier versions
+                }
+            } else {
+                
+            }
         }
     }
 }
