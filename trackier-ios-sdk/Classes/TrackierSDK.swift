@@ -107,7 +107,6 @@ public class TrackierSDK {
                     // Fallback on earlier versions
                 }
             } else {
-                
             }
         }
     }
