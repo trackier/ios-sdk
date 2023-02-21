@@ -92,14 +92,14 @@ public class TrackierSDK {
         }
     }
     
-    public func updatePostbackConversion(conversionValue: Int) {
+    public static func updatePostbackConversion(conversionValue: Int) {
         if #available(iOS 15.4, *) {
             SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
                 if error != nil {
                     //print("Coneversion VALUE --  \(error.localizedDescription)")
                 }
             }
-        } else if #available(iOS 11.3, *) && #available(iOS 14.0, *) {
+        } else if #available(iOS 11.3, *), #available(iOS 14.0, *) {
             SKAdNetwork.updateConversionValue(conversionValue)
         }
     }
