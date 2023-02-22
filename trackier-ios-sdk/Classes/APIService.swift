@@ -12,6 +12,28 @@ struct DataResponse: Codable {
     let success: Bool
 }
 
+struct InstallResponse: Codable {
+    let success: Bool?
+    let message: String?
+    let ad: String?
+    let adId: String?
+    let camp: String?
+    let campId: String?
+    let adSet: String?
+    let adSetId: String?
+    let channel: String?
+    let p1: String?
+    let p2: String?
+    let p3: String?
+    let p4: String?
+    let p5: String?
+    let clickId: String?
+    let dlv: String?
+    let pid: String?
+    let sdkParams: Dictionary<String,String>?
+    let isRetargeting: Bool?
+}
+
 class APIService {
     var sessionManager = Session()          // Create a session manager 
     static var shared = APIService()

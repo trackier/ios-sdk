@@ -19,7 +19,7 @@ public class TrackierSDKConfig {
     var sdkt: String = "ios"
     var sdkVersion: String = Constants.SDK_VERSION
 
-    private var deeplinkListener: DeepLinkListener? = null
+    private var deeplinkListener: DeepLinkListener? = nil
 
     public init(appToken: String, env: String) {
         self.appToken = appToken
@@ -64,7 +64,7 @@ public class TrackierSDKConfig {
         self.sdkVersion = sdkVersion
     }
 
-    public func setDeeplinkListerner(listner: DeepLinkListener) {
+    public func setDeeplinkListerner(listener: DeepLinkListener) {
         self.deeplinkListener = listener
     }
 

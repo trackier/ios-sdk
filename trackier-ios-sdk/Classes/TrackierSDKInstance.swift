@@ -45,10 +45,12 @@ class TrackierSDKInstance {
         self.installId = getInstallID()
         self.installTime = getInstallTime()
         DispatchQueue.global().async {
-            self.trackInstall()
+            if #available(iOS 13.0, *) {
+                self.trackInstall()
+            }
             let dl = self.config.getDeeplinkListerner()
             if dl != nil {
-                dl.onDeepLinking(obj)
+                dl?.onDeepLinking(result: DeepLink.init())
             }
             if #available(iOS 13.0, *) {
                 self.trackSession()
@@ -108,6 +110,22 @@ class TrackierSDKInstance {
         return wrk
     }
 
+//    private func trackInstall() {
+//        if (isInstallTracked()) {
+//            return
+//        }
+//        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
+//        wrk.customerId = customerId
+//        wrk.customerEmail = customerEmail
+//        wrk.customerOptionals = customerOptionals
+//        wrk.organic = organic
+//        wrk.customerName = customerName
+//        wrk.customerPhone = customerPhone
+//        APIManager.doWork(workRequest: wrk)
+//        setInstallTracked()
+//    }
+    
+    @available(iOS 13.0, *)
     private func trackInstall() {
         if (isInstallTracked()) {
             return
@@ -119,9 +137,39 @@ class TrackierSDKInstance {
         wrk.organic = organic
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
-        APIManager.doWork(workRequest: wrk)
+        DispatchQueue.global().async {
+            Task {
+                let resData = try await APIManager.doWorkInstall(workRequest: wrk)
+                let strResData = String(decoding: resData, as: UTF8.self)
+                let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
+                print("DictDatat=------\(String(describing: res.message))")
+                var dict = Dictionary<String, Any>()
+                dict["ad"] = res.ad
+                dict["adId"] = res.adId
+                dict["adSetId"] = res.adSetId
+                dict["camp"] = res.camp
+                dict["campId"] = res.campId
+                dict["adSet"] = res.adSet
+                dict["adSetId"] = res.adSetId
+                dict["channel"] = res.channel
+                dict["message"] = res.message
+                dict["p1"] = res.p1
+                dict["p2"] = res.p2
+                dict["p3"] = res.p3
+                dict["p4"] = res.p4
+                dict["p5"] = res.p5
+                dict["clickId"] = res.clickId
+                dict["dlv"] = res.dlv
+                dict["pid"] = res.pid
+                dict["sdkParams"] = res.sdkParams
+                dict["isRetargeting"] = res.isRetargeting
+                DeepLink.init().dictionaryData(dictionary: dict)
+            }
+        }
         setInstallTracked()
     }
+    
+    
 
     func trackEvent(event: TrackierEvent) {
         if (!isEnabled) {

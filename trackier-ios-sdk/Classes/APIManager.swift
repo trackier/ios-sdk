@@ -56,4 +56,12 @@ class APIManager: NSObject {
         Logger.debug(message: "Sending session request. Body is: \(jsonData)")
         return try await APIService.postAsync(uri: Constants.SESSIONS_URL, body:body, headers: headers)
     }
+    
+    @available(iOS 13.0, *)
+    static func doWorkInstall(workRequest: TrackierWorkRequest) async throws -> Data {
+        let body = workRequest.getData()
+        let jsonData = Utils.convertDictToJSON(data: body)
+        Logger.debug(message: "Sending install request. Body is: \(jsonData)")
+        return try await APIService.postAsync(uri: Constants.INSTALL_URL, body:body, headers: headers)
+    }
 }
