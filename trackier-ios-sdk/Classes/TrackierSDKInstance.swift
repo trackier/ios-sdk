@@ -51,6 +51,8 @@ class TrackierSDKInstance {
             let dl = self.config.getDeeplinkListerner()
             if dl != nil {
                 dl?.onDeepLinking(result: DeepLink.init())
+            } else {
+                print("its nilll-----------------")
             }
             if #available(iOS 13.0, *) {
                 self.trackSession()

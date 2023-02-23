@@ -9,7 +9,7 @@ import Foundation
 
 public class DeepLink {
     
-    init() {}
+    public init() {}
     
     var dictionaryData = [String: Any]()
     
@@ -20,8 +20,8 @@ public class DeepLink {
     
     private func getDictData(key: String) -> String {
         let dictData = dictionaryData[key]
-        print("dictData----wewe---\(String(describing: dictData))}")
-        return dictData as! String
+        print("dictData----wewe---\(String(describing: dictData))")
+        return (dictData as? String)!
     }
     
     public func getMessage() -> String {
