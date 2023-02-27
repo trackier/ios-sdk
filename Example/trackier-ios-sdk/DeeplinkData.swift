@@ -11,6 +11,6 @@ import trackier_ios_sdk
 
 class DeeplinkData: DeepLinkListener {
     func onDeepLinking(result: DeepLink) -> Void {
-        print("==result: \(result.getDlv())")
+        print("==result: \(result.getDlv()) \(result.getMessage())")
     }
 }
