@@ -9,18 +9,14 @@ import Foundation
 
 public class DeepLink {
     
-    public init() {}
+    private var dictionaryData: [String: Any]
     
-    var dictionaryData = [String: Any]()
-    
-    public func dictionaryData(dictionary: Dictionary<String, Any>) {
-        dictionaryData = dictionary
-        print("dictData---sasa----\(String(describing: dictionary["message"]))}")
+    public init(result: [String: Any]) {
+        self.dictionaryData = result
     }
     
-    private func getDictData(key: String) -> String {
-        let dictData = dictionaryData[key]
-        print("dictData----wewe---\(String(describing: dictData))")
+    public func getDictData(key: String) -> String {
+        let dictData = self.dictionaryData[key]
         return (dictData as? String)!
     }
     
@@ -88,4 +84,28 @@ public class DeepLink {
         return getDictData(key: "pid")
     }
     
+    static func parseDeeplinkData(res: InstallResponse) -> DeepLink {
+        var dict = Dictionary<String, Any>()
+        dict["ad"] = res.ad
+        dict["adId"] = res.adId
+        dict["adSetId"] = res.adSetId
+        dict["camp"] = res.camp
+        dict["campId"] = res.campId
+        dict["adSet"] = res.adSet
+        dict["adSetId"] = res.adSetId
+        dict["channel"] = res.channel
+        dict["message"] = res.message
+        dict["p1"] = res.p1
+        dict["p2"] = res.p2
+        dict["p3"] = res.p3
+        dict["p4"] = res.p4
+        dict["p5"] = res.p5
+        dict["clickId"] = res.clickId
+        dict["dlv"] = res.dlv
+        dict["pid"] = res.pid
+        dict["sdkParams"] = res.sdkParams
+        dict["isRetargeting"] = res.isRetargeting
+        dict["dlv"] = "this-is-dlv-value"
+        return DeepLink(result: dict)
+    }
 }

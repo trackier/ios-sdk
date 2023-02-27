@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  trackier-ios-sdk
 //
-//  Created by prak24oct on 03/18/2021.
-//  Copyright (c) 2021 prak24oct. All rights reserved.
+//  Created by Trackier on 03/18/2021.
+//  Copyright (c) 2021 Trackier. All rights reserved.
 //
 
 import UIKit
@@ -13,10 +13,7 @@ import trackier_ios_sdk
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var deeplinkListnere  = MyDeepLinking.deeplinkingCallBack { deeplink in
-        //deeplink.
-    }
-
+    var deeplinkListener = DeeplinkData()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,12 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         * In second argument, you need to pass the environment which can be either "development", "production" or "testing". */
         
         let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
-        config.setDeeplinkListerner(listener: deeplinkListnere)
+        config.setDeeplinkListerner(listener: deeplinkListener)
         TrackierSDK.initialize(config: config)
         return true
     }
-    
-    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

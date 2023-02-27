@@ -2,7 +2,7 @@
 //  TrackierSDKInstance.swift
 //  trackier-ios-sdk
 //
-//  Created by Prakhar Srivastava on 18/03/21.
+//  Created by Trackier on 18/03/21.
 //
 
 import Foundation
@@ -47,14 +47,6 @@ class TrackierSDKInstance {
         DispatchQueue.global().async {
             if #available(iOS 13.0, *) {
                 self.trackInstall()
-            }
-            let dl = self.config.getDeeplinkListerner()
-            if dl != nil {
-                dl?.onDeepLinking(result: DeepLink.init())
-            } else {
-                print("its nilll-----------------")
-            }
-            if #available(iOS 13.0, *) {
                 self.trackSession()
             }
         }
@@ -144,34 +136,16 @@ class TrackierSDKInstance {
                 let resData = try await APIManager.doWorkInstall(workRequest: wrk)
                 let strResData = String(decoding: resData, as: UTF8.self)
                 let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
-                print("DictDatat=------\(String(describing: res.message))")
-                var dict = Dictionary<String, Any>()
-                dict["ad"] = res.ad
-                dict["adId"] = res.adId
-                dict["adSetId"] = res.adSetId
-                dict["camp"] = res.camp
-                dict["campId"] = res.campId
-                dict["adSet"] = res.adSet
-                dict["adSetId"] = res.adSetId
-                dict["channel"] = res.channel
-                dict["message"] = res.message
-                dict["p1"] = res.p1
-                dict["p2"] = res.p2
-                dict["p3"] = res.p3
-                dict["p4"] = res.p4
-                dict["p5"] = res.p5
-                dict["clickId"] = res.clickId
-                dict["dlv"] = res.dlv
-                dict["pid"] = res.pid
-                dict["sdkParams"] = res.sdkParams
-                dict["isRetargeting"] = res.isRetargeting
-                DeepLink.init().dictionaryData(dictionary: dict)
+                
+                let dlObj = DeepLink.parseDeeplinkData(res: res)
+                let dl = self.config.getDeeplinkListerner()
+                if dl != nil {
+                    dl?.onDeepLinking(result: dlObj)
+                }
             }
         }
         setInstallTracked()
     }
-    
-    
 
     func trackEvent(event: TrackierEvent) {
         if (!isEnabled) {
