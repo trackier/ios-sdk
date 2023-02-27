@@ -17,6 +17,7 @@ public class DeepLink {
     
     public func getDictData(key: String) -> String {
         let dictData = self.dictionaryData[key]
+        // TODO: check key for not found in map?
         return (dictData as? String)!
     }
     
@@ -105,7 +106,6 @@ public class DeepLink {
         dict["pid"] = res.pid
         dict["sdkParams"] = res.sdkParams
         dict["isRetargeting"] = res.isRetargeting
-        dict["dlv"] = "this-is-dlv-value"
         return DeepLink(result: dict)
     }
 }

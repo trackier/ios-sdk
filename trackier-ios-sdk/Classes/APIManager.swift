@@ -62,6 +62,6 @@ class APIManager: NSObject {
         let body = workRequest.getData()
         let jsonData = Utils.convertDictToJSON(data: body)
         Logger.debug(message: "Sending install request. Body is: \(jsonData)")
-        return try await APIService.postAsync(uri: Constants.INSTALL_URL, body:body, headers: headers)
+        return try await APIService.postAsync(uri: Constants.INSTALL_URL, body: body, headers: headers)
     }
 }

@@ -49,7 +49,7 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
-    private func requestAsync(uri : String, method: HTTPMethod, body : [String : Any], headers : HTTPHeaders?) async throws -> Data {
+    private func requestAsync(uri: String, method: HTTPMethod, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
         try await withUnsafeThrowingContinuation { continuation in
             AF.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { response in
                 if let data = response.value {
@@ -66,7 +66,7 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
-    static func postAsync(uri : String, body : [String : Any], headers : HTTPHeaders?) async throws -> Data {
+    static func postAsync(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
         return try await shared.requestAsync(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
     }
 }
