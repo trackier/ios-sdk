@@ -17,7 +17,9 @@ public class DeepLink {
     
     public func getDictData(key: String) -> String {
         let dictData = self.dictionaryData[key]
-        // TODO: check key for not found in map?
+        if dictData == nil {
+            return ""
+        }
         return (dictData as? String)!
     }
     

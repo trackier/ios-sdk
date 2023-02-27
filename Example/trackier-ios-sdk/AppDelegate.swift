@@ -10,10 +10,13 @@ import UIKit
 import trackier_ios_sdk
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
 
     var window: UIWindow?
-    var deeplinkListener = DeeplinkData()
+    
+    func onDeepLinking(result: DeepLink) -> Void {
+        print("==result: \(result.getDlv()) \(result.getMessage())")
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         * In second argument, you need to pass the environment which can be either "development", "production" or "testing". */
         
         let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
-        config.setDeeplinkListerner(listener: deeplinkListener)
+        config.setDeeplinkListerner(listener: self)
         TrackierSDK.initialize(config: config)
         return true
     }
