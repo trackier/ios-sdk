@@ -45,8 +45,8 @@ class TrackierSDKInstance {
         self.installId = getInstallID()
         self.installTime = getInstallTime()
         DispatchQueue.global().async {
+            self.trackInstall()
             if #available(iOS 13.0, *) {
-                self.trackInstall()
                 self.trackSession()
             }
         }
