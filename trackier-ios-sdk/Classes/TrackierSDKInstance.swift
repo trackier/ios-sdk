@@ -119,7 +119,6 @@ class TrackierSDKInstance {
 //        setInstallTracked()
 //    }
     
-    @available(iOS 13.0, *)
     private func trackInstall() {
         if (isInstallTracked()) {
             return
@@ -132,16 +131,19 @@ class TrackierSDKInstance {
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
         DispatchQueue.global().async {
-            Task {
-                let resData = try await APIManager.doWorkInstall(workRequest: wrk)
-                let strResData = String(decoding: resData, as: UTF8.self)
-                let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
-                
-                let dlObj = DeepLink.parseDeeplinkData(res: res)
-                let dl = self.config.getDeeplinkListerner()
-                if dl != nil {
-                    dl?.onDeepLinking(result: dlObj)
+            if #available(iOS 13.0, *) {
+                Task {
+                    let resData = try await APIManager.doWorkInstall(workRequest: wrk)
+                    let strResData = String(decoding: resData, as: UTF8.self)
+                    let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
+                    let dlObj = DeepLink.parseDeeplinkData(res: res)
+                    let dl = self.config.getDeeplinkListerner()
+                    if dl != nil {
+                        dl?.onDeepLinking(result: dlObj)
+                    }
                 }
+            } else {
+                APIManager.doWork(workRequest: wrk)
             }
         }
         setInstallTracked()
