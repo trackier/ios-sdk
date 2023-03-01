@@ -2,7 +2,7 @@
 //  TrackierSDKInstance.swift
 //  trackier-ios-sdk
 //
-//  Created by Prakhar Srivastava on 18/03/21.
+//  Created by Trackier on 18/03/21.
 //
 
 import Foundation
@@ -104,6 +104,21 @@ class TrackierSDKInstance {
         return wrk
     }
 
+//    private func trackInstall() {
+//        if (isInstallTracked()) {
+//            return
+//        }
+//        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
+//        wrk.customerId = customerId
+//        wrk.customerEmail = customerEmail
+//        wrk.customerOptionals = customerOptionals
+//        wrk.organic = organic
+//        wrk.customerName = customerName
+//        wrk.customerPhone = customerPhone
+//        APIManager.doWork(workRequest: wrk)
+//        setInstallTracked()
+//    }
+    
     private func trackInstall() {
         if (isInstallTracked()) {
             return
@@ -115,7 +130,22 @@ class TrackierSDKInstance {
         wrk.organic = organic
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
-        APIManager.doWork(workRequest: wrk)
+        DispatchQueue.global().async {
+            if #available(iOS 13.0, *) {
+                Task {
+                    let resData = try await APIManager.doWorkInstall(workRequest: wrk)
+                    let strResData = String(decoding: resData, as: UTF8.self)
+                    let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
+                    let dlObj = DeepLink.parseDeeplinkData(res: res)
+                    let dl = self.config.getDeeplinkListerner()
+                    if dl != nil {
+                        dl?.onDeepLinking(result: dlObj)
+                    }
+                }
+            } else {
+                APIManager.doWork(workRequest: wrk)
+            }
+        }
         setInstallTracked()
     }
 
