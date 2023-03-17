@@ -71,6 +71,18 @@ class Utils {
             return ""
         }
     }
+    
+    static func makeQueryString(_ queryItems: [URLQueryItem]) -> String? {
+        let url = URL(string: "https://domain.com")
+        var urlComponents = URLComponents(url: url!, resolvingAgainstBaseURL: true)!
+        urlComponents.queryItems = queryItems
+        
+        if #available(iOS 16.0, *) {
+            return urlComponents.url?.query(percentEncoded: false)
+        }
+        
+        return urlComponents.url?.query
+    }
 }
 
 extension Data {

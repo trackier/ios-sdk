@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
   - CryptoSwift (1.4.3)
-  - trackier-ios-sdk (1.6.29):
+  - trackier-ios-sdk (1.6.39):
     - Alamofire (~> 5.4.1)
     - CryptoSwift (~> 1.4.1)
     - Willow (~> 5.0)
@@ -23,9 +23,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
-  trackier-ios-sdk: 383c1d882add6218e5a7a1255708cc8015450b27
+  trackier-ios-sdk: 6532d693722b3539998bde5715b5d5c95e543468
   Willow: a6310f9aedcb6f4de8c35b94fd3416a660ae9280
 
 PODFILE CHECKSUM: 6307d8f5aa6ba32335caaaa5b91debc7fcb4378e
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

@@ -112,25 +112,12 @@ public class DeepLink {
     }
     
     public func getUrlParams() -> String {
-        let urlString: Any
-        let url = URL(string: "url")!
         let queryItems = [URLQueryItem(name: "dlv", value: getDlv()), URLQueryItem(name: "pid", value: getPid()), URLQueryItem(name: "message", value: getMessage()), URLQueryItem(name: "adId", value: getAdId()), URLQueryItem(name: "adSetId", value: getAdSet()), URLQueryItem(name: "campaign", value: getCamp()), URLQueryItem(name: "campaignId", value: getCampId()), URLQueryItem(name: "channel", value: getChannel()), URLQueryItem(name: "p1", value: getP1()), URLQueryItem(name: "p2", value: getP2()), URLQueryItem(name: "p3", value: getP3()), URLQueryItem(name: "p4", value: getP4()), URLQueryItem(name: "p5", value: getP5())]
-        urlString = url.appending(queryItems)?.query! as Any
-        return urlString as! String
-    }
-}
-
-extension URL {
-    /// Returns a new URL by adding the query items, or nil if the URL doesn't support it.
-    /// URL must conform to RFC 3986.
-    func appending(_ queryItems: [URLQueryItem]) -> URL? {
-        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
-            // URL is not conforming to RFC 3986 (maybe it is only conforming to RFC 1808, RFC 1738, and RFC 2732)
-            return nil
+        
+        let queryStr = Utils.makeQueryString(queryItems)
+        if (queryStr != nil) {
+            return queryStr!
         }
-        // append the query items to the existing ones
-        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
-        // return the url from new url components
-        return urlComponents.url
+        return ""
     }
 }
