@@ -111,13 +111,13 @@ public class DeepLink {
         return DeepLink(result: dict)
     }
     
-    public func getUrlParams() -> String {
+   public func getUrlParams() -> String {
         let queryItems = [URLQueryItem(name: "dlv", value: getDlv()), URLQueryItem(name: "pid", value: getPid()), URLQueryItem(name: "message", value: getMessage()), URLQueryItem(name: "adId", value: getAdId()), URLQueryItem(name: "adSetId", value: getAdSet()), URLQueryItem(name: "campaign", value: getCamp()), URLQueryItem(name: "campaignId", value: getCampId()), URLQueryItem(name: "channel", value: getChannel()), URLQueryItem(name: "p1", value: getP1()), URLQueryItem(name: "p2", value: getP2()), URLQueryItem(name: "p3", value: getP3()), URLQueryItem(name: "p4", value: getP4()), URLQueryItem(name: "p5", value: getP5())]
             
         let queryStr = Utils.makeQueryString(queryItems)
-            if (queryStr != nil) {
-                return queryStr!
-            }
-            return ""
+        if (queryStr != nil) {
+            return queryStr!
         }
+        return ""
+    }
 }
