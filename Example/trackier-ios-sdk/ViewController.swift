@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  trackier-ios-sdk
 //
-//  Created by prak24oct on 03/18/2021.
-//  Copyright (c) 2021 prak24oct. All rights reserved.
+//  Created by Trackier on 03/18/2021.
+//  Copyright (c) 2021 Trackier. All rights reserved.
 //
 
 import UIKit

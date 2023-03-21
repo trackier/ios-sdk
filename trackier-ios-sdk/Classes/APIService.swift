@@ -12,6 +12,28 @@ struct DataResponse: Codable {
     let success: Bool
 }
 
+struct InstallResponse: Codable {
+    let success: Bool?
+    let message: String?
+    let ad: String?
+    let adId: String?
+    let camp: String?
+    let campId: String?
+    let adSet: String?
+    let adSetId: String?
+    let channel: String?
+    let p1: String?
+    let p2: String?
+    let p3: String?
+    let p4: String?
+    let p5: String?
+    let clickId: String?
+    let dlv: String?
+    let pid: String?
+    let sdkParams: Dictionary<String,String>?
+    let isRetargeting: Bool?
+}
+
 class APIService {
     var sessionManager = Session()          // Create a session manager 
     static var shared = APIService()
@@ -27,7 +49,7 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
-    private func requestAsync(uri : String, method: HTTPMethod, body : [String : Any], headers : HTTPHeaders?) async throws -> Data {
+    private func requestAsync(uri: String, method: HTTPMethod, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
         try await withUnsafeThrowingContinuation { continuation in
             AF.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { response in
                 if let data = response.value {
@@ -44,7 +66,7 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
-    static func postAsync(uri : String, body : [String : Any], headers : HTTPHeaders?) async throws -> Data {
+    static func postAsync(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
         return try await shared.requestAsync(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
     }
 }
