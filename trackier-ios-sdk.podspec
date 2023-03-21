@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'trackier-ios-sdk'
-  s.version          = '1.6.39'
-  s.summary          = 'This is trackier-ios-sdk 1.6.39'
+  s.version          = '1.6.40'
+  s.summary          = 'This is trackier-ios-sdk 1.6.40'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
