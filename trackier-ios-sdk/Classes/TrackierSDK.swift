@@ -103,4 +103,8 @@ public class TrackierSDK {
             SKAdNetwork.updateConversionValue(conversionValue)
         }
     }
+    
+    public static func waitForATTUserAuthorization(timeoutInterval: Int) {
+        shared.instance.timeoutInterval = timeoutInterval
+    }
 }

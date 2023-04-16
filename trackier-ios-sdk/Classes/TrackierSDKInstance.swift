@@ -31,6 +31,7 @@ class TrackierSDKInstance {
     var customerPhone = ""
     var customerName = ""
     var deviceToken = ""
+    var timeoutInterval = 0
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -44,10 +45,23 @@ class TrackierSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
-        DispatchQueue.global().async {
-            self.trackInstall()
-            if #available(iOS 13.0, *) {
-                self.trackSession()
+        if(timeoutInterval > 0) {
+            let varTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
+            { (varTimer) in
+                DispatchQueue.global().async {
+                        self.trackInstall()
+                        if #available(iOS 13.0, *) {
+                            self.trackSession()
+                        }
+                        self.deviceTokenApns()
+                }
+            }
+        } else {
+            DispatchQueue.global().async {
+                self.trackInstall()
+                if #available(iOS 13.0, *) {
+                    self.trackSession()
+                }
             }
         }
     }
