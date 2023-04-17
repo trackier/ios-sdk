@@ -45,13 +45,13 @@ class TrackierSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
-        if(timeoutInterval > 0) {
+        if (timeoutInterval > 0) {
             let varTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
             { (varTimer) in
-                self.idfaChecks()
+                self._sendInstall()
             }
         } else {
-            idfaChecks()
+            _sendInstall()
         }
     }
     
@@ -77,7 +77,7 @@ class TrackierSDKInstance {
         return itd 
     }
     
-    private func idfaChecks() {
+    private func _sendInstall() {
         DispatchQueue.global().async {
             self.trackInstall()
             if #available(iOS 13.0, *) {
