@@ -31,6 +31,7 @@ class TrackierSDKInstance {
     var customerPhone = ""
     var customerName = ""
     var deviceToken = ""
+    var timeoutInterval = 0
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -44,14 +45,16 @@ class TrackierSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
-        DispatchQueue.global().async {
-            self.trackInstall()
-            if #available(iOS 13.0, *) {
-                self.trackSession()
+        if (timeoutInterval > 0) {
+            let varTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
+            { (varTimer) in
+                self._sendInstall()
             }
+        } else {
+            _sendInstall()
         }
     }
-
+    
     private func setInstallID(installID: String) {
         CacheManager.setString(key: Constants.SHARED_PREF_INSTALL_ID, value: installID)
     }
@@ -72,6 +75,15 @@ class TrackierSDKInstance {
             setInstallID(installID: itd)
         }
         return itd 
+    }
+    
+    private func _sendInstall() {
+        DispatchQueue.global().async {
+            self.trackInstall()
+            if #available(iOS 13.0, *) {
+                self.trackSession()
+            }
+        }
     }
 
     private func isInstallTracked() -> Bool {

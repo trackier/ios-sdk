@@ -8,6 +8,7 @@
 
 import UIKit
 import trackier_ios_sdk
+import AppTrackingTransparency
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
         
         let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
         config.setDeeplinkListerner(listener: self)
+        //TrackierSDK.updatePostbackConversion(conversionValue: 0)
+        TrackierSDK.waitForATTUserAuthorization(timeoutInterval: 20)
         TrackierSDK.initialize(config: config)
         return true
     }
@@ -48,6 +51,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         TrackierSDK.trackSession()
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                    // Tracking authorization dialog was shown
+                    // and we are authorized
+                    print("Authorized")
+                    // Now that we are authorized we can get the IDFA
+                    //print(ASIdentifierManager.shared().advertisingIdentifier)// //e2cf9ba1-0fac-44d0-afe2-8a15164126bb
+                case .denied:
+                    // Tracking authorization dialog was
+                    // shown and permission is denied
+                    print("Denied")
+                case .notDetermined:
+                    // Tracking authorization dialog has not been shown
+                    print("Not Determined")
+                case .restricted:
+                    print("Restricted")
+                @unknown default:
+                    print("Unknown")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

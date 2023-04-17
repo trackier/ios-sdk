@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AppTrackingTransparency
+import AdSupport
 
 class DeviceInfo {
     
@@ -51,6 +53,7 @@ class DeviceInfo {
         dict["batteryLevel"] = batteryLevel
         dict["ibme"] = isBatteryMonitoringEnabled
         dict["idfv"] = idfv
+        dict["idfa"] = getIDFA()
         if (Locale.current.languageCode != nil) {
              dict["locale"] = Locale.current.languageCode!
         }       
@@ -70,5 +73,18 @@ class DeviceInfo {
     private func getScreenDensity() -> String {
         let screenDensity: CGFloat = UIScreen.main.scale
         return  "\(screenDensity)"
+    }
+    
+    private func getIDFA() -> String? {
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus != ATTrackingManager.AuthorizationStatus.authorized  {
+                return nil
+            }
+        } else {
+            if ASIdentifierManager.shared().isAdvertisingTrackingEnabled == false {
+                return nil
+            }
+        }
+        return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
 }
