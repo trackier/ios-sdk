@@ -48,24 +48,13 @@ class TrackierSDKInstance {
         if(timeoutInterval > 0) {
             let varTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
             { (varTimer) in
-                DispatchQueue.global().async {
-                        self.trackInstall()
-                        if #available(iOS 13.0, *) {
-                            self.trackSession()
-                        }
-                        self.deviceTokenApns()
-                }
+                self.idfaChecks()
             }
         } else {
-            DispatchQueue.global().async {
-                self.trackInstall()
-                if #available(iOS 13.0, *) {
-                    self.trackSession()
-                }
-            }
+            idfaChecks()
         }
     }
-
+    
     private func setInstallID(installID: String) {
         CacheManager.setString(key: Constants.SHARED_PREF_INSTALL_ID, value: installID)
     }
@@ -86,6 +75,15 @@ class TrackierSDKInstance {
             setInstallID(installID: itd)
         }
         return itd 
+    }
+    
+    private func idfaChecks() {
+        DispatchQueue.global().async {
+            self.trackInstall()
+            if #available(iOS 13.0, *) {
+                self.trackSession()
+            }
+        }
     }
 
     private func isInstallTracked() -> Bool {
