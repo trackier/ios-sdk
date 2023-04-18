@@ -46,8 +46,8 @@ class TrackierSDKInstance {
         self.installId = getInstallID()
         self.installTime = getInstallTime()
         if (timeoutInterval > 0) {
-            let varTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
-            { (varTimer) in
+            Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
+            { timer in
                 self._sendInstall()
             }
         } else {
