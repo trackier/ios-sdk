@@ -46,10 +46,12 @@ class TrackierSDKInstance {
         self.installId = getInstallID()
         self.installTime = getInstallTime()
         if (timeoutInterval > 0) {
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(timeoutInterval), repeats: false)
-            { timer in
-                self._sendInstall()
-            }
+            DispatchQueue.main.async(execute: {
+                Timer.scheduledTimer(withTimeInterval: TimeInterval(self.timeoutInterval), repeats: false)
+                { timer in
+                    self._sendInstall()
+                }
+            })
         } else {
             _sendInstall()
         }
