@@ -8,7 +8,7 @@
 import Foundation
 
 class Constants {
-    static let SDK_VERSION = "1.6.42"
+    static let SDK_VERSION = "1.6.44"
     static let USER_AGENT = "com.trackier.sdk:ios-sdk:" + SDK_VERSION
     static let API_VERSION = "v1"
     static let BASE_URL = "https://events.trackier.io/" + API_VERSION
@@ -31,4 +31,21 @@ class Constants {
     static let DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     static let UNKNOWN_EVENT = "unknown"
     static let SHARED_PREF_DEVICE_TOKEN = "deviceToken"
+    
+    static let SHARED_PREF_AD = "ad"
+    static let SHARED_PREF_ADID = "adid"
+    static let SHARED_PREF_ADSET = "adset"
+    static let SHARED_PREF_ADSETID = "adsetid"
+    static let SHARED_PREF_CAMPAIGN = "campaign"
+    static let SHARED_PREF_CAMPAIGNID = "campaignid"
+    static let SHARED_PREF_CHANNEL = "channel"
+    static let SHARED_PREF_P1 = "p1"
+    static let SHARED_PREF_P2 = "p2"
+    static let SHARED_PREF_P3 = "p3"
+    static let SHARED_PREF_P4 = "p4"
+    static let SHARED_PREF_P5 = "p5"
+    static let SHARED_PREF_CLICKID = "clickId"
+    static let SHARED_PREF_DLV = "dlv"
+    static let SHARED_PREF_PID = "pid"
+    static let SHARED_PREF_ISRETARGETING = "isRetargeting"
 }

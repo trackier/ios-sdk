@@ -107,4 +107,68 @@ public class TrackierSDK {
     public static func waitForATTUserAuthorization(timeoutInterval: Int) {
         shared.instance.timeoutInterval = timeoutInterval
     }
+    
+    public static func getAd() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_AD)
+    }
+    
+    public static func getAdID() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_ADID)
+    }
+    
+    public static func getCampaign() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_CAMPAIGN)
+    }
+    
+    public static func getCampaignID() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_CAMPAIGNID)
+    }
+    
+    public static func getAdSet() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_ADSET)
+    }
+    
+    public static func getAdSetID() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_ADSETID)
+    }
+    
+    public static func getChannel() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_CHANNEL)
+    }
+    
+    public static func getP1() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_P1)
+    }
+    
+    public static func getP2() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_P2)
+    }
+    
+    public static func getP3() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_P3)
+    }
+    
+    public static func getP4() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_P4)
+    }
+    
+    public static func getP5() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_P5)
+    }
+    
+    public static func getClickId() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_CLICKID)
+    }
+    
+    public static func getDlv() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_DLV)
+    }
+    
+    public static func getPid() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_PID)
+    }
+    
+    public static func getIsRetargeting() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_ISRETARGETING)
+    }
 }
