@@ -82,6 +82,25 @@ class Utils {
         }
         return urlComponents.url?.query
     }
+    
+    static func campaignData(res: InstallResponse) -> Void {
+        CacheManager.setString(key: Constants.SHARED_PREF_AD, value: res.ad!)
+        CacheManager.setString(key: Constants.SHARED_PREF_ADID, value: res.adId!)
+        CacheManager.setString(key: Constants.SHARED_PREF_CAMPAIGN, value: res.camp!)
+        CacheManager.setString(key: Constants.SHARED_PREF_CAMPAIGNID, value: res.campId!)
+        CacheManager.setString(key: Constants.SHARED_PREF_ADSET, value: res.adSet!)
+        CacheManager.setString(key: Constants.SHARED_PREF_ADSETID, value: res.adSetId!)
+        CacheManager.setString(key: Constants.SHARED_PREF_CHANNEL, value: res.channel!)
+        CacheManager.setString(key: Constants.SHARED_PREF_P1, value: res.p1!)
+        CacheManager.setString(key: Constants.SHARED_PREF_P2, value: res.p2!)
+        CacheManager.setString(key: Constants.SHARED_PREF_P3, value: res.p3!)
+        CacheManager.setString(key: Constants.SHARED_PREF_P4, value: res.p4!)
+        CacheManager.setString(key: Constants.SHARED_PREF_P5, value: res.p5!)
+        CacheManager.setString(key: Constants.SHARED_PREF_CLICKID, value: res.clickId!)
+        CacheManager.setString(key: Constants.SHARED_PREF_DLV, value: res.dlv!)
+        CacheManager.setString(key: Constants.SHARED_PREF_PID, value: res.pid!)
+        CacheManager.setBool(key: Constants.SHARED_PREF_ISRETARGETING, value: res.isRetargeting!)
+    }
 }
 
 extension Data {
