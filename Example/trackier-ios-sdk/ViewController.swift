@@ -32,12 +32,7 @@ func userDetails(){
     /*Passing the custom value in the events */
     event.addEventValue(prop: "customeValue1", val: "test1");
     event.addEventValue(prop: "customeValue2", val: "XXXXX");
-    
-    
-    DispatchQueue.global().async {
-        sleep(1)
-        TrackierSDK.trackEvent(event: event)
-    }
+    TrackierSDK.trackEvent(event: event)
 }
 
 func eventsRevenueTracking(){
@@ -52,10 +47,7 @@ func eventsRevenueTracking(){
     event.param2 = "param2";
     event.addEventValue(prop: "customeValue1", val: "test1");
     event.addEventValue(prop: "customeValue2", val: "XXXXX");
-    DispatchQueue.global().async {
-        sleep(1)
-        TrackierSDK.trackEvent(event: event)
-    }
+    TrackierSDK.trackEvent(event: event)
 }
 
 func eventsTracking(){
