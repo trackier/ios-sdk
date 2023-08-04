@@ -83,6 +83,10 @@ public class TrackierSDK {
         shared.instance.customerName = userName
     }
     
+    public static func getTrackierId() -> String {
+        return CacheManager.getString(key: Constants.SHARED_PREF_INSTALL_ID)
+    }
+    
     public static func setDeviceToken(deviceToken: String) {
         let getCacheToken = CacheManager.getString(key: Constants.SHARED_PREF_DEVICE_TOKEN)
         if (!getCacheToken.elementsEqual(deviceToken)) {
