@@ -175,4 +175,8 @@ public class TrackierSDK {
     public static func getIsRetargeting() -> String {
         return CacheManager.getString(key: Constants.SHARED_PREF_ISRETARGETING)
     }
+    
+    public static func updateAppleAdsToken(token: String) {
+        shared.instance.appleAdsToken = token
+    }
 }

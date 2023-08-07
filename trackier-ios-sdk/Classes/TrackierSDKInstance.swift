@@ -32,6 +32,7 @@ class TrackierSDKInstance {
     var customerName = ""
     var deviceToken = ""
     var timeoutInterval = 0
+    var appleAdsToken = ""
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -144,6 +145,7 @@ class TrackierSDKInstance {
         wrk.organic = organic
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
+        wrk.appleAdsToken = appleAdsToken
         DispatchQueue.global().async {
             if #available(iOS 13.0, *) {
                 Task {
