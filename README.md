@@ -21,7 +21,7 @@
     * [Pass the custom params in events](#qs-add-custome-param-event)
 * [SDK Signing](#qs-sdk-signing)
 * [Deep Link Setup](#qs-deeplink)
-
+* [Apple Search Ads](#qs-aaattribution)
 
 ## <a id="qs-add-trackier-sdk"></a>Quick start guide
 
@@ -422,6 +422,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
 
 ```
 
+## <a id="qs-aaattribution"></a>Apple Search Ads
+Apple Search Ads is an advertising platform provided by Apple Inc. that allows app developers and marketers to promote their apps within the Apple App Store search results. The platform enables advertisers to bid on specific keywords to have their app displayed prominently when users search for those keywords in the App Store.
 
+Here is some configuration in the SDK. Please follow the below example code
+
+
+```swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        /*While Initializing the Sdk, You need to pass the two arguments in the TrackierSDKConfig.
+         * In First argument, you need to pass the Trackier SDK api key
+        * In second argument, you need to pass the environment which can be either "development", "production" or "testing". */
+        
+        let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
+        // Apple Search Ads Attribution code
+        if #available(iOS 14.3, *) {
+            let a = try? AAAttribution.attributionToken()
+            TrackierSDK.updateAppleAdsToken(token: a!)
+        } else {
+            // Fallback on earlier versions
+        }
+        TrackierSDK.initialize(config: config)
+        return true
+    }
+```
 
 

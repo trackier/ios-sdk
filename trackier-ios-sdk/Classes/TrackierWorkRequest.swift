@@ -32,6 +32,7 @@ class TrackierWorkRequest {
     var customerPhone = ""
     var customerName = ""
     var deviceToken = ""
+    var appleAdsToken = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -65,6 +66,7 @@ class TrackierWorkRequest {
         dict["sdkt"] = sdkt
         dict["cphone"] = customerPhone
         dict["cname"] = customerName
+        dict["attributionToken"] = appleAdsToken
         return dict
     }
     
