@@ -437,7 +437,6 @@ Here is some configuration in the SDK. Please follow the below example code
         * In second argument, you need to pass the environment which can be either "development", "production" or "testing". */
         
         let config = TrackierSDKConfig(appToken: "xxxx-xx-xxx-xxx", env: TrackierSDKConfig.ENV_DEVELOPMENT) //Pass your Trackier sdk api key
-        config.setDeeplinkListerner(listener: self)
         // Apple Search Ads Attribution code
         if #available(iOS 14.3, *) {
             let a = try? AAAttribution.attributionToken()
