@@ -21,6 +21,7 @@
     * [Pass the custom params in events](#qs-add-custome-param-event)
 * [SDK Signing](#qs-sdk-signing)
 * [Deep Link Setup](#qs-deeplink)
+* [Getting Campaign Data](#qs-campaign-data)
 * [Apple Search Ads](#qs-aaattribution)
 
 ## <a id="qs-add-trackier-sdk"></a>Quick start guide
@@ -418,6 +419,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
         return true
     }
 
+}
+
+```
+## <a id="qs-campaign-data"></a>Getting Campaign Data
+For getting the campaign data, We have a function that return the campaign data. Please check below the example code.
+
+```swift
+
+func userDetails(){
+    let event = TrackierEvent(id: "EwQP98t4Ns")
+    var ad = TrackierSDK.getAd()
+    var adID = TrackierSDK.getAdID()
+    var adSet = TrackierSDK.getAdSet()
+    var adSetID = TrackierSDK.getAdSetID()
+    var campaign = TrackierSDK.getCampaign()
+    var campaignID = TrackierSDK.getCampaignID()
+    var channel = TrackierSDK.getChannel()
+    var clickId = TrackierSDK.getClickId()
+    var p1 = TrackierSDK.getP1()
+    var p2 = TrackierSDK.getP2()
+    var p3 = TrackierSDK.getP3()
+    var p4 = TrackierSDK.getP4()
+    var p5 = TrackierSDK.getP5()
+    var dlv = TrackierSDK.getDlv()
+    var pid = TrackierSDK.getPid()
+    var retargetting = TrackierSDK.getIsRetargeting()
+    TrackierSDK.trackEvent(event: event)
 }
 
 ```
