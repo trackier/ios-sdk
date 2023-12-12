@@ -33,6 +33,8 @@ class TrackierSDKInstance {
     var deviceToken = ""
     var timeoutInterval = 0
     var appleAdsToken = ""
+    var gender = ""
+    var dob = ""
     
     /**
      * Initialize method should be called to initialize the sdk
@@ -146,6 +148,8 @@ class TrackierSDKInstance {
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
         wrk.appleAdsToken = appleAdsToken
+        wrk.dob = dob
+        wrk.gender = gender
         DispatchQueue.global().async {
             if #available(iOS 13.0, *) {
                 Task {
@@ -186,6 +190,8 @@ class TrackierSDKInstance {
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
         wrk.eventObj = event
+        wrk.dob = dob
+        wrk.gender = gender
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
         }
@@ -210,6 +216,8 @@ class TrackierSDKInstance {
         wrk.organic = organic
         wrk.customerName = customerName
         wrk.customerPhone = customerPhone
+        wrk.dob = dob
+        wrk.gender = gender
         let lastSessionTime = getLastSessionTime()
         wrk.lastSessionTime = Utils.convertUnixTsToISO(ts: lastSessionTime)
         let currentSessionTime = Int64(Date().timeIntervalSince1970)

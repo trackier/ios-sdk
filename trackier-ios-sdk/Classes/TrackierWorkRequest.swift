@@ -33,6 +33,8 @@ class TrackierWorkRequest {
     var customerName = ""
     var deviceToken = ""
     var appleAdsToken = ""
+    var gender = ""
+    var dob = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -54,6 +56,8 @@ class TrackierWorkRequest {
         dict["cuid"] = customerId
         dict["cmail"] = customerEmail
         dict["installTimeMicro"] = Utils.getUnixTime(time: self.installTime)
+        dict["gender"] = gender
+        dict["dob"] = dob
         if (customerOptionals != nil) {
             dict["opts"] = customerOptionals
         }

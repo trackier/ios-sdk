@@ -179,4 +179,18 @@ public class TrackierSDK {
     public static func updateAppleAdsToken(token: String) {
         shared.instance.appleAdsToken = token
     }
+    
+    public enum Gender {
+        case MALE
+        case FEMALE
+        case OTHERS
+    }
+    
+    public static func setGender(gender: Gender) {
+        shared.instance.gender = String(describing: gender)
+    }
+    
+    public static func setDOB(dob: String) {
+        shared.instance.dob = dob
+    }
 }
