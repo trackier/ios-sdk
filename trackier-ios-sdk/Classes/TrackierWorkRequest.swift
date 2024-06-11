@@ -70,7 +70,7 @@ class TrackierWorkRequest {
         dict["sdkt"] = sdkt
         dict["cphone"] = customerPhone
         dict["cname"] = customerName
-        dict["attributionToken"] = appleAdsToken
+        dict["iOSAttributionToken"] = appleAdsToken
         return dict
     }
     

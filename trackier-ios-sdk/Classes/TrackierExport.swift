@@ -14,6 +14,7 @@ public func initialize(initParam: UnsafePointer<CChar>?)  {
     let sdkConfigs = TrackierSDKConfig.init(appToken: initData.appKey, env: initData.env)
     sdkConfigs.sdkt = initData.setSDKType
     sdkConfigs.sdkVersion = initData.setSDKVersion
+    sdkConfigs.setSDKVersion(sdkVersion: "1.6.59")
     TrackierSDK.initialize(config: sdkConfigs)
 }
 
