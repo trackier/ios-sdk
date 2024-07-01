@@ -13,6 +13,7 @@ class TrackierWorkRequest {
     static let KIND_SESSION = "session"
     static let KIND_UNKNOWN = "unknown"
     static let KIND_Token = "deviceToken"
+    static let KIND_Resolver = "deeplinkURL"
     
     var kind: String
     var installId: String = ""
@@ -35,6 +36,7 @@ class TrackierWorkRequest {
     var appleAdsToken = ""
     var gender = ""
     var dob = ""
+    var deeplinkUrl = ""
     
     init(kind: String, appToken: String, mode: String) {
         self.kind = kind
@@ -94,4 +96,17 @@ class TrackierWorkRequest {
         dict["installId"] = installID
         return dict
     }
+    
+    func getDeeplinksData() -> Dictionary<String, Any> {
+        var dict = Dictionary<String, Any>()
+        dict["url"] = self.deeplinkUrl
+        dict["os"] = "ios"
+        dict["osv"] = UIDevice.current.systemVersion
+        dict["sdkv"] = Constants.SDK_VERSION
+        dict["apv"] = DeviceInfo().buildInfo?["CFBundleShortVersionString"]
+        dict["insId"] = TrackierSDK.getTrackierId()
+        dict["appKey"] = appToken
+        return dict
+    }
+    
 }

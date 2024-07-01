@@ -32,6 +32,117 @@ struct InstallResponse: Codable {
     let pid: String?
     let sdkParams: Dictionary<String,String>?
     let isRetargeting: Bool?
+    let data: DlData?
+}
+
+struct DlData: Codable {
+    let url: String?
+    let dlv: String?
+    let sdkParams: [String: Any]?
+
+
+init(from decoder: Decoder) throws {
+       let container = try decoder.container(keyedBy: CodingKeys.self)
+       url = try container.decodeIfPresent(String.self, forKey: .url)
+       dlv = try container.decodeIfPresent(String.self, forKey: .dlv)
+       let params = try container.decodeIfPresent([String: JSONValue].self, forKey: .sdkParams)
+       sdkParams = params?.mapValues { $0.value }
+   }
+
+   // Custom encoding to handle the `sdkParams` dictionary
+   func encode(to encoder: Encoder) throws {
+       var container = encoder.container(keyedBy: CodingKeys.self)
+       try container.encodeIfPresent(url, forKey: .url)
+       try container.encodeIfPresent(dlv, forKey: .dlv)
+       let params = sdkParams?.mapValues { JSONValue($0) }
+       try container.encodeIfPresent(params, forKey: .sdkParams)
+   }
+
+   enum CodingKeys: String, CodingKey {
+       case url
+       case dlv
+       case sdkParams = "sdkparams"
+   }
+}
+
+// Helper enum to handle heterogeneous types in the dictionary
+enum JSONValue: Codable {
+   case string(String)
+   case number(Double)
+   case bool(Bool)
+   case object([String: JSONValue])
+   case array([JSONValue])
+   case null
+
+   var value: Any {
+       switch self {
+       case .string(let value):
+           return value
+       case .number(let value):
+           return value
+       case .bool(let value):
+           return value
+       case .object(let value):
+           return value
+       case .array(let value):
+           return value
+       case .null:
+           return NSNull()
+       }
+   }
+
+   init(_ value: Any) {
+       if let value = value as? String {
+           self = .string(value)
+       } else if let value = value as? Double {
+           self = .number(value)
+       } else if let value = value as? Bool {
+           self = .bool(value)
+       } else if let value = value as? [String: Any] {
+           self = .object(value.mapValues { JSONValue($0) })
+       } else if let value = value as? [Any] {
+           self = .array(value.map { JSONValue($0) })
+       } else {
+           self = .null
+       }
+   }
+
+   init(from decoder: Decoder) throws {
+       let container = try decoder.singleValueContainer()
+       if let value = try? container.decode(String.self) {
+           self = .string(value)
+       } else if let value = try? container.decode(Double.self) {
+           self = .number(value)
+       } else if let value = try? container.decode(Bool.self) {
+           self = .bool(value)
+       } else if let value = try? container.decode([String: JSONValue].self) {
+           self = .object(value)
+       } else if let value = try? container.decode([JSONValue].self) {
+           self = .array(value)
+       } else if container.decodeNil() {
+           self = .null
+       } else {
+           throw DecodingError.typeMismatch(JSONValue.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Unsupported JSON value"))
+       }
+   }
+
+   func encode(to encoder: Encoder) throws {
+       var container = encoder.singleValueContainer()
+       switch self {
+       case .string(let value):
+           try container.encode(value)
+       case .number(let value):
+           try container.encode(value)
+       case .bool(let value):
+           try container.encode(value)
+       case .object(let value):
+           try container.encode(value)
+       case .array(let value):
+           try container.encode(value)
+       case .null:
+           try container.encodeNil()
+       }
+   }
 }
 
 class APIService {
@@ -66,7 +177,34 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
+    private func requestAsyncDeeplink(uri: String, method: HTTPMethod, body: [String : Any], headers: HTTPHeaders?) async throws -> InstallResponse {
+        try await withUnsafeThrowingContinuation { continuation in
+            AF.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { response in
+                if let data = response.value {
+                    do {
+                        let installResponse = try JSONDecoder().decode(InstallResponse.self, from: data)
+                        continuation.resume(returning: installResponse)
+                    } catch {
+                        continuation.resume(throwing: error)
+                    }
+                    return
+                }
+                if let err = response.error {
+                    continuation.resume(throwing: err)
+                    return
+                }
+                fatalError("unhandled request edge case")
+            }
+        }
+    }
+    
+    @available(iOS 13.0, *)
     static func postAsync(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
         return try await shared.requestAsync(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
+    }
+    
+    @available(iOS 13.0, *)
+    static func postAsyncDeeplink(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> InstallResponse {
+        return try await shared.requestAsyncDeeplink(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
     }
 }
