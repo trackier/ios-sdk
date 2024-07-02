@@ -157,11 +157,6 @@ class TrackierSDKInstance {
                     let strResData = String(decoding: resData, as: UTF8.self)
                     let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
                     Utils.campaignData(res: res)
-                    //let dlObj = DeepLink.parseDeeplinkData(res: res)
-                    let dl = self.config.getDeeplinkListerner()
-                    if dl != nil {
-                     //   dl?.onDeepLinking(result: dlObj)
-                    }
                 }
             } else {
                 APIManager.doWork(workRequest: wrk)
