@@ -193,4 +193,12 @@ public class TrackierSDK {
     public static func setDOB(dob: String) {
         shared.instance.dob = dob
     }
+    
+    public static func parseDeepLink(uri: String?) {
+        if #available(iOS 13.0, *) {
+            shared.instance.parseDeepLink(uri: uri)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
 }

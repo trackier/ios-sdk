@@ -64,4 +64,13 @@ class APIManager: NSObject {
         Logger.debug(message: "Sending install request. Body is: \(jsonData)")
         return try await APIService.postAsync(uri: Constants.INSTALL_URL, body: body, headers: headers)
     }
+    
+    @available(iOS 13.0, *)
+    static func doWorkDeeplinkresolver(workRequest: TrackierWorkRequest) async throws -> InstallResponse {
+        let body = workRequest.getDeeplinksData()
+        let jsonData = Utils.convertDictToJSON(data: body)
+        Logger.debug(message: "Sending deeplink request. Body is: \(jsonData)")
+        return try await APIService.postAsyncDeeplink(uri: Constants.DEEPLINK_URL, body: body, headers: headers)
+    }
+    
 }

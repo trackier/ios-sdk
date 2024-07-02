@@ -72,14 +72,14 @@ class TrackierSDKInstance {
         }
         return installTime
     }
-
+    
     private func getInstallID() -> String {
         var itd = CacheManager.getString(key: Constants.SHARED_PREF_INSTALL_ID)
         if itd == "" {
             itd = UUID().uuidString
             setInstallID(installID: itd)
         }
-        return itd 
+        return itd
     }
     
     private func _sendInstall() {
@@ -90,11 +90,11 @@ class TrackierSDKInstance {
             }
         }
     }
-
+    
     private func isInstallTracked() -> Bool {
         return CacheManager.getBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED)
     }
-
+    
     private func setInstallTracked() {
         CacheManager.setBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED, value: true)
     }
@@ -102,7 +102,7 @@ class TrackierSDKInstance {
     private func getLastSessionTime() -> Int64 {
         return CacheManager.getInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME)
     }
-
+    
     private func setLastSessionTime(val: Int64) {
         CacheManager.setInt(key: Constants.SHARED_PREF_LAST_SESSION_TIME, value: val)
     }
@@ -110,7 +110,7 @@ class TrackierSDKInstance {
     private func makeWorkRequest(kind: String) -> TrackierWorkRequest {
         let wrk = TrackierWorkRequest(kind: kind, appToken: self.appToken, mode: self.config.env)
         if (self.config.getSDKType() != "ios") {
-           deviceInfo.sdkVersion = self.config.getSDKVersion()
+            deviceInfo.sdkVersion = self.config.getSDKVersion()
         }
         wrk.installId = installId
         wrk.installTime = installTime
@@ -120,21 +120,21 @@ class TrackierSDKInstance {
         wrk.sdkt = self.config.getSDKType()
         return wrk
     }
-
-//    private func trackInstall() {
-//        if (isInstallTracked()) {
-//            return
-//        }
-//        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
-//        wrk.customerId = customerId
-//        wrk.customerEmail = customerEmail
-//        wrk.customerOptionals = customerOptionals
-//        wrk.organic = organic
-//        wrk.customerName = customerName
-//        wrk.customerPhone = customerPhone
-//        APIManager.doWork(workRequest: wrk)
-//        setInstallTracked()
-//    }
+    
+    //    private func trackInstall() {
+    //        if (isInstallTracked()) {
+    //            return
+    //        }
+    //        let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_INSTALL)
+    //        wrk.customerId = customerId
+    //        wrk.customerEmail = customerEmail
+    //        wrk.customerOptionals = customerOptionals
+    //        wrk.organic = organic
+    //        wrk.customerName = customerName
+    //        wrk.customerPhone = customerPhone
+    //        APIManager.doWork(workRequest: wrk)
+    //        setInstallTracked()
+    //    }
     
     private func trackInstall() {
         if (isInstallTracked()) {
@@ -157,11 +157,6 @@ class TrackierSDKInstance {
                     let strResData = String(decoding: resData, as: UTF8.self)
                     let res = try! JSONDecoder().decode(InstallResponse.self, from: strResData.data(using: .utf8)!)
                     Utils.campaignData(res: res)
-                    let dlObj = DeepLink.parseDeeplinkData(res: res)
-                    let dl = self.config.getDeeplinkListerner()
-                    if dl != nil {
-                        dl?.onDeepLinking(result: dlObj)
-                    }
                 }
             } else {
                 APIManager.doWork(workRequest: wrk)
@@ -169,7 +164,7 @@ class TrackierSDKInstance {
         }
         setInstallTracked()
     }
-
+    
     func trackEvent(event: TrackierEvent) {
         if (!isEnabled) {
             Logger.warning(message: "SDK Not Enabled")
@@ -237,11 +232,51 @@ class TrackierSDKInstance {
         }
     }
     
+    @available(iOS 13.0, *)
+    func deeplinkData(url: String) async throws -> InstallResponse? {
+        var deeplinRes: InstallResponse? = nil
+        let wrkRequest = makeWorkRequest(kind: TrackierWorkRequest.KIND_Resolver)
+        wrkRequest.deeplinkUrl = url
+                do {
+                    deeplinRes = try await APIManager.doWorkDeeplinkresolver(workRequest: wrkRequest)
+                } catch {
+                    //try await APIManager.doWorkDeeplinkresolver(workRequest: wrkRequest)
+                }
+        return deeplinRes
+    }
+    
+    func callDeepLinkListenerDynamic(dlObj: InstallResponse) {
+        guard let dlt = config.getDeeplinkListerner() else { return }
+        if let url = dlObj.data?.url{
+            let resultDict: String = url 
+            let dlResult = DeepLink(result: resultDict)
+            dlt.onDeepLinking(result: dlResult)
+        }
+    }
+    
     func deviceTokenApns() {
         let wrk = makeWorkRequest(kind: TrackierWorkRequest.KIND_Token)
         wrk.deviceToken = deviceToken
         DispatchQueue.global().async {
             APIManager.doWork(workRequest: wrk)
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func parseDeepLink(uri: String?) {
+        guard let uri = uri else { return }
+        var resData: InstallResponse?
+        DispatchQueue.global().async {
+            Task {
+                resData = try await self.deeplinkData(url: uri)
+                if self.isInitialized {
+                    do {
+                        if let resData = resData {
+                            self.callDeepLinkListenerDynamic(dlObj: resData)
+                        }
+                    }
+                }
+            }
         }
     }
 }
