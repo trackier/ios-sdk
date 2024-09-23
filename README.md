@@ -269,8 +269,8 @@ Screenshot[7]
      TrackierSDK.setUserPhone(userPhone: "8138933891") // Pass User Phone Number
     
     /*Passing the custom value in the events */
-    event.addEventValue("customeValue1","XXXXX");
-    event.addEventValue("customeValue2","XXXXX");
+     event.addEventValue("customeValue1","XXXXX");
+     event.addEventValue("customeValue2","XXXXX");
     
     
     DispatchQueue.global().async {
@@ -296,6 +296,8 @@ func userDetails(){
     /* Passing the UserId and User EmailId Data */
      TrackierSDK.setUserId(XXXXXXXX) // Pass user Id here
      TrackierSDK.setUserEmail("abc@gmail.com") // Pass email Id
+     TrackierSDK.setUserName(userName: "abc") // Pass User Name
+     TrackierSDK.setUserPhone(userPhone: "8138933891") // Pass User Phone Number
     DispatchQueue.global().async {
         sleep(1)
         TrackierSDK.trackEvent(event: event)
