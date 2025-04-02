@@ -30,8 +30,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DeepLinkListener {
         config.setDeeplinkListerner(listener: self)
         //TrackierSDK.updatePostbackConversion(conversionValue: 0)
         TrackierSDK.waitForATTUserAuthorization(timeoutInterval: 20)
+        
+        // Configure SKAN properly
+        config.setSKANAid("eGfidWe3Ea")
+            .setSKANBaseURL("https://apptrovesn.com/api/v2")
+        config.setDebugMode(true)
+        TrackierSDK.registerSKAdNetwork()
         TrackierSDK.initialize(config: config)
+        setupSKANDebugging()
+
         return true
+    }
+    
+    // MARK: - SKAN Debugging
+    
+    private func setupSKANDebugging() {
+        #if DEBUG
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.testSKANConversionValues()
+        }
+        #endif
+    }
+    
+    
+    
+    private func testSKANConversionValues() {
+        let testScenarios = [
+            (revenue: 10.0, eventId: "app_launch"),
+            (revenue: 25.0, eventId: "tutorial_complete"),
+            (revenue: 50.0, eventId: "first_purchase")
+        ]
+        
+        testScenarios.forEach { scenario in
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 1...3)) {
+                print("Testing SKAN Conversion: \(scenario.eventId) - $\(scenario.revenue)")
+                TrackierSDK.updateSKANConversion(
+                    revenue: scenario.revenue,
+                    eventId: scenario.eventId
+                ) { success, error in
+                    if let error = error {
+                        print("SKAN Update Error: \(error.localizedDescription)")
+                    } else {
+                        let (fine, coarse) = TrackierSDK.getCurrentSKANValues()
+                        print("Current Values - Fine: \(fine ?? 0), Coarse: \(coarse ?? "none")")
+                    }
+                }
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

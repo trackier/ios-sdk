@@ -11,7 +11,6 @@ import Alamofire
 struct DataResponse: Codable {
     let success: Bool
 }
-
 struct InstallResponse: Codable {
     let success: Bool?
     let message: String?

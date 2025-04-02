@@ -25,6 +25,26 @@ public class TrackierSDK {
         shared.isInitialized = true
         Logger.info(message: "Trackier SDK \(Constants.SDK_VERSION) initialized")
         shared.instance.initialize(config: config)
+        
+        // Automatically configure SKAN if aid is provided
+        if let aid = config.skanAid {
+            let skanConfig = SKANManager.Configuration(
+                minimumRevenueDelta: config.skanMinimumRevenueDelta,
+                maximumUpdateFrequency: config.skanMaximumUpdateFrequency,
+                automaticSessionTracking: config.skanAutomaticSessionTracking,
+                debugMode: config.debugMode
+            )
+            
+            SKANManager.shared.configure(
+                aid: aid,
+                baseURL: config.skanBaseURL,
+                config: skanConfig
+            )
+            
+            if config.skanRegisterForAttribution {
+                SKANManager.shared.registerForAttribution()
+            }
+        }
     }
 
     public static func isEnabled() -> Bool {
@@ -96,17 +116,36 @@ public class TrackierSDK {
         }
     }
     
-    public static func updatePostbackConversion(conversionValue: Int) {
-        if #available(iOS 15.4, *) {
-            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
-                if error != nil {
-                    //print("Coneversion VALUE --  \(error.localizedDescription)")
+//    public static func updatePostbackConversion(conversionValue: Int) {
+//        if #available(iOS 15.4, *) {
+//            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+//                if error != nil {
+//                    //print("Coneversion VALUE --  \(error.localizedDescription)")
+//                }
+//            }
+//        } else if #available(iOS 14.5, *) {
+//            SKAdNetwork.updateConversionValue(conversionValue)
+//        }
+//    }
+    
+    
+    // updateSKANConversion for SKAN 4.0
+        @available(*, deprecated, message: "Use updateSKANConversion(revenue:eventId:) for SKAN 4.0 support")
+        public static func updatePostbackConversion(conversionValue: Int) {
+            if #available(iOS 15.4, *) {
+                SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                    if let error = error {
+                        Logger.error(message: """
+                        Conversion update failed: \(error.localizedDescription)
+                        Value attempted: \(conversionValue)
+                        """)
+                    }
                 }
+            } else if #available(iOS 14.0, *) {
+                SKAdNetwork.updateConversionValue(conversionValue)
             }
-        } else if #available(iOS 14.5, *) {
-            SKAdNetwork.updateConversionValue(conversionValue)
         }
-    }
+    
     
     public static func waitForATTUserAuthorization(timeoutInterval: Int) {
         shared.instance.timeoutInterval = timeoutInterval
@@ -201,4 +240,52 @@ public class TrackierSDK {
             // Fallback on earlier versions
         }
     }
+    
+    
+    
+    // MARK: - SKAN Methods
+    
+    public static func configureSKAN(
+        aid: String,
+        baseURL: String = "https://apptrovesn.com/api/v2",
+        minimumRevenueDelta: Double = 1.0,
+        maximumUpdateFrequency: TimeInterval = 3600,
+        automaticSessionTracking: Bool = true,
+        debugMode: Bool = false
+    ) {
+        let config = SKANManager.Configuration(
+            minimumRevenueDelta: minimumRevenueDelta,
+            maximumUpdateFrequency: maximumUpdateFrequency,
+            automaticSessionTracking: automaticSessionTracking,
+            debugMode: debugMode
+        )
+        
+        SKANManager.shared.configure(aid: aid, baseURL: baseURL, config: config)
+    }
+    
+    /// Registers the app for SKAdNetwork attribution (call once)
+    public static func registerSKAdNetwork() {
+        SKANManager.shared.registerForAttribution()
+    }
+    
+    /// Updates conversion value with revenue and optional event
+    public static func updateSKANConversion(
+        revenue: Double,
+        eventId: String? = nil,
+        completion: ((Bool, Error?) -> Void)? = nil
+    ) {
+        SKANManager.shared.updateConversionValue(revenue: revenue, eventId: eventId, completion: completion)
+    }
+    
+    /// Gets current SKAN conversion values
+    public static func getCurrentSKANValues() -> (fine: Int?, coarse: String?) {
+        return SKANManager.shared.getCurrentValues()
+    }
+    
+    /// Tests SKAN postback (iOS 16.1+ only)
+    @available(iOS 16.1, *)
+    public static func testSKANPostback(url: URL, completion: @escaping (Bool, Error?) -> Void) {
+        SKANManager.shared.testPostback(url: url, completion: completion)
+    }
+
 }
