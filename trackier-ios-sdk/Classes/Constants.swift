@@ -20,7 +20,7 @@ class Constants {
     static let DEEPLINK_URL = BASE_URL_DL + "/resolver"
     static let LOG_TAG = "com.trackier.sdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"
-    
+    static let SKANURL = "https://apptrovesn.com/api/v2/skans/sdk/conversion_studios"
     static let SHARED_PREF_IS_INSTALL_TRACKED = "is_install_tracked"
     static let SHARED_PREF_INSTALL_ID = "install_id"
     static let SHARED_PREF_LAST_SESSION_TIME = "last_session_time"

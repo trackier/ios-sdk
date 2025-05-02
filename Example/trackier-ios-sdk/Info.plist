@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This app collects data to provide you with a better and personalized experience.</string>
+    <key>NSAdvertisingAttributionReportEndpoint</key>
+    <string>apptrovesn.com/.well-known/skadnetwork/report-attribution</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

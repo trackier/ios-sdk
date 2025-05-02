@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  trackier-ios-sdk
-//
-//  Created by Trackier on 03/18/2021.
-//  Copyright (c) 2021 Trackier. All rights reserved.
-//
-
 import UIKit
 import trackier_ios_sdk
 import os.log

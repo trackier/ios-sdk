@@ -11,6 +11,14 @@ public class TrackierSDKConfig {
     public static let ENVIRONMENT_PRODUCTION = Constants.ENV_PRODUCTION
     public static let ENV_DEVELOPMENT = Constants.ENV_DEVELOPMENT
     public static let ENV_TESTING = Constants.ENV_TESTING
+
+    
+    // SKAN Properties
+    public private(set) var skanMinimumRevenueDelta: Double = 1.0
+        public private(set) var skanMaximumUpdateFrequency: TimeInterval = 3600
+        public private(set) var skanAutomaticSessionTracking: Bool = true
+        public private(set) var skanRegisterForAttribution: Bool = true
+        public private(set) var debugMode: Bool = false
     
     
     // SKAN Properties
@@ -85,6 +93,7 @@ public class TrackierSDKConfig {
     
     // MARK: - SKAN Configuration Methods
     
+<<<<<<< HEAD
     public func setSKANAid(_ aid: String) -> Self {
         self.skanAid = aid
         return self
@@ -124,4 +133,11 @@ public class TrackierSDKConfig {
         self.debugMode = enabled
         return self
     }
+=======
+    public func setSKANMinimumRevenueDelta(_ delta: Double) -> Self { self.skanMinimumRevenueDelta = delta; return self }
+        public func setSKANMaximumUpdateFrequency(_ frequency: TimeInterval) -> Self { self.skanMaximumUpdateFrequency = frequency; return self }
+        public func setSKANAutomaticSessionTracking(_ enabled: Bool) -> Self { self.skanAutomaticSessionTracking = enabled; return self }
+        public func setSKANRegisterForAttribution(_ register: Bool) -> Self { self.skanRegisterForAttribution = register; return self }
+        public func setDebugMode(_ enabled: Bool) -> Self { self.debugMode = enabled; return self }
+>>>>>>> cca9e48 (feat : fixed log issues)
 }

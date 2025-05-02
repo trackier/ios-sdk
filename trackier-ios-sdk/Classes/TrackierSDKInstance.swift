@@ -91,6 +91,7 @@ class TrackierSDKInstance {
         }
     }
     
+
     private func isInstallTracked() -> Bool {
         return CacheManager.getBool(key: Constants.SHARED_PREF_IS_INSTALL_TRACKED)
     }
@@ -279,4 +280,8 @@ class TrackierSDKInstance {
             }
         }
     }
+    
+//    Send install for Skan
+    
+    
 }

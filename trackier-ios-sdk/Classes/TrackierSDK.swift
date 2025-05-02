@@ -18,10 +18,26 @@ public class TrackierSDK {
     private init() {}
     
     public static func initialize(config: TrackierSDKConfig) {
-        if (shared.isInitialized) {
-            Logger.warning(message: "SDK Already initialized!")
-            return
+            if (shared.isInitialized) {
+                Logger.warning(message: "SDK Already initialized!")
+                return
+            }
+            shared.isInitialized = true
+            Logger.info(message: "Trackier SDK \(Constants.SDK_VERSION) initialized")
+            shared.instance.initialize(config: config)
+            
+            let skanConfig = SKANManager.Configuration(
+                minimumRevenueDelta: config.skanMinimumRevenueDelta,
+                maximumUpdateFrequency: config.skanMaximumUpdateFrequency,
+                automaticSessionTracking: config.skanAutomaticSessionTracking,
+                debugMode: config.debugMode
+            )
+            SKANManager.shared.configure(config: skanConfig)
+            if config.skanRegisterForAttribution {
+                SKANManager.shared.registerForAttribution()
+            }
         }
+<<<<<<< HEAD
         shared.isInitialized = true
         Logger.info(message: "Trackier SDK \(Constants.SDK_VERSION) initialized")
         shared.instance.initialize(config: config)
@@ -47,14 +63,17 @@ public class TrackierSDK {
         }
     }
 
+=======
+    
+>>>>>>> cca9e48 (feat : fixed log issues)
     public static func isEnabled() -> Bool {
         return shared.instance.isEnabled
     }
-
+    
     public static func setEnabled(value : Bool) {
         shared.instance.isEnabled = value
     }
-   
+    
     public static func trackEvent(event: TrackierEvent) {
         if (!shared.isInitialized) {
             Logger.warning(message: "SDK Not Initialized")
@@ -90,7 +109,7 @@ public class TrackierSDK {
     public static func setUserAdditionalDetails(userAdditionalDetails: Dictionary<String, Any>) {
         shared.instance.customerOptionals = userAdditionalDetails
     }
-
+    
     public static func trackAsOrganic(organic: Bool) {
         shared.instance.organic = organic
     }
@@ -116,6 +135,7 @@ public class TrackierSDK {
         }
     }
     
+<<<<<<< HEAD
 //    public static func updatePostbackConversion(conversionValue: Int) {
 //        if #available(iOS 15.4, *) {
 //            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
@@ -146,6 +166,9 @@ public class TrackierSDK {
             }
         }
     
+=======
+
+>>>>>>> cca9e48 (feat : fixed log issues)
     
     public static func waitForATTUserAuthorization(timeoutInterval: Int) {
         shared.instance.timeoutInterval = timeoutInterval
@@ -241,6 +264,7 @@ public class TrackierSDK {
         }
     }
     
+<<<<<<< HEAD
     
     
     // MARK: - SKAN Methods
@@ -252,11 +276,22 @@ public class TrackierSDK {
         maximumUpdateFrequency: TimeInterval = 3600,
         automaticSessionTracking: Bool = true,
         debugMode: Bool = false
+=======
+    // Updated SKAN Methods
+    
+    public static func configureSKAN(
+        minimumRevenueDelta: Double = 1.0,
+        maximumUpdateFrequency: TimeInterval = 3600,
+        automaticSessionTracking: Bool = true,
+        debugMode: Bool = false,
+        registerForAttribution: Bool = true
+>>>>>>> cca9e48 (feat : fixed log issues)
     ) {
         let config = SKANManager.Configuration(
             minimumRevenueDelta: minimumRevenueDelta,
             maximumUpdateFrequency: maximumUpdateFrequency,
             automaticSessionTracking: automaticSessionTracking,
+<<<<<<< HEAD
             debugMode: debugMode
         )
         
@@ -288,4 +323,52 @@ public class TrackierSDK {
         SKANManager.shared.testPostback(url: url, completion: completion)
     }
 
+=======
+            debugMode: debugMode,
+            registerForAttribution: registerForAttribution
+        )
+        SKANManager.shared.configure(config: config)
+    }
+    
+    public static func registerSKAdNetwork() {
+        SKANManager.shared.registerForAttribution()
+    }
+
+        public static func updateSKANConversion(revenue: Double, eventId: String? = nil, completion: ((Bool, Error?) -> Void)? = nil) {
+            SKANManager.shared.updateConversionValue(revenue: revenue, eventId: eventId, completion: completion)
+        }
+
+    @available(iOS 16.1, *)
+    public static func updatePostbackConversionValue(
+        fineValue: Int,
+        coarseValue: String,
+        lockWindow: Bool,
+        completion: ((Bool, Error?) -> Void)? = nil
+    ) {
+        guard let coarseType = SKANCoarseType(rawValue: coarseValue.lowercased()) else {
+            completion?(false, SKANError.invalidCoarseValue(coarseValue))
+            return
+        }
+        SKANManager.shared.updatePostbackConversionValue(
+            fineValue: fineValue,
+            coarseValue: coarseType,
+            lockWindow: lockWindow,
+            completion: completion
+        )
+    }
+
+        public static func getCurrentSKANValues() -> (fine: Int?, coarse: String?) {
+            SKANManager.shared.getCurrentValues()
+        }
+
+        @available(iOS 16.1, *)
+        public static func testSKANPostback(url: URL, completion: @escaping (Bool, Error?) -> Void) {
+            SKANManager.shared.testPostback(url: url, completion: completion)
+        }
+
+    public static func getAppToken() -> String? {
+           return shared.instance.appToken
+       }
+    
+>>>>>>> cca9e48 (feat : fixed log issues)
 }
