@@ -108,7 +108,7 @@ public class TrackierSDK {
         }
     }
     
-public static func waitForATTUserAuthorization(timeoutInterval: Int) {
+    public static func waitForATTUserAuthorization(timeoutInterval: Int) {
         shared.instance.timeoutInterval = timeoutInterval
     }
     
