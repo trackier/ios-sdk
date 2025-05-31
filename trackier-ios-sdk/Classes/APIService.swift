@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+
 struct DataResponse: Codable {
     let success: Bool
 }
@@ -145,6 +146,25 @@ enum JSONValue: Codable {
    }
 }
 
+public struct DynamicLinkResponse: Codable {
+    public let success: Bool
+    public let message: String?
+    public let error: ErrorResponse?
+    public let data: LinkData?
+}
+
+public struct ErrorResponse: Codable {
+    public let statusCode: Int
+    public let errorCode: String
+    public let codeMsg: String
+    public let message: String
+}
+
+public struct LinkData: Codable {
+    public let link: String
+}
+
+
 class APIService {
     var sessionManager = Session()          // Create a session manager 
     static var shared = APIService()
@@ -177,6 +197,24 @@ class APIService {
     }
     
     @available(iOS 13.0, *)
+        private func requestAsyncDynamicDeeplink(uri: String, method: HTTPMethod, body: [String : Any], headers: HTTPHeaders?) async throws -> Data {
+            try await withUnsafeThrowingContinuation { continuation in
+                AF.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { response in
+                    switch response.result {
+                    case .success(let data):
+                        continuation.resume(returning: data)
+                    case .failure(let error):
+                        if let data = response.data, let statusCode = response.response?.statusCode {
+                            continuation.resume(throwing: APIServiceError.httpError(data: data, statusCode: statusCode))
+                        } else {
+                            continuation.resume(throwing: error)
+                        }
+                    }
+                }
+            }
+        }
+    
+    @available(iOS 13.0, *)
     private func requestAsyncDeeplink(uri: String, method: HTTPMethod, body: [String : Any], headers: HTTPHeaders?) async throws -> InstallResponse {
         try await withUnsafeThrowingContinuation { continuation in
             AF.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { response in
@@ -206,5 +244,27 @@ class APIService {
     @available(iOS 13.0, *)
     static func postAsyncDeeplink(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> InstallResponse {
         return try await shared.requestAsyncDeeplink(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
+    }
+    
+    @available(iOS 13.0, *)
+       static func postAsyncDynamicLink(uri: String, body: [String : Any], headers: HTTPHeaders?) async throws -> DynamicLinkResponse {
+           do {
+               let data = try await shared.requestAsyncDynamicDeeplink(uri: uri, method: HTTPMethod.post, body: body, headers: headers)
+               let decoder = JSONDecoder()
+               return try decoder.decode(DynamicLinkResponse.self, from: data)
+           } catch APIServiceError.httpError(let data, _) {
+               let decoder = JSONDecoder()
+               if let backendError = try? decoder.decode(DynamicLinkResponse.self, from: data) {
+                   return backendError
+               }
+               return DynamicLinkResponse(success: false, message: "Unknown backend error", error: nil, data: nil)
+           } catch {
+               return DynamicLinkResponse(success: false, message: error.localizedDescription, error: nil, data: nil)
+           }
+       }
+    
+    enum APIServiceError: Error {
+        case httpError(data: Data, statusCode: Int)
+        case other(Error)
     }
 }

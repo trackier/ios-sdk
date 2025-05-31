@@ -108,7 +108,7 @@ public class TrackierSDK {
         }
     }
     
-    public static func waitForATTUserAuthorization(timeoutInterval: Int) {
+public static func waitForATTUserAuthorization(timeoutInterval: Int) {
         shared.instance.timeoutInterval = timeoutInterval
     }
     
@@ -199,6 +199,23 @@ public class TrackierSDK {
             shared.instance.parseDeepLink(uri: uri)
         } else {
             // Fallback on earlier versions
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    public static func createDynamicLink(
+        dynamicLink: DynamicLink,
+        onSuccess: @escaping (String) -> Void,
+        onFailure: @escaping (String) -> Void
+    ) {
+        Task {
+            let response = await shared.instance.createDynamicLink(dynamicLink: dynamicLink)
+            if response.success, let link = response.data?.link {
+                onSuccess(link)
+            } else {
+                let errorMessage = response.error?.message ?? response.message ?? "Unknown error"
+                onFailure(errorMessage)
+            }
         }
     }
 }
