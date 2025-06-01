@@ -8,7 +8,7 @@
 import Foundation
 
 class Constants {
-    static let SDK_VERSION = "1.6.60"
+    static let SDK_VERSION = "1.6.70"
     static let USER_AGENT = "com.trackier.sdk:ios-sdk:" + SDK_VERSION
     static let API_VERSION = "v1"
     static let BASE_URL = "https://events.trackier.io/" + API_VERSION
@@ -18,6 +18,7 @@ class Constants {
     static let SESSIONS_URL = BASE_URL + "/session"
     static let TOKEN_URL = BASE_URL + "/device-token"
     static let DEEPLINK_URL = BASE_URL_DL + "/resolver"
+    static let BASE_URL_DYNAMIC_LINK = "https://sdkr.apptracking.io/api/v4/ug/dlg/"
     static let LOG_TAG = "com.trackier.sdk"
     static let SHARED_PREF_NAME = "com.trackier.sdk"
     
