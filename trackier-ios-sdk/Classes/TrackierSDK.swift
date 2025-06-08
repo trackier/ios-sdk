@@ -8,10 +8,12 @@
 import Foundation
 import os
 import StoreKit
+import Alamofire
 
 public class TrackierSDK {
     private var isInitialized = false
     private var instance = TrackierSDKInstance()
+    var appToken: String = ""
     
     static let shared = TrackierSDK()
     
@@ -24,6 +26,7 @@ public class TrackierSDK {
         }
         shared.isInitialized = true
         Logger.info(message: "Trackier SDK \(Constants.SDK_VERSION) initialized")
+        shared.appToken = config.appToken
         shared.instance.initialize(config: config)
     }
 
@@ -202,6 +205,10 @@ public class TrackierSDK {
         }
     }
     
+    public static func getAppToken() -> String {
+        return shared.appToken
+    }
+    
     @available(iOS 13.0, *)
     public static func createDynamicLink(
         dynamicLink: DynamicLink,
@@ -215,6 +222,51 @@ public class TrackierSDK {
             } else {
                 let errorMessage = response.error?.message ?? response.message ?? "Unknown error"
                 onFailure(errorMessage)
+            }
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    public static func resolveDeeplinkUrl(
+        inputUrl: String,
+        completion: @escaping (Result<DlData, Error>) -> Void
+    ) {
+        let device = DeviceInfo()
+        let appVersion = device.buildInfo?["CFBundleShortVersionString"] as? String ?? ""
+
+        let body: [String: Any] = [
+            "url": inputUrl,
+            "os": "ios",
+            "osv": UIDevice.current.systemVersion,
+            "sdkv": Constants.SDK_VERSION,
+            "apv": appVersion,
+            "insId": TrackierSDK.getTrackierId().lowercased(),
+            "appKey": TrackierSDK.getAppToken()
+        ]
+        AF.request(
+            "https://sdkr.apptracking.io/dl/resolver",
+            method: .post,
+            parameters: body,
+            encoding: JSONEncoding.default,
+            headers: nil
+        )
+        .validate()
+        .responseDecodable(of: InstallResponse.self) { response in
+            switch response.result {
+            case .success(let installResponse):
+                if let data = installResponse.data {
+                    completion(.success(data))
+                } else {
+                    let error = NSError(
+                        domain: "DeeplinkResolver",
+                        code: 1001,
+                        userInfo: [NSLocalizedDescriptionKey: "No data found in response"]
+                    )
+                    completion(.failure(error))
+                }
+
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
