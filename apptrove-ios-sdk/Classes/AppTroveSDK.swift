@@ -198,6 +198,18 @@ public class AppTroveSDK {
     public static func setDOB(dob: String) {
         shared.instance.dob = dob
     }
+
+    public static func sendAPNToken(token: String) {
+        if (!shared.isInitialized) {
+            Logger.warning(message: "SDK Not Initialized")
+            return
+        }
+        if (!isEnabled()) {
+            Logger.warning(message: "SDK Disabled")
+            return
+        }
+        shared.instance.sendAPNToken(token: token)
+    }
     
     public static func parseDeepLink(uri: String?) {
         if #available(iOS 13.0, *) {
