@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'apptrove-ios-sdk'
-  s.version          = '2.0.1'
-  s.summary          = 'This is apptrove-ios-sdk 2.0.1'
+  s.version          = '2.0.2'
+  s.summary          = 'This is apptrove-ios-sdk 2.0.2'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ This is apptrove ios SDK which is used for attribution and event tracking in iOS
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trackier' => 'dev@trackier.com' }
-  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.1' }
+  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.2' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '5.0'
@@ -40,7 +40,7 @@ This is apptrove ios SDK which is used for attribution and event tracking in iOS
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'Alamofire', '~> 5.9.0'
+  s.dependency 'Alamofire', '5.10.2'
   s.dependency 'Willow', '~> 5.0'
   s.dependency 'CryptoSwift', '~> 1.4.1'
   # s.dependency 'Networking', '~> 5.1'
