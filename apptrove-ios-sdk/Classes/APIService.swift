@@ -155,7 +155,7 @@ class APIService {
     static var shared = APIService()
 
     private func request(uri : String, method: HTTPMethod, body : [String : Any], headers : HTTPHeaders?) {
-        sessionManager.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (responseObj) -> Void in
+        sessionManager.request(uri, method: method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseData { (responseObj) -> Void in
             Logger.debug(message: "Response is \(responseObj)")
             if let data = responseObj.data, uri.contains("ingest-token") {
                 // Just extract and log the message field
