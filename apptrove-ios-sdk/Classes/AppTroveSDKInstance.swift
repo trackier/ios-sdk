@@ -274,6 +274,17 @@ class AppTroveSDKInstance {
     @available(iOS 13.0, *)
     func parseDeepLink(uri: String?) {
         guard let uri = uri else { return }
+        // Full link resolver check 
+        let urlParams = DeepLink.getQueryParams(uri: uri)
+        if uri.contains("?") && !urlParams.isEmpty {
+            DispatchQueue.global().async {
+                if self.isInitialized, let dlt = self.config.getDeeplinkListerner() {
+                    let dl = DeepLink(result: uri)
+                    dlt.onDeepLinking(result: dl)
+                }
+            }
+            return
+        }
         var resData: InstallResponse?
         DispatchQueue.global().async {
             Task {
