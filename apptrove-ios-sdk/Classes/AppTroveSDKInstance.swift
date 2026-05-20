@@ -285,26 +285,16 @@ class AppTroveSDKInstance {
             }
             return
         }
-        var resData: InstallResponse?
         DispatchQueue.global().async {
             Task {
-                resData = try await self.deeplinkData(url: uri)
-                if self.isInitialized {
-//                    do {
-//                        if let resData = resData {
-//                            self.callDeepLinkListenerDynamic(dlObj: resData)
-//                        }
-//                    }
-                    do {
-                        resData = try await self.deeplinkData(url: uri)
+                do {
+                    if let resData = try await self.deeplinkData(url: uri) {
                         if self.isInitialized {
-                            if let resData = resData {
-                                self.callDeepLinkListenerDynamic(dlObj: resData)
-                            }
+                            self.callDeepLinkListenerDynamic(dlObj: resData)
                         }
-                    } catch {
-                        Logger.error(message: "Failed to parse deep link: \(error.localizedDescription)")
                     }
+                } catch {
+                    Logger.error(message: "Failed to parse deep link: \(error.localizedDescription)")
                 }
             }
         }
