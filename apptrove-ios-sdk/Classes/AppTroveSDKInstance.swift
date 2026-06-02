@@ -285,26 +285,27 @@ class AppTroveSDKInstance {
     @available(iOS 13.0, *)
     func parseDeepLink(uri: String?) {
         guard let uri = uri else { return }
-        var resData: InstallResponse?
+        // Full link resolver check 
+        let urlParams = DeepLink.getQueryParams(uri: uri)
+        if uri.contains("?") && !urlParams.isEmpty {
+            DispatchQueue.global().async {
+                if self.isInitialized, let dlt = self.config.getDeeplinkListerner() {
+                    let dl = DeepLink(result: uri)
+                    dlt.onDeepLinking(result: dl)
+                }
+            }
+            return
+        }
         DispatchQueue.global().async {
             Task {
-                resData = try await self.deeplinkData(url: uri)
-                if self.isInitialized {
-//                    do {
-//                        if let resData = resData {
-//                            self.callDeepLinkListenerDynamic(dlObj: resData)
-//                        }
-//                    }
-                    do {
-                        resData = try await self.deeplinkData(url: uri)
+                do {
+                    if let resData = try await self.deeplinkData(url: uri) {
                         if self.isInitialized {
-                            if let resData = resData {
-                                self.callDeepLinkListenerDynamic(dlObj: resData)
-                            }
+                            self.callDeepLinkListenerDynamic(dlObj: resData)
                         }
-                    } catch {
-                        Logger.error(message: "Failed to parse deep link: \(error.localizedDescription)")
                     }
+                } catch {
+                    Logger.error(message: "Failed to parse deep link: \(error.localizedDescription)")
                 }
             }
         }

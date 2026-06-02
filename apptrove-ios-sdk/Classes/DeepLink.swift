@@ -44,7 +44,9 @@ public class DeepLink {
     }
     
     public func getAd() -> String {
-        return getMapStringVal(data: deeplinkData, key: "ad")
+        let val = getMapStringVal(data: deeplinkData, key: "ad")
+        if !val.isEmpty { return val }
+        return getMapStringVal(data: deeplinkData, key: "adName")
     }
     
     public func getAdId() -> String {
@@ -52,7 +54,11 @@ public class DeepLink {
     }
     
     public func getCamp() -> String {
-        return getMapStringVal(data: deeplinkData, key: "camp")
+        let val = getMapStringVal(data: deeplinkData, key: "camp")
+        if !val.isEmpty { return val }
+        let campaign = getMapStringVal(data: deeplinkData, key: "campaign")
+        if !campaign.isEmpty { return campaign }
+        return getMapStringVal(data: deeplinkData, key: "campaignName")
     }
     
     public func getCampId() -> String {
@@ -96,7 +102,9 @@ public class DeepLink {
     }
     
     public func getDlv() -> String {
-        return getMapStringVal(data: deeplinkData, key: "dlv")
+        let val = getMapStringVal(data: deeplinkData, key: "dlv")
+        if !val.isEmpty { return val }
+        return getMapStringVal(data: deeplinkData, key: "deep_link_value")
     }
     
     public func getPid() -> String {
@@ -107,12 +115,21 @@ public class DeepLink {
 //        return getMapStringVal(data: deeplinkData, key: "sdkparams")
 //    }
     
+    // Reserved keys = standard attribution params (mirrors backend canonical set). Anything else in a full URL = SDK param.
+    private static let reservedKeys: Set<String> = [
+        "pid", "camp", "dlv", "deep_link_value",
+        "ad", "adId", "adSet", "adSetId", "campId",
+        "channel", "clickId", "message",
+        "p1", "p2", "p3", "p4", "p5",
+        "cost_value", "cost_currency", "lbw",
+        "is_retargeting", "isRetargeting",
+        "sdkparams", "sdkParams"
+    ]
+
     // Updated method to get SDK parameters from both URL and response
       public func getSDKParams() -> String {
-          // First try to get from URL parameters
+          // First try to get from URL parameters (legacy "sdkparams=..." wrapper)
           let urlParams = getMapStringVal(data: deeplinkData, key: "sdkparams")
-
-          // If URL has SDK params, return them
           if !urlParams.isEmpty {
               return urlParams
           }
@@ -122,21 +139,36 @@ public class DeepLink {
               return convertSDKParamsToString(responseParams)
           }
 
+          // Full-URL fallback: non-reserved query params
+          let custom = deeplinkData.filter { !DeepLink.reservedKeys.contains($0.key) }
+          if !custom.isEmpty {
+              return convertSDKParamsToString(custom)
+          }
+
           return ""
       }
 
-      // New method to get SDK parameters as dictionary (from response)
+      // New method to get SDK parameters as dictionary (from response or full URL)
       public func getSDKParamsDictionary() -> [String: Any]? {
-          return sdkParamsFromResponse
+          if let responseParams = sdkParamsFromResponse {
+              return responseParams
+          }
+          let custom = deeplinkData.filter { !DeepLink.reservedKeys.contains($0.key) }
+          return custom.isEmpty ? nil : custom
       }
 
       // New method to get specific SDK parameter value
       public func getSDKParamValue(key: String) -> String {
-          // First check URL parameters
-          let urlParams = getMapStringVal(data: deeplinkData, key: "sdkParams")
+          // First check URL parameters (support both "sdkparams" and "sdkParams" key casing)
+          var urlParams = getMapStringVal(data: deeplinkData, key: "sdkparams")
+          if urlParams.isEmpty {
+              urlParams = getMapStringVal(data: deeplinkData, key: "sdkParams")
+          }
           if !urlParams.isEmpty {
               let params = parseSDKParamsString(urlParams)
-              return params[key] ?? ""
+              if let val = params[key] {
+                  return val
+              }
           }
 
           // Then check response parameters
@@ -146,7 +178,13 @@ public class DeepLink {
               }
           }
 
-          return ""
+          // Final fallback: check direct URL parameters
+          return getMapStringVal(data: deeplinkData, key: key)
+      }
+
+      // New method to get direct query parameter value from full URL
+      public func getQueryParamValue(key: String) -> String {
+          return getMapStringVal(data: deeplinkData, key: key)
       }
 
       // Helper method to convert SDK params dictionary to string
