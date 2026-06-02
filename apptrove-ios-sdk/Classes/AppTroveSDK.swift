@@ -101,16 +101,23 @@ public class AppTroveSDK {
         }
     }
     
-    public static func updatePostbackConversion(conversionValue: Int) {
-        if #available(iOS 15.4, *) {
-            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
-                if error != nil {
-                    //print("Coneversion VALUE --  \(error.localizedDescription)")
-                }
-            }
-        } else if #available(iOS 14.5, *) {
-            SKAdNetwork.updateConversionValue(conversionValue)
+    public static func updatePostbackConversion(
+        _ conversionValue: Int,
+        coarseValue: String? = nil,
+        lockWindow: Bool? = nil,
+        completion: ((Error?) -> Void)? = nil
+    ) {
+        if (!shared.isInitialized) {
+            Logger.warning(message: "SDK Not Initialized")
+            completion?(NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SDK Not Initialized"]))
+            return
         }
+        if (!isEnabled()) {
+            Logger.warning(message: "SDK Disabled")
+            completion?(NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SDK Disabled"]))
+            return
+        }
+        shared.instance.updatePostbackConversion(conversionValue, coarseValue: coarseValue, lockWindow: lockWindow, completion: completion)
     }
     
     public static func waitForATTUserAuthorization(timeoutInterval: Int) {

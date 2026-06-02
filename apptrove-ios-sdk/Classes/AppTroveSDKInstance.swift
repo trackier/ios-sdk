@@ -8,6 +8,7 @@
 import Foundation
 import os
 import Alamofire
+import StoreKit
 
 class AppTroveSDKInstance {
     
@@ -48,6 +49,15 @@ class AppTroveSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
+        
+        if config.isSkanAttributionEnabled {
+            if #available(iOS 15.4, *) {
+                SKAdNetwork.updatePostbackConversionValue(0, completionHandler: nil)
+            } else if #available(iOS 14.0, *) {
+                SKAdNetwork.registerAppForAdNetworkAttribution()
+            }
+        }
+        
         if (timeoutInterval > 0) {
             DispatchQueue.main.async(execute: {
                 Timer.scheduledTimer(withTimeInterval: TimeInterval(self.timeoutInterval), repeats: false)
@@ -370,6 +380,41 @@ class AppTroveSDKInstance {
         // Send token with delay to ensure install data is processed first
         DispatchQueue.global().async {
             APIManager.doWorkTokenIngest(body: body)
+        }
+    }
+    
+    func updatePostbackConversion(
+        _ conversionValue: Int,
+        coarseValue: String?,
+        lockWindow: Bool?,
+        completion: ((Error?) -> Void)?
+    ) {
+        if (!config.isSkanAttributionEnabled) {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork attribution is disabled in config."])
+            completion?(err)
+            return
+        }
+        
+        if #available(iOS 16.1, *) {
+            var skanCoarseValue: SKAdNetwork.CoarseConversionValue = .low
+            if let cv = coarseValue?.lowercased() {
+                if cv == "high" { skanCoarseValue = .high }
+                else if cv == "medium" { skanCoarseValue = .medium }
+            }
+            let isLocked = lockWindow ?? false
+            SKAdNetwork.updatePostbackConversionValue(conversionValue, coarseValue: skanCoarseValue, lockWindow: isLocked) { error in
+                completion?(error)
+            }
+        } else if #available(iOS 15.4, *) {
+            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                completion?(error)
+            }
+        } else if #available(iOS 14.5, *) {
+            SKAdNetwork.updateConversionValue(conversionValue)
+            completion?(nil)
+        } else {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork update not supported on this iOS version."])
+            completion?(err)
         }
     }
 }
