@@ -52,6 +52,7 @@ class AppTroveSDKInstance {
         
         if config.isSkanAttributionEnabled {
             if #available(iOS 15.4, *) {
+                // Apple's recommended modern replacement for registerAppForAdNetworkAttribution (deprecated iOS 15.4)
                 SKAdNetwork.updatePostbackConversionValue(0, completionHandler: nil)
             } else if #available(iOS 14.0, *) {
                 SKAdNetwork.registerAppForAdNetworkAttribution()
@@ -385,7 +386,7 @@ class AppTroveSDKInstance {
     
     func updatePostbackConversion(
         _ conversionValue: Int,
-        coarseValue: String?,
+        coarseValue: AppTroveCoarseValue?,
         lockWindow: Bool?,
         completion: ((Error?) -> Void)?
     ) {
@@ -395,15 +396,30 @@ class AppTroveSDKInstance {
             return
         }
         
+        guard (0...63).contains(conversionValue) else {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork conversion value must be between 0 and 63."])
+            completion?(err)
+            return
+        }
+        
+        let isLocked = lockWindow ?? false
+        
         if #available(iOS 16.1, *) {
-            var skanCoarseValue: SKAdNetwork.CoarseConversionValue = .low
-            if let cv = coarseValue?.lowercased() {
-                if cv == "high" { skanCoarseValue = .high }
-                else if cv == "medium" { skanCoarseValue = .medium }
-            }
-            let isLocked = lockWindow ?? false
-            SKAdNetwork.updatePostbackConversionValue(conversionValue, coarseValue: skanCoarseValue, lockWindow: isLocked) { error in
-                completion?(error)
+            if let cv = coarseValue {
+                let skanCoarseValue: SKAdNetwork.CoarseConversionValue
+                switch cv {
+                case .high: skanCoarseValue = .high
+                case .medium: skanCoarseValue = .medium
+                case .low: skanCoarseValue = .low
+                }
+                
+                SKAdNetwork.updatePostbackConversionValue(conversionValue, coarseValue: skanCoarseValue, lockWindow: isLocked) { error in
+                    completion?(error)
+                }
+            } else {
+                SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                    completion?(error)
+                }
             }
         } else if #available(iOS 15.4, *) {
             SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in

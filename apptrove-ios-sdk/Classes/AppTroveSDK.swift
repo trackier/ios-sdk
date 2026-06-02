@@ -10,6 +10,12 @@ import os
 import StoreKit
 import Alamofire
 
+public enum AppTroveCoarseValue: String {
+    case low = "low"
+    case medium = "medium"
+    case high = "high"
+}
+
 public class AppTroveSDK {
     private var isInitialized = false
     private var instance = AppTroveSDKInstance()
@@ -103,7 +109,7 @@ public class AppTroveSDK {
     
     public static func updatePostbackConversion(
         _ conversionValue: Int,
-        coarseValue: String? = nil,
+        coarseValue: AppTroveCoarseValue? = nil,
         lockWindow: Bool? = nil,
         completion: ((Error?) -> Void)? = nil
     ) {

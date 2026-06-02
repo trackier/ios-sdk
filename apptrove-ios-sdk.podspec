@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'apptrove-ios-sdk'
-  s.version          = '2.0.2'
+  s.version          = '2.0.4'
   s.summary          = 'This is apptrove-ios-sdk 2.0.2'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ This is apptrove ios SDK which is used for attribution and event tracking in iOS
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trackier' => 'dev@trackier.com' }
-  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.2' }
+  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.4' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '5.0'
