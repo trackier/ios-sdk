@@ -51,17 +51,23 @@ class AppTroveSDKInstance {
         self.installTime = getInstallTime()
         
         if config.isSkanAttributionEnabled {
-            if #available(iOS 15.4, *) {
-                // Apple's recommended modern replacement for registerAppForAdNetworkAttribution (deprecated iOS 15.4)
-                SKAdNetwork.updatePostbackConversionValue(0, completionHandler: { error in
-                    if let error = error {
-                        Logger.error(message: "SKAdNetwork initial registration failed: \(error.localizedDescription)")
-                    } else {
-                        Logger.info(message: "SKAdNetwork initial registration succeeded with value 0")
-                    }
-                })
-            } else if #available(iOS 14.0, *) {
-                SKAdNetwork.registerAppForAdNetworkAttribution()
+            if !CacheManager.getBool(key: "is_skan_initialized") {
+                if #available(iOS 15.4, *) {
+                    // Apple's recommended modern replacement for registerAppForAdNetworkAttribution (deprecated iOS 15.4)
+                    SKAdNetwork.updatePostbackConversionValue(0, completionHandler: { error in
+                        if let error = error {
+                            Logger.error(message: "SKAdNetwork initial registration failed: \(error.localizedDescription)")
+                        } else {
+                            Logger.info(message: "SKAdNetwork initial registration succeeded with value 0")
+                            CacheManager.setBool(key: "is_skan_initialized", value: true)
+                        }
+                    })
+                } else if #available(iOS 14.0, *) {
+                    SKAdNetwork.registerAppForAdNetworkAttribution()
+                    CacheManager.setBool(key: "is_skan_initialized", value: true)
+                }
+            } else {
+                Logger.info(message: "SKAdNetwork registration SKIPPED (Already registered)")
             }
         }
         
