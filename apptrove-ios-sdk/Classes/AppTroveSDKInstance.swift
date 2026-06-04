@@ -8,6 +8,7 @@
 import Foundation
 import os
 import Alamofire
+import StoreKit
 
 class AppTroveSDKInstance {
     
@@ -48,6 +49,28 @@ class AppTroveSDKInstance {
         self.appToken = config.appToken
         self.installId = getInstallID()
         self.installTime = getInstallTime()
+        
+        if config.isSkanAttributionEnabled {
+            if !CacheManager.getBool(key: Constants.SHARED_PREF_IS_SKAN_INITIALIZED) {
+                if #available(iOS 15.4, *) {
+                    // Apple's recommended modern replacement for registerAppForAdNetworkAttribution (deprecated iOS 15.4)
+                    SKAdNetwork.updatePostbackConversionValue(0, completionHandler: { error in
+                        if let error = error {
+                            Logger.error(message: "SKAdNetwork initial registration failed: \(error.localizedDescription)")
+                        } else {
+                            Logger.info(message: "SKAdNetwork initial registration succeeded with value 0")
+                            CacheManager.setBool(key: Constants.SHARED_PREF_IS_SKAN_INITIALIZED, value: true)
+                        }
+                    })
+                } else if #available(iOS 14.0, *) {
+                    SKAdNetwork.registerAppForAdNetworkAttribution()
+                    CacheManager.setBool(key: Constants.SHARED_PREF_IS_SKAN_INITIALIZED, value: true)
+                }
+            } else {
+                Logger.info(message: "SKAdNetwork registration SKIPPED (Already registered)")
+            }
+        }
+        
         if (timeoutInterval > 0) {
             DispatchQueue.main.async(execute: {
                 Timer.scheduledTimer(withTimeInterval: TimeInterval(self.timeoutInterval), repeats: false)
@@ -371,6 +394,56 @@ class AppTroveSDKInstance {
         // Send token with delay to ensure install data is processed first
         DispatchQueue.global().async {
             APIManager.doWorkTokenIngest(body: body)
+        }
+    }
+    
+    func updatePostbackConversion(
+        _ conversionValue: Int,
+        coarseValue: AppTroveCoarseValue?,
+        lockWindow: Bool?,
+        completion: ((Error?) -> Void)?
+    ) {
+        if (!config.isSkanAttributionEnabled) {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork attribution is disabled in config."])
+            completion?(err)
+            return
+        }
+        
+        guard (0...63).contains(conversionValue) else {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork conversion value must be between 0 and 63."])
+            completion?(err)
+            return
+        }
+        
+        let isLocked = lockWindow ?? false
+        
+        if #available(iOS 16.1, *) {
+            if let cv = coarseValue {
+                let skanCoarseValue: SKAdNetwork.CoarseConversionValue
+                switch cv {
+                case .high: skanCoarseValue = .high
+                case .medium: skanCoarseValue = .medium
+                case .low: skanCoarseValue = .low
+                }
+                
+                SKAdNetwork.updatePostbackConversionValue(conversionValue, coarseValue: skanCoarseValue, lockWindow: isLocked) { error in
+                    completion?(error)
+                }
+            } else {
+                SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                    completion?(error)
+                }
+            }
+        } else if #available(iOS 15.4, *) {
+            SKAdNetwork.updatePostbackConversionValue(conversionValue) { error in
+                completion?(error)
+            }
+        } else if #available(iOS 14.5, *) {
+            SKAdNetwork.updateConversionValue(conversionValue)
+            completion?(nil)
+        } else {
+            let err = NSError(domain: "AppTrove", code: -1, userInfo: [NSLocalizedDescriptionKey: "SKAdNetwork update not supported on this iOS version."])
+            completion?(err)
         }
     }
 }
