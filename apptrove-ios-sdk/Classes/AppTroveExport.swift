@@ -15,7 +15,6 @@ public func initialize(initParam: UnsafePointer<CChar>?)  {
     sdkConfigs.sdkt = initData.setSDKType
     sdkConfigs.sdkVersion = initData.setSDKVersion
     sdkConfigs.setSDKVersion(sdkVersion: "2.0.4")
-    sdkConfigs.setSDKVersion(sdkVersion: "2.0.3")
     AppTroveSDK.initialize(config: sdkConfigs)
 }
 
