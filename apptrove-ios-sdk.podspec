@@ -25,7 +25,6 @@ This is apptrove ios SDK which is used for attribution and event tracking in iOS
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trackier' => 'dev@trackier.com' }
   s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.4' }
-  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.3' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '5.0'
