@@ -32,6 +32,10 @@ This is trackier ios SDK which is used for attribution and event tracking in iOS
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'apptrove-ios-sdk/Classes/**/*'
+
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES'
+  }
   
   # s.resource_bundles = {
   #   'trackier-ios-sdk' => ['trackier-ios-sdk/Assets/*.png']
