@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'apptrove-ios-sdk'
-  s.version          = '2.0.5'
-  s.summary          = 'This is apptrove-ios-sdk 2.0.5'
+  s.version          = '2.0.6'
+  s.summary          = 'This is apptrove-ios-sdk 2.0.6'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,13 +25,17 @@ This is trackier ios SDK which is used for attribution and event tracking in iOS
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'trackier' => 'dev@trackier.com' }
-  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.5' }
+  s.source           = { :git => 'https://github.com/trackier/ios-sdk.git', :tag => '2.0.6' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '5.0'
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'apptrove-ios-sdk/Classes/**/*'
+
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES'
+  }
   
   # s.resource_bundles = {
   #   'trackier-ios-sdk' => ['trackier-ios-sdk/Assets/*.png']
