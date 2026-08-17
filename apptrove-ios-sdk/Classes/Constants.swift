@@ -8,7 +8,7 @@
 import Foundation
 
 class Constants {
-    static let SDK_VERSION = "2.0.6"
+    static let SDK_VERSION = "2.0.7"
     static let USER_AGENT = "com.apptrove.sdk:ios-sdk:" + SDK_VERSION
     static let API_VERSION = "v1"
     static let BASE_URL = "events.trackier.io/" + API_VERSION
@@ -16,6 +16,7 @@ class Constants {
     static let INSTALL_URL = BASE_URL + "/install"
     static let EVENTS_URL = BASE_URL + "/event"
     static let SESSIONS_URL = BASE_URL + "/session"
+    static let SKAN_COMPUTE_URL = BASE_URL + "/skan/compute"
     static let TOKEN_URL = BASE_URL + "/device-token"
     static let TOKEN_INGEST_URL = BASE_URL + "/ingest-token"
     static let DEEPLINK_URL = BASE_URL_DL + "/resolver"
@@ -27,6 +28,7 @@ class Constants {
     static let SHARED_PREF_IS_INSTALL_TRACKED = "is_install_tracked"
     static let SHARED_PREF_INSTALL_ID = "install_id"
     static let SHARED_PREF_LAST_SESSION_TIME = "last_session_time"
+    static let SHARED_PREF_LAST_SESSION_DATE = "last_session_date"
     static let SHARED_PREF_IS_SKAN_INITIALIZED = "is_skan_initialized"
 
     static let ENV_PRODUCTION = "production"

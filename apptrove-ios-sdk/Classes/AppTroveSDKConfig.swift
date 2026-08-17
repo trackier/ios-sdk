@@ -20,8 +20,6 @@ public class AppTroveSDKConfig {
     var sdkVersion: String = Constants.SDK_VERSION
     var region: Region = .NONE
     
-    public var isSkanAttributionEnabled: Bool = false
-    
     private var deeplinkListener: DeepLinkListener? = nil
     
     public init(appToken: String, env: String) {
@@ -87,13 +85,5 @@ public class AppTroveSDKConfig {
     
     func getRegion() -> String {
         return self.region.rawValue
-    }
-    
-    public func enableSkanAttribution() {
-        self.isSkanAttributionEnabled = true
-    }
-    
-    public func disableSkanAttribution() {
-        self.isSkanAttributionEnabled = false
     }
 }
