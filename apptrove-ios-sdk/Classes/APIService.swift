@@ -265,4 +265,52 @@ class APIService {
         case httpError(data: Data, statusCode: Int)
         case other(Error)
     }
+
+    // Skan compute POST. Does not use validate so 404 is handled here.
+    static func postSkanCompute(
+        uri: String,
+        body: [String: Any],
+        headers: HTTPHeaders?,
+        completion: @escaping (_ response: SkanComputeResponse?, _ statusCode: Int?, _ errorMessage: String?) -> Void
+    ) {
+        shared.sessionManager.request(
+            uri,
+            method: .post,
+            parameters: body,
+            encoding: JSONEncoding.default,
+            headers: headers
+        ).responseData { response in
+            let statusCode = response.response?.statusCode
+
+            if let error = response.error, response.data == nil {
+                completion(nil, statusCode, error.localizedDescription)
+                return
+            }
+
+            if let statusCode = statusCode {
+                // API not live yet
+                if statusCode == 404 {
+                    completion(nil, statusCode, "not_found")
+                    return
+                }
+                if !(200..<300).contains(statusCode) {
+                    let bodyText = response.data.flatMap { String(data: $0, encoding: .utf8) } ?? ""
+                    completion(nil, statusCode, "http_\(statusCode): \(bodyText.prefix(200))")
+                    return
+                }
+            }
+
+            guard let data = response.data, !data.isEmpty else {
+                completion(nil, statusCode, "empty_body")
+                return
+            }
+
+            let parsed = SkanComputeResponse.parse(from: data)
+            if parsed == nil {
+                completion(nil, statusCode, "invalid_json")
+                return
+            }
+            completion(parsed, statusCode, nil)
+        }
+    }
 }

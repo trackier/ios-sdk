@@ -76,7 +76,6 @@ public final class ObjCAppTroveSDKConfig: NSObject {
 
     private var secretId = ""
     private var secretKey = ""
-    private var skanEnabled = false
     private var sdkType = "ios"
     private var sdkVersion = Constants.SDK_VERSION
     private var region: AppTroveSDKConfig.Region = .NONE
@@ -98,9 +97,6 @@ public final class ObjCAppTroveSDKConfig: NSObject {
         self.secretKey = secretKey
     }
 
-    @objc public func enableSkanAttribution() { skanEnabled = true }
-    @objc public func disableSkanAttribution() { skanEnabled = false }
-
     @objc(setDeeplinkListernerWithListener:)
     public func setDeeplinkListerner(listener: ObjCDeepLinkListener?) {
         deepLinkListener = listener
@@ -121,7 +117,6 @@ public final class ObjCAppTroveSDKConfig: NSObject {
         if !secretId.isEmpty || !secretKey.isEmpty {
             config.setAppSecret(secretId: secretId, secretKey: secretKey)
         }
-        if skanEnabled { config.enableSkanAttribution() } else { config.disableSkanAttribution() }
         config.setSDKType(sdkType: sdkType)
         config.setSDKVersion(sdkVersion: sdkVersion)
         config.setRegion(region)

@@ -100,4 +100,37 @@ class APIManager: NSObject {
         let baseUrl = getBaseUrl(for: Constants.TOKEN_INGEST_URL)
         APIService.post(uri: baseUrl, body: body, headers: headers)
     }
+
+    // Call skan compute API. Returns nil on failure so app keeps running.
+    static func computeSkan(
+        body: [String: Any],
+        completion: @escaping (SkanComputeResponse?) -> Void
+    ) {
+        let baseUrl: String
+        if AppTroveSDK.config != nil {
+            baseUrl = getBaseUrl(for: Constants.SKAN_COMPUTE_URL)
+        } else {
+            baseUrl = "\(Constants.SCHEME)\(Constants.SKAN_COMPUTE_URL)"
+        }
+
+        let jsonData = Utils.convertDictToJSON(data: body)
+        Logger.debug(message: "[SKAN] request \(baseUrl) body: \(jsonData)")
+
+        APIService.postSkanCompute(uri: baseUrl, body: body, headers: headers) { response, statusCode, errorMessage in
+            if let errorMessage = errorMessage {
+                Logger.debug(message: "[SKAN] request failed status=\(statusCode ?? -1) err=\(errorMessage)")
+                completion(nil)
+                return
+            }
+            guard let response = response else {
+                Logger.debug(message: "[SKAN] empty response")
+                completion(nil)
+                return
+            }
+
+            let msg = response.message ?? ""
+            Logger.debug(message: "[SKAN] success=\(String(describing: response.success)) message=\(msg) active=\(String(describing: response.data?.active)) fine_cv=\(String(describing: response.data?.fineCv)) coarse_cv=\(String(describing: response.data?.coarseCv)) lock=\(String(describing: response.data?.lock))")
+            completion(response)
+        }
+    }
 }

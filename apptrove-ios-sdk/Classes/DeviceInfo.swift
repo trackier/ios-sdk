@@ -54,7 +54,8 @@ class DeviceInfo {
         dict["screenDensity"] = getScreenDensity()
         dict["screenFormat"] = name
         // TODO: screenSize,screenDensity?
-        dict["batteryLevel"] = batteryLevel
+        // Backend expects batteryLevel as string (number causes session 400).
+        dict["batteryLevel"] = String(batteryLevel)
         dict["ibme"] = isBatteryMonitoringEnabled
         dict["idfv"] = idfv
         dict["idfa"] = getIDFA()
@@ -82,7 +83,7 @@ class DeviceInfo {
         return  "\(screenDensity)"
     }
     
-    private func getIDFA() -> String? {
+    func getIDFA() -> String? {
         if #available(iOS 14, *) {
             if ATTrackingManager.trackingAuthorizationStatus != ATTrackingManager.AuthorizationStatus.authorized  {
                 return nil
